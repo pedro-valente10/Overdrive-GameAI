@@ -1,4 +1,4 @@
-# Overdrive-GameAI 🎮🏎️
+# Overdrive-GameAI 🏎️🎮
 
 Um jogo de corrida top-down, estilo pixel-art retrô, desenvolvido com GODOT.
 
