@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://duv4numhdxws4"]
+
+[sub_resource type="TileSet" id="TileSet_0sjvc"]
+
+[sub_resource type="TileSet" id="TileSet_p84jh"]
+
+[node name="Node2D" type="Node2D" unique_id=2120064602]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]
+
+[node name="aslphalt_border_L" type="TileMapLayer" parent="TileMapLayer" unique_id=1720819596]
+tile_set = SubResource("TileSet_0sjvc")
+
+[node name="asphalt_border_R" type="TileMap" parent="TileMapLayer" unique_id=507489883]
+tile_set = SubResource("TileSet_p84jh")
+format = 2
+
+[node name="Layer0" type="TileMapLayer" parent="TileMapLayer/asphalt_border_R" unique_id=1755167383]
+use_parent_material = true
+tile_set = SubResource("TileSet_p84jh")
