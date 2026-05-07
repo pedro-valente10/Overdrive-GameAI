@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm6bkk5yuvrh5"
-path="res://.godot/imported/alphalt_border_L.png-69f37141d3b09003f7d51742b34ad9e2.ctex"
+path="res://.godot/imported/asphalt_border_L.png-1e15dc2cbedd1891e4d0a95438537900.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tile_sets/alphalt_border_L.png"
-dest_files=["res://.godot/imported/alphalt_border_L.png-69f37141d3b09003f7d51742b34ad9e2.ctex"]
+source_file="res://sprites/tile_sets/asphalt_border_L.png"
+dest_files=["res://.godot/imported/asphalt_border_L.png-1e15dc2cbedd1891e4d0a95438537900.ctex"]
 
 [params]
 
