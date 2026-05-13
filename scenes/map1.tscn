@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bm6bkk5yuvrh5" path="res://sprites/tile_sets/asphalt_border_L.png" id="1_v7ld6"]
 [ext_resource type="Texture2D" uid="uid://2r6010k0i6nt" path="res://sprites/tile_sets/asphalt2.png" id="2_x0ugi"]
 [ext_resource type="Texture2D" uid="uid://eo2644davua0" path="res://sprites/tile_sets/asphalt1.png" id="3_wpo3d"]
+[ext_resource type="Script" uid="uid://bwah8yj6luede" path="res://scenes/character_body_2d.gd" id="4_wpo3d"]
+[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://sprites/cars/r_car_red.png" id="5_uyy6q"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uyy6q"]
 load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f2477529b.ctex"
@@ -10,15 +12,19 @@ load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7jwj"]
 texture = SubResource("CompressedTexture2D_uyy6q")
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.17985916, -8, 8, -8, 8, 8, 0.17985916, 8)
 0:0/0 = 0
 0:1/0 = 0
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0.17985916, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2m3eu"]
 texture = ExtResource("1_v7ld6")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.35971832, -8, 0, 8, -8, 8)
 1:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 8, -8, 8)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_raiux"]
@@ -36,6 +42,7 @@ texture = ExtResource("3_wpo3d")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0sjvc"]
+physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_p7jwj")
 sources/2 = SubResource("TileSetAtlasSource_2m3eu")
 sources/3 = SubResource("TileSetAtlasSource_raiux")
@@ -70,12 +77,16 @@ sources/0 = SubResource("TileSetAtlasSource_srta2")
 sources/1 = SubResource("TileSetAtlasSource_lpe66")
 sources/2 = SubResource("TileSetAtlasSource_bwvye")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jwj"]
+size = Vector2(15, 25)
+
 [node name="map1" type="Node2D" unique_id=2120064602]
-position = Vector2(-151, 43)
+position = Vector2(-56, 329)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]
 
 [node name="aslphalt_border_L" type="TileMapLayer" parent="TileMapLayer" unique_id=1720819596]
+position = Vector2(-2, 0)
 tile_set = SubResource("TileSet_0sjvc")
 
 [node name="asphalt_border_R" type="TileMap" parent="TileMapLayer" unique_id=507489883]
@@ -88,3 +99,15 @@ layer_0/tile_data = PackedInt32Array(-1114145, 1, 1610612736, -1179681, 65537, 1
 position = Vector2(0, -45)
 scale = Vector2(31.811, 15)
 zoom = Vector2(0.8, 0.8)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136]
+position = Vector2(-79, 233)
+script = ExtResource("4_wpo3d")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=402526488]
+texture = ExtResource("5_uyy6q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1899713621]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_p7jwj")
