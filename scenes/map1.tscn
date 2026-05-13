@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://2r6010k0i6nt" path="res://sprites/tile_sets/asphalt2.png" id="2_x0ugi"]
 [ext_resource type="Texture2D" uid="uid://eo2644davua0" path="res://sprites/tile_sets/asphalt1.png" id="3_wpo3d"]
 [ext_resource type="Texture2D" uid="uid://bdexcu4umdi8c" path="res://sprites/tile_sets/grass.png" id="4_uyy6q"]
-[ext_resource type="Script" uid="uid://bwah8yj6luede" path="res://scenes/character_body_2d.gd" id="4_wpo3d"]
+[ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="4_wpo3d"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://sprites/cars/r_car_red.png" id="5_uyy6q"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uyy6q"]
@@ -113,7 +113,8 @@ scale = Vector2(31.811, 15)
 zoom = Vector2(0.8, 0.8)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136]
-position = Vector2(-79, 233)
+position = Vector2(-86, 237)
+rotation = 1.5707964
 script = ExtResource("4_wpo3d")
 metadata/_edit_group_ = true
 
