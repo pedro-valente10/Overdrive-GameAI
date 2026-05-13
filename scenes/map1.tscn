@@ -70,7 +70,7 @@ sources/0 = SubResource("TileSetAtlasSource_srta2")
 sources/1 = SubResource("TileSetAtlasSource_lpe66")
 sources/2 = SubResource("TileSetAtlasSource_bwvye")
 
-[node name="Node2D" type="Node2D" unique_id=2120064602]
+[node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-151, 43)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]

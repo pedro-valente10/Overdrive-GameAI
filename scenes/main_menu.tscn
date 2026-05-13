@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ch2sex183f75o"]
+
+[ext_resource type="Script" uid="uid://cwi28hxudv0jn" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+
+[node name="MainMenu" type="Node2D" unique_id=719023652]
+scale = Vector2(52.60268, -19.65018)
+script = ExtResource("1_l6cm7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1546593424]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=984483754]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1133000939]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=324440957]
+layout_mode = 2
+text = "Play
+"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1376850712]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=974605751]
