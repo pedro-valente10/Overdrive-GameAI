@@ -7,13 +7,7 @@ func _ready() -> void:
 	$CanvasLayer/Control/VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/map1.tscn")
+	get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -53,6 +53,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 20
 text = "PLAY"
+icon_alignment = 1
 
 [node name="QuitButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1376850712]
 layout_mode = 2
