@@ -12,19 +12,15 @@ load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p7jwj"]
 texture = SubResource("CompressedTexture2D_uyy6q")
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.17985916, -8, 8, -8, 8, 8, 0.17985916, 8)
 0:0/0 = 0
 0:1/0 = 0
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 8, -8, 8, 8, 0.17985916, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2m3eu"]
 texture = ExtResource("1_v7ld6")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.35971832, -8, 0, 8, -8, 8)
 1:0/0 = 0
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 8, -8, 8)
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_raiux"]
@@ -42,7 +38,6 @@ texture = ExtResource("3_wpo3d")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0sjvc"]
-physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_p7jwj")
 sources/2 = SubResource("TileSetAtlasSource_2m3eu")
 sources/3 = SubResource("TileSetAtlasSource_raiux")
@@ -86,7 +81,7 @@ position = Vector2(-56, 329)
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]
 
 [node name="aslphalt_border_L" type="TileMapLayer" parent="TileMapLayer" unique_id=1720819596]
-position = Vector2(-2, 0)
+position = Vector2(-2, -6)
 tile_set = SubResource("TileSet_0sjvc")
 
 [node name="asphalt_border_R" type="TileMap" parent="TileMapLayer" unique_id=507489883]
@@ -111,3 +106,43 @@ texture = ExtResource("5_uyy6q")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1899713621]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_p7jwj")
+
+[node name="AtritoZebra" type="Area2D" parent="." unique_id=1217089988]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=902407783]
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=140231715]
+position = Vector2(120, 0)
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=670236943]
+position = Vector2(-73, -37)
+rotation = 1.5738449
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1726598090]
+position = Vector2(-73, 83)
+rotation = 1.5738449
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=974483532]
+position = Vector2(-73, 540)
+rotation = 1.5738449
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=2038704831]
+position = Vector2(-73, 661)
+rotation = 1.5738449
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=93188151]
+position = Vector2(576, -1)
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=557418909]
+position = Vector2(696, 0)
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
+[connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
