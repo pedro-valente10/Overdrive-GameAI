@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://eo2644davua0" path="res://sprites/tile_sets/asphalt1.png" id="3_wpo3d"]
 [ext_resource type="Texture2D" uid="uid://b5c2x4qkaxdt4" path="res://sprites/tile_sets/grass_border1_R.png" id="4_2m3eu"]
 [ext_resource type="Script" uid="uid://bwah8yj6luede" path="res://scenes/character_body_2d.gd" id="4_wpo3d"]
+[ext_resource type="Texture2D" uid="uid://ddg6epe5cmffq" path="res://sprites/tile_sets/grass_center1.png" id="5_5vo6v"]
 [ext_resource type="Texture2D" uid="uid://cl4g5wnq2i678" path="res://sprites/tile_sets/grass_border2_R.png" id="5_raiux"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://sprites/cars/r_car_red.png" id="5_uyy6q"]
 [ext_resource type="Texture2D" uid="uid://xsf2iebfxp8r" path="res://sprites/tile_sets/grass_border1_L.png" id="6_5vo6v"]
@@ -56,6 +57,16 @@ texture = ExtResource("7_k348l")
 sources/0 = SubResource("TileSetAtlasSource_2m3eu")
 sources/1 = SubResource("TileSetAtlasSource_raiux")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1kdh"]
+texture = ExtResource("5_5vo6v")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rimy1"]
+sources/0 = SubResource("TileSetAtlasSource_x1kdh")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k348l"]
 texture = ExtResource("4_2m3eu")
 0:0/0 = 0
@@ -82,7 +93,7 @@ position = Vector2(-56, 329)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]
 
-[node name="asphalt_border_R" type="TileMap" parent="TileMapLayer" unique_id=507489883]
+[node name="asphalt_border" type="TileMap" parent="TileMapLayer" unique_id=507489883]
 position = Vector2(286, -6)
 tile_set = SubResource("TileSet_p84jh")
 format = 2
@@ -94,7 +105,8 @@ tile_set = SubResource("TileSet_5vo6v")
 format = 2
 layer_0/tile_data = PackedInt32Array(196583, 0, 0, 262119, 0, 1, 196584, 65536, 0, 262120, 65536, 1, 458727, 0, 0, 524263, 0, 1, 458728, 65536, 0, 524264, 65536, 1, 589799, 0, 0, 655335, 0, 1, 589800, 65536, 0, 655336, 65536, 1, 327655, 0, 0, 393191, 0, 1, 327656, 65536, 0, 393192, 65536, 1, 65511, 0, 0, 131047, 0, 1, 65512, 65536, 0, 131048, 65536, 1, -196633, 0, 0, -131097, 0, 1, -196632, 65536, 0, -131096, 65536, 1, -65561, 1, 0, -25, 1, 1, -65560, 65537, 0, -24, 65537, 1, -327705, 1, 0, -262169, 1, 1, -327704, 65537, 0, -262168, 65537, 1, -458777, 1, 0, -393241, 1, 1, -458776, 65537, 0, -393240, 65537, 1, -720921, 1, 0, -655385, 1, 1, -720920, 65537, 0, -655384, 65537, 1, -851993, 1, 0, -786457, 1, 1, -851992, 65537, 0, -786456, 65537, 1, -1048601, 1, 1, -1048600, 65537, 1, -983065, 0, 0, -917529, 0, 1, -983064, 65536, 0, -917528, 65536, 1, -589849, 0, 0, -524313, 0, 1, -589848, 65536, 0, -524312, 65536, 1, 720871, 0, 0, 720872, 65536, 0)
 
-[node name="grass_center1" type="TileMap" parent="TileMapLayer" unique_id=1494774616]
+[node name="grass_center" type="TileMap" parent="TileMapLayer" unique_id=1494774616]
+tile_set = SubResource("TileSet_rimy1")
 format = 2
 
 [node name="grass_border_R" type="TileMap" parent="TileMapLayer" unique_id=1397259722]
