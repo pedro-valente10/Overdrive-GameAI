@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5v4wcpnntfy" path="res://sprites/tile_sets/grass_center2.png" id="7_srta2"]
 [ext_resource type="Texture2D" uid="uid://cwlidtk7wa63r" path="res://sprites/tile_sets/grass_center3.png" id="8_bwvye"]
 [ext_resource type="Texture2D" uid="uid://b8hkcj5munajt" path="res://sprites/tile_sets/trees.png" id="11_x1kdh"]
-[ext_resource type="Script" uid="uid://5tgaqhkbmmap" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
+[ext_resource type="Script" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
 [ext_resource type="Texture2D" uid="uid://bsmt22fn8yjmq" path="res://sprites/tile_sets/trees_noShadow.png" id="12_rimy1"]
 [ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://sprites/cars/r_car_blue.png" id="12_srta2"]
 [ext_resource type="Texture2D" uid="uid://dvadi0iu4jiql" path="res://sprites/tile_sets/asphalt_inside_curve1.png" id="13_25n8o"]
@@ -53,27 +53,11 @@ texture = ExtResource("3_k348l")
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sslir"]
-texture = ExtResource("4_ol6j0")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0y4q"]
-texture = ExtResource("5_1bs4p")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
 [sub_resource type="TileSet" id="TileSet_p84jh"]
 sources/0 = SubResource("TileSetAtlasSource_srta2")
 sources/1 = SubResource("TileSetAtlasSource_lpe66")
 sources/2 = SubResource("TileSetAtlasSource_bwvye")
 sources/3 = SubResource("TileSetAtlasSource_rimy1")
-sources/4 = SubResource("TileSetAtlasSource_sslir")
-sources/5 = SubResource("TileSetAtlasSource_f0y4q")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2m3eu"]
 texture = ExtResource("6_5vo6v")
@@ -583,6 +567,20 @@ texture = ExtResource("12_rimy1")
 sources/0 = SubResource("TileSetAtlasSource_ol6j0")
 sources/1 = SubResource("TileSetAtlasSource_1bs4p")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sslir"]
+texture = ExtResource("4_ol6j0")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0y4q"]
+texture = ExtResource("5_1bs4p")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pf8s5"]
 texture = ExtResource("13_25n8o")
 0:0/0 = 0
@@ -600,6 +598,8 @@ texture = ExtResource("14_d7n0x")
 [sub_resource type="TileSet" id="TileSet_tovi2"]
 sources/2 = SubResource("TileSetAtlasSource_pf8s5")
 sources/3 = SubResource("TileSetAtlasSource_qtxlm")
+sources/0 = SubResource("TileSetAtlasSource_sslir")
+sources/1 = SubResource("TileSetAtlasSource_f0y4q")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jwj"]
 size = Vector2(15, 25)
@@ -648,7 +648,7 @@ layer_0/tile_data = PackedInt32Array(983008, 1572864, 9, 1048544, 1572864, 10, 1
 position = Vector2(-2, -6)
 tile_set = SubResource("TileSet_tovi2")
 format = 2
-layer_0/tile_data = PackedInt32Array(786416, 65539, 1610612737, 851952, 3, 1610612737, 786415, 65539, 1610612736, 851951, 3, 1610612736, 786445, 65539, 805306368, 720909, 65539, 805306369, 786446, 3, 805306368, 720910, 3, 805306369, -1114129, 3, 1, -1179665, 3, 0, -1114128, 65539, 1, -1179664, 65539, 0, -1245170, 3, 1342177280, -1179634, 65539, 1342177280, -1245171, 3, 1342177281, -1179635, 65539, 1342177281)
+layer_0/tile_data = PackedInt32Array(786416, 65539, 1610612737, 851952, 3, 1610612737, 786415, 65539, 1610612736, 851951, 3, 1610612736, 786445, 65539, 805306368, 720909, 65539, 805306369, 786446, 3, 805306368, 720910, 3, 805306369, -1114129, 3, 1, -1179665, 3, 0, -1114128, 65539, 1, -1179664, 65539, 0, -1245170, 3, 1342177280, -1179634, 65539, 1342177280, -1245171, 3, 1342177281, -1179635, 65539, 1342177281, -1179671, 0, 0, -1114135, 0, 1, -1179670, 65536, 0, -1114134, 65536, 1, -1310742, 0, 0, -1245206, 0, 1, -1310741, 65536, 0, -1245205, 65536, 1, -1441813, 1, 0, -1376277, 1, 1, -1441812, 65537, 0, -1376276, 65537, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1447153436]
 position = Vector2(0, -45)
