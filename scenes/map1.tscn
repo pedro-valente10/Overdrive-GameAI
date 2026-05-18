@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://xsf2iebfxp8r" path="res://sprites/tile_sets/grass_border1_L.png" id="6_5vo6v"]
 [ext_resource type="Texture2D" uid="uid://dauhsbc5s1yqg" path="res://sprites/tile_sets/grass_border2_L.png" id="7_k348l"]
 [ext_resource type="Texture2D" uid="uid://dc5v4wcpnntfy" path="res://sprites/tile_sets/grass_center2.png" id="7_srta2"]
+[ext_resource type="Script" uid="uid://5tgaqhkbmmap" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
+[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://sprites/cars/r_car_blue.png" id="12_srta2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
 load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f2477529b.ctex"
@@ -106,6 +108,12 @@ sources/1 = SubResource("TileSetAtlasSource_txtfr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jwj"]
 size = Vector2(15, 25)
 
+[sub_resource type="Curve2D" id="Curve2D_k348l"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -45, 234, -26.14244, -10.710731, 26.14244, 10.710731, 66.60969, 232.63434, -125.61983, 97.52065, 125.61983, -97.52065, 259, 233, 74.08347, 95.0201, -74.08347, -95.0201, 263, -342, 71.18871, -77, -71.18871, 77, -295, -348, -53.649467, -74, 53.649467, 74, -311, 227, 0, 0, 0, 0, -45, 234)
+}
+point_count = 7
+
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
 
@@ -189,6 +197,20 @@ polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=557418909]
 position = Vector2(696, 0)
 polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="TrilhoDoBot" type="Path2D" parent="." unique_id=1693967628]
+position = Vector2(-9.561768, 8.662628)
+scale = Vector2(0.9692548, 0.96863323)
+curve = SubResource("Curve2D_k348l")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TrilhoDoBot" unique_id=1697969384]
+position = Vector2(-45, 234)
+rotation = -0.14036915
+script = ExtResource("12_lpe66")
+
+[node name="Sprite2D" type="Sprite2D" parent="TrilhoDoBot/PathFollow2D" unique_id=1534055]
+rotation = 1.5707964
+texture = ExtResource("12_srta2")
 
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
