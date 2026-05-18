@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bdexcu4umdi8c" path="res://sprites/tile_sets/grass.png" id="4_uyy6q"]
 [ext_resource type="Script" uid="uid://bwah8yj6luede" path="res://scenes/character_body_2d.gd" id="4_wpo3d"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://sprites/cars/r_car_red.png" id="5_uyy6q"]
+[ext_resource type="Script" uid="uid://ci1t0bc7x5dsd" path="res://scenes/path_follow_2d.gd" id="7_2m3eu"]
+[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://sprites/cars/r_car_blue.png" id="8_raiux"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uyy6q"]
 load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f2477529b.ctex"
@@ -86,6 +88,12 @@ sources/0 = SubResource("TileSetAtlasSource_k348l")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jwj"]
 size = Vector2(15, 25)
 
+[sub_resource type="Curve2D" id="Curve2D_5vo6v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 40.085205, 251.90866, 0, 0, 0, 0, 140.20786, 244.41537, -146.66089, 3.552288, 146.66089, -3.552288, 267, 238, 131.08084, 135.36948, -131.08084, -135.36948, 251, -332, 124.3172, -113.33337, -124.3172, 113.33337, -298, -350, -90.18806, -84.13403, 90.18806, 84.13403, -303, 243, -29.814663, 5.4548817, 29.814663, -5.4548817, -77.83704, 261.54288, 0, 0, 0, 0, 40.085205, 251.90866)
+}
+point_count = 8
+
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
 
@@ -116,6 +124,7 @@ zoom = Vector2(0.8, 0.8)
 position = Vector2(-86, 237)
 rotation = 1.5707964
 script = ExtResource("4_wpo3d")
+max_speed = 250.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=402526488]
@@ -161,6 +170,20 @@ polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=557418909]
 position = Vector2(696, 0)
 polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+
+[node name="TrilhodoBot" type="Path2D" parent="." unique_id=1181427197]
+position = Vector2(-8.03249, 18.675041)
+scale = Vector2(0.8988974, 0.9341678)
+curve = SubResource("Curve2D_5vo6v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TrilhodoBot" unique_id=2119683168]
+position = Vector2(40.085205, 251.90866)
+rotation = -0.07470181
+script = ExtResource("7_2m3eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="TrilhodoBot/PathFollow2D" unique_id=1999572955]
+rotation = 1.5707964
+texture = ExtResource("8_raiux")
 
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
