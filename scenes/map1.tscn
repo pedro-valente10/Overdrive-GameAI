@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5v4wcpnntfy" path="res://sprites/tile_sets/grass_center2.png" id="7_srta2"]
 [ext_resource type="Texture2D" uid="uid://cwlidtk7wa63r" path="res://sprites/tile_sets/grass_center3.png" id="8_bwvye"]
 [ext_resource type="Texture2D" uid="uid://b8hkcj5munajt" path="res://sprites/tile_sets/trees.png" id="11_x1kdh"]
-[ext_resource type="Script" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
+[ext_resource type="Script" uid="uid://5tgaqhkbmmap" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
 [ext_resource type="Texture2D" uid="uid://bsmt22fn8yjmq" path="res://sprites/tile_sets/trees_noShadow.png" id="12_rimy1"]
 [ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://sprites/cars/r_car_blue.png" id="12_srta2"]
 [ext_resource type="Texture2D" uid="uid://dvadi0iu4jiql" path="res://sprites/tile_sets/asphalt_inside_curve1.png" id="13_25n8o"]
@@ -606,9 +606,9 @@ size = Vector2(15, 25)
 
 [sub_resource type="Curve2D" id="Curve2D_k348l"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -45, 234, -26.14244, -10.710731, 26.14244, 10.710731, 66.60969, 232.63434, -125.61983, 97.52065, 125.61983, -97.52065, 259, 233, 74.08347, 95.0201, -74.08347, -95.0201, 263, -342, 71.18871, -77, -71.18871, 77, -295, -348, -53.649467, -74, 53.649467, 74, -311, 227, 0, 0, 0, 0, -45, 234)
+"points": PackedVector2Array(0, 0, 0, 0, -77.83117, 214.05145, -48.76378, -19.861395, 48.76378, 19.861395, 66.60969, 232.63434, -125.61983, 97.52065, 125.61983, -97.52065, 259, 233, 74.08347, 95.0201, -74.08347, -95.0201, 263, -342, 71.18871, -77, -71.18871, 77, -295, -348, -53.649467, -74, 53.649467, 74, -311, 227, 0, 0, 0, 0, -160.3688, 252.24963, 0, 0, 0, 0, -77.83117, 214.05145)
 }
-point_count = 7
+point_count = 8
 
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
@@ -711,8 +711,8 @@ scale = Vector2(0.9692548, 0.96863323)
 curve = SubResource("Curve2D_k348l")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrilhoDoBot" unique_id=1697969384]
-position = Vector2(-45, 234)
-rotation = -0.14036916
+position = Vector2(-77.83117, 214.05145)
+rotation = -0.013361897
 script = ExtResource("12_lpe66")
 
 [node name="Sprite2D" type="Sprite2D" parent="TrilhoDoBot/PathFollow2D" unique_id=1534055]
