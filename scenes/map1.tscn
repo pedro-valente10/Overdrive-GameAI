@@ -954,7 +954,7 @@ curve = SubResource("Curve2D_k348l")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrilhoDoBot" unique_id=1697969384]
 position = Vector2(-77.83117, 215.08386)
-rotation = -0.024148561
+rotation = -0.024148563
 script = ExtResource("12_lpe66")
 
 [node name="Sprite2D" type="Sprite2D" parent="TrilhoDoBot/PathFollow2D" unique_id=1534055]
