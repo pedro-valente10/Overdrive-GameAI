@@ -27,7 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://cff7f6nd5k5u5" path="res://assets/tile_sets/asphalt/asphalt_curve5.png" id="20_f0y4q"]
 [ext_resource type="Texture2D" uid="uid://b7i18buv3ve0o" path="res://assets/tile_sets/asphalt/asphalt_curve6.png" id="22_574ci"]
 [ext_resource type="Texture2D" uid="uid://dxbn46e361ykq" path="res://assets/house.png" id="23_qwlrb"]
-[ext_resource type="Texture2D" uid="uid://bxmkvu2qntvvp" path="res://assets/brick.png" id="24_nok5a"]
+[ext_resource type="Texture2D" uid="uid://bxmkvu2qntvvp" path="res://assets/tile_sets/brick.png" id="24_nok5a"]
+[ext_resource type="Texture2D" uid="uid://dijsjqtr3tpoi" path="res://assets/tile_sets/car_start.png" id="25_nok5a"]
+[ext_resource type="Texture2D" uid="uid://dbyjsfmf2b6u4" path="res://assets/tile_sets/race_line.png" id="26_0j1pt"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
 load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f2477529b.ctex"
@@ -764,6 +766,22 @@ texture = ExtResource("24_nok5a")
 [sub_resource type="TileSet" id="TileSet_3rppj"]
 sources/0 = SubResource("TileSetAtlasSource_lus0x")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rppj"]
+texture = ExtResource("25_nok5a")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykhnw"]
+texture = ExtResource("26_0j1pt")
+1:0/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ykhnw"]
+sources/0 = SubResource("TileSetAtlasSource_3rppj")
+sources/1 = SubResource("TileSetAtlasSource_ykhnw")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jwj"]
 size = Vector2(15, 25)
 
@@ -823,13 +841,19 @@ tile_set = SubResource("TileSet_3rppj")
 format = 2
 layer_0/tile_data = PackedInt32Array(458761, 65536, 1610612736, -917495, 65536, 1610612736, -851959, 65536, 1610612736, -786423, 65536, 1610612736, -720887, 65536, 1610612736, -655351, 65536, 1610612736, -589815, 65536, 1610612736, -524279, 65536, 1610612736, -458743, 65536, 1610612736, -393207, 65536, 1610612736, -327671, 65536, 1610612736, -262135, 65536, 1610612736, -196599, 65536, 1610612736, -131063, 65536, 1610612736, -65527, 65536, 1610612736, 9, 65536, 1610612736, 65545, 65536, 1610612736, 131081, 65536, 1610612736, 196617, 65536, 1610612736, 262153, 65536, 1610612736, 327689, 65536, 1610612736, 393225, 65536, 1610612736, 524297, 196608, 12, 589812, 196608, 1342177292, -983052, 196608, 805306380, -1048567, 196608, 1610612748, 524296, 458752, 5, 524295, 458752, 5, 524294, 458752, 5, 524293, 458752, 5, 524292, 458752, 5, 524291, 458752, 5, 524290, 458752, 5, 524289, 458752, 5, 524288, 458752, 5, 589823, 458752, 5, 589822, 458752, 5, 589821, 458752, 5, 589820, 458752, 5, 589819, 458752, 5, 589818, 458752, 5, 589817, 458752, 5, 589816, 458752, 5, 589815, 458752, 5, 589814, 458752, 5, 589813, 458752, 5, 524276, 458752, 1342177285, 458740, 458752, 1342177285, 393204, 458752, 1342177285, 327668, 458752, 1342177285, 262132, 458752, 1342177285, 196596, 458752, 1342177285, 131060, 458752, 1342177285, 65524, 458752, 1342177285, -12, 458752, 1342177285, -65548, 458752, 1342177285, -131084, 458752, 1342177285, -196620, 458752, 1342177285, -262156, 458752, 1342177285, -327692, 458752, 1342177285, -393228, 458752, 1342177285, -458764, 458752, 1342177285, -524300, 458752, 1342177285, -589836, 458752, 1342177285, -655372, 458752, 1342177285, -720908, 458752, 1342177285, -786444, 458752, 1342177285, -851980, 458752, 1342177285, -917516, 458752, 1342177285, -983051, 458752, 805306373, -983050, 458752, 805306373, -983049, 458752, 805306373, -983048, 458752, 805306373, -983047, 458752, 805306373, -983046, 458752, 805306373, -983045, 458752, 805306373, -983044, 458752, 805306373, -983043, 458752, 805306373, -983042, 458752, 805306373, -983041, 458752, 805306373, -1048576, 458752, 805306373, -1048575, 458752, 805306373, -1048574, 458752, 805306373, -1048573, 458752, 805306373, -1048572, 458752, 805306373, -1048571, 458752, 805306373, -1048570, 458752, 805306373, -1048569, 458752, 805306373, -1048568, 458752, 805306373, -983031, 458752, 1610612741)
 
+[node name="race" type="TileMap" parent="TileMapLayer" unique_id=1593375726]
+position = Vector2(0, 2)
+tile_set = SubResource("TileSet_ykhnw")
+format = 2
+layer_0/tile_data = PackedInt32Array(917498, 0, 0, 983034, 0, 1, 917499, 65536, 0, 983035, 65536, 1, 1048570, 0, 0, 1114106, 0, 1, 1048571, 65536, 0, 1114107, 65536, 1, 917501, 0, 0, 983037, 0, 1, 917502, 65536, 0, 983038, 65536, 1, 1048573, 0, 0, 1114109, 0, 1, 1048574, 65536, 0, 1114110, 65536, 1, 917495, 0, 0, 983031, 0, 1, 917496, 65536, 0, 983032, 65536, 1, 1048567, 0, 0, 1114103, 0, 1, 1048568, 65536, 0, 1114104, 65536, 1, 786435, 65537, 0, 851971, 65537, 1, 917507, 65537, 0, 983043, 65537, 1, 1048579, 65537, 0, 1114115, 65537, 1, 720899, 65537, 0)
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1447153436]
 position = Vector2(0, -45)
 scale = Vector2(31.811, 15)
 zoom = Vector2(0.8, 0.8)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136]
-position = Vector2(-86, 237)
+position = Vector2(-86, 249)
 rotation = 1.5707964
 script = ExtResource("4_wpo3d")
 metadata/_edit_group_ = true
@@ -848,27 +872,27 @@ polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=140231715]
 position = Vector2(120, 0)
-polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+polygon = PackedVector2Array(-370, -278, -362, -278, -362, 178, -370, 178)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=670236943]
 position = Vector2(-73, -37)
 rotation = 1.5738449
-polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+polygon = PackedVector2Array(-369.8641, -282.87378, -361.86414, -282.89813, -360.4679, 175.09973, -368.46786, 175.12411)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1726598090]
 position = Vector2(-73, 83)
 rotation = 1.5738449
-polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+polygon = PackedVector2Array(-369.87323, -285.87375, -361.87326, -285.89813, -360.45874, 178.09969, -368.45868, 178.12407)
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=974483532]
-position = Vector2(-73, 540)
+position = Vector2(-72, 540)
 rotation = 1.5738449
-polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+polygon = PackedVector2Array(-371.87018, -284.86765, -362.8702, -284.89508, -361.48004, 171.10281, -369.48, 171.1272)
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=2038704831]
-position = Vector2(-73, 661)
+position = Vector2(-71, 659)
 rotation = 1.5738449
-polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
+polygon = PackedVector2Array(-369.85492, -279.87378, -361.85498, -279.89816, -360.4679, 175.0997, -368.46783, 175.12408)
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=93188151]
 position = Vector2(576, -1)
@@ -889,6 +913,7 @@ rotation = -0.013361897
 script = ExtResource("12_lpe66")
 
 [node name="Sprite2D" type="Sprite2D" parent="TrilhoDoBot/PathFollow2D" unique_id=1534055]
+position = Vector2(-0.01379418, 1.0322905)
 rotation = 1.5707964
 texture = ExtResource("12_srta2")
 
