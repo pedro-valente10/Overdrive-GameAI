@@ -853,7 +853,7 @@ scale = Vector2(31.811, 15)
 zoom = Vector2(0.8, 0.8)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136]
-position = Vector2(-86, 249)
+position = Vector2(-86, 251)
 rotation = 1.5707964
 script = ExtResource("4_wpo3d")
 metadata/_edit_group_ = true
