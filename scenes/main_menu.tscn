@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cwi28hxudv0jn" path="res://scenes/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://dd8ybwq4h6sh0" path="res://images/cover.png" id="2_ekxnf"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="3_bqqt6"]
+[ext_resource type="AudioStream" uid="uid://c27htyv2m2b3f" path="res://sound/car_starting.mp3" id="4_wu84c"]
 
 [node name="MainMenu" type="Node2D" unique_id=719023652]
 scale = Vector2(54.073692, -19.65018)
@@ -71,3 +72,10 @@ text = "QUIT
 "
 flat = true
 icon_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1373688900]
+position = Vector2(9.708972, -26.61553)
+scale = Vector2(0.01849328, -0.050890114)
+stream = ExtResource("4_wu84c")
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
