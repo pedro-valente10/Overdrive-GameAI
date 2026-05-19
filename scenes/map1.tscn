@@ -589,8 +589,8 @@ sources/1 = SubResource("TileSetAtlasSource_1bs4p")
 texture = ExtResource("4_ol6j0")
 0:0/0 = 0
 1:0/0 = 0
-0:1/0 = 0
 1:1/0 = 0
+0:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f0y4q"]
 texture = ExtResource("5_1bs4p")
@@ -642,6 +642,8 @@ texture = ExtResource("22_574ci")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tovi2"]
+physics_layer_0/collision_layer = 0
+physics_layer_1/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_pf8s5")
 sources/3 = SubResource("TileSetAtlasSource_qtxlm")
 sources/0 = SubResource("TileSetAtlasSource_sslir")
@@ -654,17 +656,29 @@ sources/7 = SubResource("TileSetAtlasSource_uoi5k")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lus0x"]
 texture = ExtResource("24_nok5a")
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 1.978447, -8, 2.3381634, -8, 8, 8, 8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 1.978447, -8, 2.3381634, -8, 8, 8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 1.978447, -8, 2.3381634, -8, 8, 8, 8)
 6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.1583061, 8, 1.978447, 8, 8, -8, 8)
 7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.1583061, 8, 1.978447, 8, 8, -8, 8)
 8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.1583061, 8, 1.978447, 8, 8, -8, 8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 2.1583061, -8, 2.6978817)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 2.1583061, -8, 2.6978817)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 2.1583061, -8, 2.6978817)
 6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.7985878, 8, 2.1583061, 8, 8, -8, 8)
 7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.7985878, 8, 2.1583061, 8, 8, -8, 8)
 8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.7985878, 8, 2.1583061, 8, 8, -8, 8)
 1:2/0 = 0
 2:2/0 = 0
 3:2/0 = 0
@@ -712,11 +726,17 @@ texture = ExtResource("24_nok5a")
 8:7/0 = 0
 9:7/0 = 0
 1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 2.1583061, 8, 1.6187286, 8, 8)
 2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 2.1583061, 8, 1.6187286, 8, 8)
 3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 2.1583061, 8, 1.6187286, 8, 8)
 6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 1.2590122, -8, 1.7985878)
 7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 1.2590122, -8, 1.7985878)
 8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, 1.2590122, -8, 1.7985878)
 1:9/0 = 0
 2:9/0 = 0
 3:9/0 = 0
@@ -731,13 +751,17 @@ texture = ExtResource("24_nok5a")
 8:10/0 = 0
 0:12/0 = 0
 1:12/0 = 0
+1:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0.71943474, -8, 1.0791531, 1.4388714, 8, 1.978447, 8, 8, -8, 8)
 2:12/0 = 0
 3:12/0 = 0
+3:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.71943474, -8, 8, -8, 8, 8, -8, 8, -8, 2.3381634, -1.6187286, 1.6187286)
 4:12/0 = 0
 5:12/0 = 0
 6:12/0 = 0
+6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.8992939, -8, 0, 0.8992939, 8, 2.1583061, 8, 8, -8, 8)
 7:12/0 = 0
 8:12/0 = 0
+8:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.5395756, -8, -1.2590103, 1.2590122, -8, 2.1583061, -8, 8, 6.834631, 8, 8, -8)
 9:12/0 = 0
 0:13/0 = 0
 1:13/0 = 0
@@ -765,6 +789,7 @@ texture = ExtResource("24_nok5a")
 4:8/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_3rppj"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lus0x")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3rppj"]
@@ -791,6 +816,9 @@ _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -77.83117, 215.08386, -48.76378, -19.861395, 48.76378, 19.861395, 66.60969, 232.63434, -125.61983, 97.52065, 125.61983, -97.52065, 259, 233, 74.08347, 95.0201, -74.08347, -95.0201, 263, -342, 71.18871, -77, -71.18871, 77, -295, -348, -53.649467, -74, 53.649467, 74, -314.09512, 226.44006, -89.37494, 24.341839, 89.37494, -24.341839, -182.03491, 233.66675, 0, 0, 0, 0, -77.83117, 215.08386)
 }
 point_count = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoi5k"]
+size = Vector2(15.5061035, 24.779003)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j1pt"]
 size = Vector2(8, 196)
@@ -860,7 +888,7 @@ zoom = Vector2(0.8, 0.8)
 position = Vector2(-86, 251)
 rotation = 1.5707964
 script = ExtResource("4_wpo3d")
-max_speed = 250.0
+max_speed = 200.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=402526488]
@@ -907,6 +935,18 @@ polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 position = Vector2(696, 0)
 polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 
+[node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=65999442]
+polygon = PackedVector2Array(211, -406, 286, -368, 309, -338, 334, -279, 325, -279, 318, -304, 303, -330, 285, -355, 259, -375, 240, -381, 211, -397)
+
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=783444454]
+polygon = PackedVector2Array(326, 171, 319, 185, 319, 193, 310, 203, 304, 219, 296, 236, 262, 266, 249, 269, 236, 276, 229, 284, 217, 285, 210, 290, 210, 297, 219, 292, 230, 290, 251, 275, 264, 272, 287, 255, 307, 232, 312, 216, 322, 200, 329, 186, 330, 176, 334, 175, 334, 169)
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1689941491]
+polygon = PackedVector2Array(-370, -279, -357, -310, -345, -335, -327, -358, -302, -382, -279, -390, -264, -400, -247, -405, -247, -398, -257, -391, -267, -390, -274, -383, -281, -381, -285, -376, -299, -374, -314, -360, -333, -340, -339, -332, -339, -325, -347, -314, -346, -310, -353, -303, -356, -298, -356, -293, -357, -288, -362, -283, -362, -278)
+
+[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=632610610]
+polygon = PackedVector2Array(-362, 170, -362, 175, -357, 184, -355, 193, -348, 202, -344, 209, -341, 211, -341, 216, -339, 217, -339, 224, -338, 228, -328, 237, -313, 252, -304, 261, -299, 264, -296, 267, -289, 267, -283, 270, -279, 273, -275, 274, -274, 279, -267, 280, -264, 283, -257, 283, -251, 285, -248, 289, -245, 290, -245, 298, -249, 298, -256, 291, -266, 291, -287, 276, -299, 275, -341, 237, -343, 228, -347, 225, -348, 215, -360, 198, -363, 193, -363, 185, -366, 181, -370, 177, -370, 169)
+
 [node name="TrilhoDoBot" type="Path2D" parent="." unique_id=1693967628]
 position = Vector2(-9.561768, 8.662628)
 scale = Vector2(0.9692548, 0.96863323)
@@ -922,6 +962,13 @@ position = Vector2(-0.01379418, 1.0322905)
 rotation = 1.5707964
 texture = ExtResource("12_srta2")
 
+[node name="CorpoDoBot" type="StaticBody2D" parent="TrilhoDoBot/PathFollow2D/Sprite2D" unique_id=1413125749]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrilhoDoBot/PathFollow2D/Sprite2D/CorpoDoBot" unique_id=1931378367]
+position = Vector2(-0.5037842, -1.0327759)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_uoi5k")
+
 [node name="LinhaDeChegada" type="Area2D" parent="." unique_id=834506707]
 script = ExtResource("31_uoi5k")
 
@@ -936,6 +983,50 @@ offset_right = 66.0
 offset_bottom = 23.0
 text = "Voltas: 0"
 
+[node name="PainelFinal" type="ColorRect" parent="CanvasLayer" unique_id=1553691793]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1148968, 0.11489681, 0.11489674, 0.7058824)
+
+[node name="ResultadoLabel" type="Label" parent="CanvasLayer/PainelFinal" unique_id=148075154]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.5
+offset_top = -55.0
+offset_right = 155.5
+offset_bottom = 55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 80
+text = "VITÓRIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParedesDaPista" type="StaticBody2D" parent="." unique_id=872785858]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParedesDaPista" unique_id=1815159758]
+polygon = PackedVector2Array(-192, -256, -191, 141, 159, 143, 158, -257)
+
+[node name="Checkpoint" type="Area2D" parent="." unique_id=8145625]
+
+[node name="Check1" type="CollisionPolygon2D" parent="Checkpoint" unique_id=1676154572]
+polygon = PackedVector2Array(-53, -435, -54, -257, -24, -256, -25, -434)
+
+[node name="Check2" type="CollisionPolygon2D" parent="Checkpoint" unique_id=165385276]
+polygon = PackedVector2Array(-452, -85, -453, -44, -192, -46, -193, -90)
+
+[node name="Check3" type="CollisionPolygon2D" parent="Checkpoint" unique_id=602691042]
+polygon = PackedVector2Array(157, -108, 390, -111, 389, -43, 159, -47)
+
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
 [connection signal="body_entered" from="LinhaDeChegada" to="LinhaDeChegada" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint" to="LinhaDeChegada" method="_on_checkpoint_body_entered"]

@@ -8,8 +8,6 @@ func _ready() -> void:
 
 func _on_play_pressed() -> void:
 	som_botao.play()
-	await som_botao.finished
-	await get_tree().create_timer(0.1).timeout
 	get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
 
 func _on_quit_pressed() -> void:
