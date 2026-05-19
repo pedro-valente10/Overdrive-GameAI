@@ -1015,18 +1015,23 @@ vertical_alignment = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParedesDaPista" unique_id=1815159758]
 polygon = PackedVector2Array(-192, -256, -191, 141, 159, 143, 158, -257)
 
-[node name="Checkpoint" type="Area2D" parent="." unique_id=8145625]
+[node name="Checkpoints" type="Node2D" parent="." unique_id=1235197278]
 
-[node name="Check1" type="CollisionPolygon2D" parent="Checkpoint" unique_id=1676154572]
-polygon = PackedVector2Array(-53, -435, -54, -257, -24, -256, -25, -434)
+[node name="Area2D" type="Area2D" parent="Checkpoints" unique_id=1655302242]
 
-[node name="Check2" type="CollisionPolygon2D" parent="Checkpoint" unique_id=165385276]
-polygon = PackedVector2Array(-452, -85, -453, -44, -192, -46, -193, -90)
+[node name="Check1" type="CollisionPolygon2D" parent="Checkpoints/Area2D" unique_id=365257937]
+polygon = PackedVector2Array(159, -80, 404, -75, 401, -11, 161, -19)
 
-[node name="Check3" type="CollisionPolygon2D" parent="Checkpoint" unique_id=602691042]
-polygon = PackedVector2Array(157, -108, 390, -111, 389, -43, 159, -47)
+[node name="Area2D3" type="Area2D" parent="Checkpoints" unique_id=2100187761]
+
+[node name="Check3" type="CollisionPolygon2D" parent="Checkpoints/Area2D3" unique_id=1254427241]
+polygon = PackedVector2Array(-428, -92, -192, -91, -191, -37, -436, -37)
+
+[node name="Area2D2" type="Area2D" parent="Checkpoints" unique_id=1506168358]
+
+[node name="Check2" type="CollisionPolygon2D" parent="Checkpoints/Area2D2" unique_id=1484287112]
+polygon = PackedVector2Array(-59, -454, -64, -254, -8, -258, -12, -452)
 
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
 [connection signal="body_entered" from="LinhaDeChegada" to="LinhaDeChegada" method="_on_body_entered"]
-[connection signal="body_entered" from="Checkpoint" to="LinhaDeChegada" method="_on_checkpoint_body_entered"]
