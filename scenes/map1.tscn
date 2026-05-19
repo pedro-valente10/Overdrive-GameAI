@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5v4wcpnntfy" path="res://assets/tile_sets/grass/grass_center2.png" id="7_srta2"]
 [ext_resource type="Texture2D" uid="uid://cwlidtk7wa63r" path="res://assets/tile_sets/grass/grass_center3.png" id="8_bwvye"]
 [ext_resource type="Texture2D" uid="uid://b8hkcj5munajt" path="res://assets/tile_sets/trees.png" id="11_x1kdh"]
-[ext_resource type="Script" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
+[ext_resource type="Script" uid="uid://5tgaqhkbmmap" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
 [ext_resource type="Texture2D" uid="uid://bsmt22fn8yjmq" path="res://assets/tile_sets/trees_noShadow.png" id="12_rimy1"]
 [ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="12_srta2"]
 [ext_resource type="Texture2D" uid="uid://dvadi0iu4jiql" path="res://assets/tile_sets/asphalt/asphalt_inside_curve1.png" id="13_25n8o"]
