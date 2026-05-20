@@ -18,7 +18,7 @@ func iniciar_contagem():
 	contagem_label.text = "1"
 	await get_tree().create_timer(1.0).timeout
 	
-	contagem_label.text = "CORRA!"
+	contagem_label.text = "DRIVE!"
 	# 3. Libera todo mundo que está no grupo "corredores"
 	liberar_todos_os_corredores()
 	

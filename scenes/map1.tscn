@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://dijsjqtr3tpoi" path="res://assets/tile_sets/car_start.png" id="25_nok5a"]
 [ext_resource type="Texture2D" uid="uid://dbyjsfmf2b6u4" path="res://assets/tile_sets/race_line.png" id="26_0j1pt"]
 [ext_resource type="PackedScene" path="res://scenes/bot_steering.tscn" id="30_0j1pt"]
+[ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="31_lus0x"]
 [ext_resource type="Script" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
@@ -814,6 +815,8 @@ size = Vector2(15, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j1pt"]
 size = Vector2(8, 196)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
+
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
 script = ExtResource("1_uoi5k")
@@ -986,17 +989,20 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -636.0
-offset_top = -59.5
-offset_right = -473.0
-offset_bottom = 59.5
+offset_left = -44.0
+offset_top = -11.5
+offset_right = 156.0
+offset_bottom = 188.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("31_lus0x")
+theme_override_font_sizes/font_size = 68
+text = "1,2,3, DRIVE!"
+label_settings = SubResource("LabelSettings_3rppj")
 
 [node name="ContadorTimer" type="Timer" parent="CanvasLayer" unique_id=776608469]
 one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=2074572138]
 
 [node name="ParedesDaPista" type="StaticBody2D" parent="." unique_id=872785858]
 
