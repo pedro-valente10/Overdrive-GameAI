@@ -14,6 +14,8 @@ func _physics_process(delta):
 	# ui_up = -1, ui_down = 1 (O Y no Godot é invertido: para cima é negativo)
 	if not pode_correr: 
 		velocity = Vector2.ZERO
+		move_and_slide()
+		return
 
 	var turn_input = Input.get_axis("ui_left", "ui_right")
 	var drive_input = Input.get_axis("ui_up", "ui_down")

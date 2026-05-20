@@ -15,6 +15,9 @@ func _ready():
 	var caminho_waypoints = get_node("../Waypoints")
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
+	
+func definir_pode_correr(status: bool):
+	pode_correr = status
 
 func _physics_process(delta):
 	# O tick inicial faz a magia da recursividade rodar a árvore toda

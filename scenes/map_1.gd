@@ -1,34 +1,35 @@
 extends Node2D
 
-@onready var contador_label = $CanvasLayer/ContadorLabel
-@onready var contador_timer = $CanvasLayer/ContadorTimer
-@onready var carro = $CharacterBody2D #carro do jogador
-@onready var bots = $BotSteering
-
-var tempo_restante = 3
+@onready var contagem_label = $CanvasLayer/ContadorLabel # Certifique-se de que o caminho está correto
 
 func _ready():
-	# 1. Bloqueia o movimento do carro assim que a cena carrega
-	carro.pode_correr = false
-	
-	# 2. Configura o texto inicial e inicia o timer de 1 segundo
-	contador_label.text = str(tempo_restante)
-	contador_timer.start()
-	
-	# 3. Conecta o sinal do timer via código (ou você pode fazer pelo nó de Sinais)
-	contador_timer.timeout.connect(_on_contador_timer_timeout)
+	# 1. Garante que ninguém corre assim que o mapa carrega
+	bloquear_todos_os_corredores()
+	# 2. Inicia a contagem regressiva
+	iniciar_contagem()
 
-func _on_contador_timer_timeout():
-	tempo_restante -= 1
+func iniciar_contagem():
+	contagem_label.text = "3"
+	await get_tree().create_timer(1.0).timeout
 	
-	if tempo_restante > 0:
-		# Ainda está na contagem (2, 1)
-		contador_label.text = str(tempo_restante)
-		contador_timer.start() # Reinicia o timer para o próximo segundo
-	elif tempo_restante == 0:
-		contador_label.text = "DRIVE!"
-		carro.pode_correr = true # Libera o carro!
-		bots.pode_correr = true
-		contador_timer.start() # Roda o timer uma última vez para sumir com o texto
-	else:
-		contador_label.visible = false
+	contagem_label.text = "2"
+	await get_tree().create_timer(1.0).timeout
+	
+	contagem_label.text = "1"
+	await get_tree().create_timer(1.0).timeout
+	
+	contagem_label.text = "CORRA!"
+	# 3. Libera todo mundo que está no grupo "corredores"
+	liberar_todos_os_corredores()
+	
+	# Espera mais um segundo e some com o texto da tela
+	await get_tree().create_timer(1.0).timeout
+	contagem_label.visible = false
+
+func bloquear_todos_os_corredores():
+	# Dispara a função 'definir_pode_correr(false)' em absolutamente todos os nós do grupo
+	get_tree().call_group("corredores", "definir_pode_correr", false)
+
+func liberar_todos_os_corredores():
+	# Dispara a função 'definir_pode_correr(true)' para todo mundo do grupo jogar
+	get_tree().call_group("corredores", "definir_pode_correr", true)
