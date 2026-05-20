@@ -9,9 +9,10 @@ var pode_correr: bool = false
 @export var steering_speed = 3.5
 var speed_multiplier = 1.0
 
+func definir_pode_correr(status: bool):
+	pode_correr = status
+
 func _physics_process(delta):
-	# 1. Pegar as teclas pressionadas (Setas direcionais por padrão)
-	# ui_up = -1, ui_down = 1 (O Y no Godot é invertido: para cima é negativo)
 	if not pode_correr: 
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -19,15 +20,11 @@ func _physics_process(delta):
 
 	var turn_input = Input.get_axis("ui_left", "ui_right")
 	var drive_input = Input.get_axis("ui_up", "ui_down")
-	
-	# 2. Sistema de Curvas (Só vira se o carro estiver em movimento)
+
 	if velocity.length() > 5:
-		# Se estiver dando ré, inverte a curva para o controle ficar natural
 		var direction_modifier = -1 if drive_input > 0 else 1
 		rotation += turn_input * steering_speed * delta * direction_modifier
-
-	# 3. Aceleração e Fricção
-	# O seu sprite aponta para CIMA, então usamos 'transform.y' para saber para onde a "frente" do carro está apontando.
+ 
 	var current_max_speed = max_speed * speed_multiplier
 	
 	

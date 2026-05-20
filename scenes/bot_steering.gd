@@ -11,6 +11,7 @@ var pode_correr: bool = false
 var lista_waypoints = []
 var indice_alvo = 0
 
+
 func _ready():
 	var caminho_waypoints = get_node("../Waypoints")
 	if caminho_waypoints:
