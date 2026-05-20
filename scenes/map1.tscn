@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://duv4numhdxws4"]
 
+[ext_resource type="Script" uid="uid://cyseeq7um4sst" path="res://scenes/map_1.gd" id="1_uoi5k"]
 [ext_resource type="Texture2D" uid="uid://bm6bkk5yuvrh5" path="res://assets/tile_sets/asphalt/asphalt_border_L.png" id="1_v7ld6"]
 [ext_resource type="Texture2D" uid="uid://2r6010k0i6nt" path="res://assets/tile_sets/asphalt/asphalt2.png" id="3_k348l"]
 [ext_resource type="Texture2D" uid="uid://eo2644davua0" path="res://assets/tile_sets/asphalt/asphalt1.png" id="3_wpo3d"]
@@ -815,6 +816,7 @@ size = Vector2(8, 196)
 
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
+script = ExtResource("1_uoi5k")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]
 
@@ -949,7 +951,7 @@ shape = SubResource("RectangleShape2D_0j1pt")
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1910730348]
 offset_right = 66.0
 offset_bottom = 23.0
-text = "Voltas: 0"
+text = "Voltas: 0/5"
 
 [node name="PainelFinal" type="ColorRect" parent="CanvasLayer" unique_id=1553691793]
 visible = false
@@ -974,9 +976,20 @@ offset_bottom = 55.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 80
-text = "VITÓRIA"
+text = "VICTORY"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ContadorLabel" type="Label" parent="CanvasLayer" unique_id=1679498239]
+offset_left = -56.0
+offset_top = 329.0
+offset_right = -16.0
+offset_bottom = 352.0
+
+[node name="ContadorTimer" type="Timer" parent="CanvasLayer" unique_id=776608469]
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=2074572138]
 
 [node name="ParedesDaPista" type="StaticBody2D" parent="." unique_id=872785858]
 

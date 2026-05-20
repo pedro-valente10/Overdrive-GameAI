@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var pode_correr: bool = false
 @export var velocidade_maxima = 275.0
 @export var forca_curva = 4.0
 @export var distancia_alvo = 90.0
@@ -19,6 +20,10 @@ func _physics_process(delta):
 	# O tick inicial faz a magia da recursividade rodar a árvore toda
 	if arvore_comportamento:
 		arvore_comportamento.tick(self, delta)
+	
+	if not pode_correr: 
+		velocity = Vector2.ZERO
+		move_and_slide()
 		
 	if velocity.length() > 0:
 		rotation = velocity.angle()
