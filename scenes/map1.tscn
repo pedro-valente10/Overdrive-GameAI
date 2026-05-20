@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://dc5v4wcpnntfy" path="res://assets/tile_sets/grass/grass_center2.png" id="7_srta2"]
 [ext_resource type="Texture2D" uid="uid://cwlidtk7wa63r" path="res://assets/tile_sets/grass/grass_center3.png" id="8_bwvye"]
 [ext_resource type="Texture2D" uid="uid://b8hkcj5munajt" path="res://assets/tile_sets/trees.png" id="11_x1kdh"]
-[ext_resource type="Script" uid="uid://5tgaqhkbmmap" path="res://scenes/bot_corredor.gd" id="12_lpe66"]
 [ext_resource type="Texture2D" uid="uid://bsmt22fn8yjmq" path="res://assets/tile_sets/trees_noShadow.png" id="12_rimy1"]
 [ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="12_srta2"]
 [ext_resource type="Texture2D" uid="uid://dvadi0iu4jiql" path="res://assets/tile_sets/asphalt/asphalt_inside_curve1.png" id="13_25n8o"]
@@ -30,7 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://bxmkvu2qntvvp" path="res://assets/tile_sets/brick.png" id="24_nok5a"]
 [ext_resource type="Texture2D" uid="uid://dijsjqtr3tpoi" path="res://assets/tile_sets/car_start.png" id="25_nok5a"]
 [ext_resource type="Texture2D" uid="uid://dbyjsfmf2b6u4" path="res://assets/tile_sets/race_line.png" id="26_0j1pt"]
-[ext_resource type="Script" uid="uid://dkhwvut5q2urw" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
+[ext_resource type="Script" uid="uid://ftg6owsx3iga" path="res://scenes/bot_steering.gd" id="30_uoi5k"]
+[ext_resource type="Script" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
 load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f2477529b.ctex"
@@ -811,17 +811,11 @@ sources/1 = SubResource("TileSetAtlasSource_ykhnw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7jwj"]
 size = Vector2(15, 25)
 
-[sub_resource type="Curve2D" id="Curve2D_k348l"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -77.83117, 215.08386, -48.76378, -19.861395, 48.76378, 19.861395, 66.60969, 232.63434, -125.61983, 97.52065, 125.61983, -97.52065, 259, 233, 74.08347, 95.0201, -74.08347, -95.0201, 263, -342, 71.18871, -77, -71.18871, 77, -295, -348, -53.649467, -74, 53.649467, 74, -314.09512, 226.44006, -89.37494, 24.341839, 89.37494, -24.341839, -182.03491, 233.66675, 0, 0, 0, 0, -77.83117, 215.08386)
-}
-point_count = 8
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoi5k"]
-size = Vector2(15.5061035, 24.779003)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j1pt"]
 size = Vector2(8, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoi5k"]
+size = Vector2(25, 15)
 
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
@@ -947,28 +941,6 @@ polygon = PackedVector2Array(-370, -279, -357, -310, -345, -335, -327, -358, -30
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=632610610]
 polygon = PackedVector2Array(-362, 170, -362, 175, -357, 184, -355, 193, -348, 202, -344, 209, -341, 211, -341, 216, -339, 217, -339, 224, -338, 228, -328, 237, -313, 252, -304, 261, -299, 264, -296, 267, -289, 267, -283, 270, -279, 273, -275, 274, -274, 279, -267, 280, -264, 283, -257, 283, -251, 285, -248, 289, -245, 290, -245, 298, -249, 298, -256, 291, -266, 291, -287, 276, -299, 275, -341, 237, -343, 228, -347, 225, -348, 215, -360, 198, -363, 193, -363, 185, -366, 181, -370, 177, -370, 169)
 
-[node name="TrilhoDoBot" type="Path2D" parent="." unique_id=1693967628]
-position = Vector2(-9.561768, 8.662628)
-scale = Vector2(0.9692548, 0.96863323)
-curve = SubResource("Curve2D_k348l")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="TrilhoDoBot" unique_id=1697969384]
-position = Vector2(-77.83117, 215.08386)
-rotation = -0.024148563
-script = ExtResource("12_lpe66")
-
-[node name="Sprite2D" type="Sprite2D" parent="TrilhoDoBot/PathFollow2D" unique_id=1534055]
-position = Vector2(-0.01379418, 1.0322905)
-rotation = 1.5707964
-texture = ExtResource("12_srta2")
-
-[node name="CorpoDoBot" type="StaticBody2D" parent="TrilhoDoBot/PathFollow2D/Sprite2D" unique_id=1413125749]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrilhoDoBot/PathFollow2D/Sprite2D/CorpoDoBot" unique_id=1931378367]
-position = Vector2(-0.5037842, -1.0327759)
-scale = Vector2(0.9999997, 0.9999997)
-shape = SubResource("RectangleShape2D_uoi5k")
-
 [node name="LinhaDeChegada" type="Area2D" parent="." unique_id=834506707]
 script = ExtResource("31_uoi5k")
 
@@ -1031,6 +1003,71 @@ polygon = PackedVector2Array(-428, -92, -192, -91, -191, -37, -436, -37)
 
 [node name="Check2" type="CollisionPolygon2D" parent="Checkpoints/Area2D2" unique_id=1484287112]
 polygon = PackedVector2Array(-59, -454, -64, -254, -8, -258, -12, -452)
+
+[node name="Waypoints" type="Node2D" parent="." unique_id=382592575]
+
+[node name="Marker2D" type="Marker2D" parent="Waypoints" unique_id=1686088175]
+position = Vector2(23, 235)
+
+[node name="Marker2D2" type="Marker2D" parent="Waypoints" unique_id=1295096697]
+position = Vector2(196, 263)
+
+[node name="Marker2D3" type="Marker2D" parent="Waypoints" unique_id=845602738]
+position = Vector2(275, 238)
+
+[node name="Marker2D4" type="Marker2D" parent="Waypoints" unique_id=468155976]
+position = Vector2(277, 144)
+
+[node name="Marker2D5" type="Marker2D" parent="Waypoints" unique_id=1830169803]
+position = Vector2(277, -59)
+
+[node name="Marker2D6" type="Marker2D" parent="Waypoints" unique_id=1797126844]
+position = Vector2(284, -233)
+
+[node name="Marker2D7" type="Marker2D" parent="Waypoints" unique_id=1176234291]
+position = Vector2(272, -340)
+
+[node name="Marker2D8" type="Marker2D" parent="Waypoints" unique_id=378929315]
+position = Vector2(167, -340)
+
+[node name="Marker2D9" type="Marker2D" parent="Waypoints" unique_id=260067454]
+position = Vector2(-39, -343)
+
+[node name="Marker2D10" type="Marker2D" parent="Waypoints" unique_id=226332502]
+position = Vector2(-228, -337)
+
+[node name="Marker2D11" type="Marker2D" parent="Waypoints" unique_id=259291223]
+position = Vector2(-325, -330)
+
+[node name="Marker2D12" type="Marker2D" parent="Waypoints" unique_id=173696145]
+position = Vector2(-306, -255)
+
+[node name="Marker2D13" type="Marker2D" parent="Waypoints" unique_id=296273111]
+position = Vector2(-310, -63)
+
+[node name="Marker2D14" type="Marker2D" parent="Waypoints" unique_id=586204959]
+position = Vector2(-300, 142)
+
+[node name="Marker2D15" type="Marker2D" parent="Waypoints" unique_id=1826187117]
+position = Vector2(-297, 247)
+
+[node name="Marker2D16" type="Marker2D" parent="Waypoints" unique_id=335755153]
+position = Vector2(-197, 235)
+
+[node name="BotSteering" type="CharacterBody2D" parent="." unique_id=2142409878]
+position = Vector2(-39, 219)
+script = ExtResource("30_uoi5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="BotSteering" unique_id=422908777]
+rotation = 1.5707964
+texture = ExtResource("12_srta2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BotSteering" unique_id=1171364955]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_uoi5k")
+
+[node name="RayCast2D" type="RayCast2D" parent="BotSteering" unique_id=1885605558]
+target_position = Vector2(100, 0)
 
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
