@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var velocidade_maxima = 300.0
+@export var velocidade_maxima = 275.0
 @export var forca_curva = 4.0
 @export var distancia_alvo = 90.0
 

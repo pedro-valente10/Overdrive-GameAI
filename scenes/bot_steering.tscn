@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lbqs8k4g42h8"]
 
 [ext_resource type="Script" uid="uid://ftg6owsx3iga" path="res://scenes/bot_steering.gd" id="1_xd11p"]
-[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="2_7yvso"]
+[ext_resource type="Texture2D" uid="uid://b15nsmfmuixb7" path="res://assets/cars/r_car_green.png" id="2_mw6xm"]
 [ext_resource type="Script" uid="uid://da74ptolpoymg" path="res://scripts/behaviortree/bt_selector.gd" id="3_f36s5"]
 [ext_resource type="Script" uid="uid://d0byoy1h0qfci" path="res://scripts/behaviortree/bt_sequence.gd" id="4_gn8sb"]
 [ext_resource type="Script" uid="uid://cbtfisltvsnft" path="res://scripts/behaviortree/bt_condobstaculo.gd" id="5_mw6xm"]
@@ -16,7 +16,7 @@ script = ExtResource("1_xd11p")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242166554]
 rotation = 1.5707964
-texture = ExtResource("2_7yvso")
+texture = ExtResource("2_mw6xm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1200832950]
 position = Vector2(1.5, -0.5)
