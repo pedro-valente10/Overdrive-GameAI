@@ -3,7 +3,7 @@ extends CharacterBody2D
 var pode_correr: bool = false
 
 # O @export permite que você mude esses valores direto no Inspector (lado direito da tela) sem precisar mexer no código de novo!
-@export var max_speed = 400.0
+@export var max_speed = 300.0
 @export var acceleration = 1500.0
 @export var friction = 800.0
 @export var steering_speed = 3.5

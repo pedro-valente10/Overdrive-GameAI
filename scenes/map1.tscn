@@ -883,7 +883,6 @@ zoom = Vector2(0.8, 0.8)
 position = Vector2(-86, 251)
 rotation = 1.5707964
 script = ExtResource("4_wpo3d")
-max_speed = 300.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=402526488]
