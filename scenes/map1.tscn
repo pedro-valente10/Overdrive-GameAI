@@ -25,11 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://eltnlm6djl8d" path="res://assets/tile_sets/asphalt/asphalt_curve4.png" id="19_sslir"]
 [ext_resource type="Texture2D" uid="uid://cff7f6nd5k5u5" path="res://assets/tile_sets/asphalt/asphalt_curve5.png" id="20_f0y4q"]
 [ext_resource type="Texture2D" uid="uid://b7i18buv3ve0o" path="res://assets/tile_sets/asphalt/asphalt_curve6.png" id="22_574ci"]
-[ext_resource type="Texture2D" uid="uid://dxbn46e361ykq" path="res://assets/house.png" id="23_qwlrb"]
+[ext_resource type="Texture2D" uid="uid://dxbn46e361ykq" path="res://assets/others/house.png" id="23_qwlrb"]
 [ext_resource type="Texture2D" uid="uid://bxmkvu2qntvvp" path="res://assets/tile_sets/brick.png" id="24_nok5a"]
 [ext_resource type="Texture2D" uid="uid://dijsjqtr3tpoi" path="res://assets/tile_sets/car_start.png" id="25_nok5a"]
 [ext_resource type="Texture2D" uid="uid://dbyjsfmf2b6u4" path="res://assets/tile_sets/race_line.png" id="26_0j1pt"]
-[ext_resource type="PackedScene" path="res://scenes/bot_steering.tscn" id="30_0j1pt"]
+[ext_resource type="PackedScene" uid="uid://lbqs8k4g42h8" path="res://scenes/bot_steering.tscn" id="30_0j1pt"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="31_lus0x"]
 [ext_resource type="Script" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
 
