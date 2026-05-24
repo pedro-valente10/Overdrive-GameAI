@@ -985,6 +985,7 @@ theme_override_font_sizes/font_size = 80
 text = "VICTORY"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ContadorLabel" type="Label" parent="CanvasLayer" unique_id=1679498239]
 anchors_preset = 8

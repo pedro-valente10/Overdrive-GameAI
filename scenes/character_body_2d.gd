@@ -2,37 +2,35 @@ extends CharacterBody2D
 
 var pode_correr: bool = false
 
-# O @export permite que você mude esses valores direto no Inspector
 @export var max_speed = 300.0
 @export var acceleration = 1500.0
 @export var friction = 800.0
 @export var steering_speed = 3.5
 var speed_multiplier = 1.0
 
-# --- VARIÁVEIS DA CORRIDA ---
+
 var voltas_completadas: int = 0
 var max_voltas: int = 6
 var indice_alvo: int = 0
 var lista_waypoints = []
 
 func _ready():
-	# Carrega os waypoints para o jogador também saber em qual parte da pista ele está
 	var caminho_waypoints = get_node("../Waypoints")
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
 
 func definir_pode_correr(status: bool):
 	pode_correr = status
-
-# O Gerenciador chama isso para calcular a posição no rank
+	
+	
 func obter_pontuacao_corrida() -> float:
 	return (voltas_completadas * 1000.0) + indice_alvo
 
-# Função chamada pelo nó de Linha de Chegada quando o jogador passa por ela
+
 func completou_uma_volta():
 	voltas_completadas += 1
 	
-	# Se chegou em 5 voltas, avisa o mapa que a corrida acabou!
+
 	if voltas_completadas >= max_voltas:
 		var mapa = get_tree().current_scene
 		if mapa.has_method("finalizar_corrida"):
@@ -61,17 +59,17 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	# Atualiza em qual parte da pista o jogador está para o Rank não quebrar
+
 	atualizar_waypoint_atual()
 
-# Calcula qual é o próximo waypoint que o jogador deve cruzar
+
 func atualizar_waypoint_atual():
 	if lista_waypoints.is_empty():
 		return
 		
 	var alvo_atual = lista_waypoints[indice_alvo].global_position
-	# Se o jogador chegar perto do waypoint atual, assume o próximo
-	if global_position.distance_to(alvo_atual) < 150.0: # Distância um pouco maior para o jogador cooperar bem
+
+	if global_position.distance_to(alvo_atual) < 150.0:
 		indice_alvo += 1
 		if indice_alvo >= lista_waypoints.size():
 			indice_alvo = 0
