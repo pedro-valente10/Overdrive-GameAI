@@ -28,10 +28,10 @@ func finalizar_corrida(vencedor):
 	var posicao_final = rank_corredores.find(jogador_node) + 1 
 	
 	if vencedor == jogador_node:
-		label_resultado.text = "VITÓRIA!\nVocê chegou em 1º!"
+		label_resultado.text = "VITÓRIA!\nVocê terminou em 1º"
 		label_resultado.modulate = Color.GREEN
 	else:
-		label_resultado.text = "DERROTA!\nVocê terminou em " + str(posicao_final) + "º lugar."
+		label_resultado.text = "DERROTA!\nVocê terminou em " + str(posicao_final) + "º lugar"
 		label_resultado.modulate = Color.RED
 	
 	if painel_final:
