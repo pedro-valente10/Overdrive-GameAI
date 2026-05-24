@@ -31,10 +31,9 @@
 [ext_resource type="Texture2D" uid="uid://dbyjsfmf2b6u4" path="res://assets/tile_sets/race_line.png" id="26_0j1pt"]
 [ext_resource type="PackedScene" uid="uid://lbqs8k4g42h8" path="res://scenes/bot_steering.tscn" id="30_0j1pt"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="31_lus0x"]
-[ext_resource type="Script" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
+[ext_resource type="Script" uid="uid://dkhwvut5q2urw" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
-load_path = "res://.godot/imported/asphalt_border_R.png-5925c41883324eb427b45f5f2477529b.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srta2"]
 texture = SubResource("CompressedTexture2D_k348l")

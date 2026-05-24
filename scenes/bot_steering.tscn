@@ -22,9 +22,6 @@ texture = ExtResource("2_mw6xm")
 position = Vector2(1.5, -0.5)
 shape = SubResource("RectangleShape2D_uoi5k")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1878086494]
-target_position = Vector2(100, 0)
-
 [node name="BehaviorTree" type="Node" parent="." unique_id=151230121]
 script = ExtResource("3_f36s5")
 
@@ -39,3 +36,14 @@ script = ExtResource("6_mw6xm")
 
 [node name="CorrerNormal" type="Node" parent="BehaviorTree" unique_id=1420752200]
 script = ExtResource("7_nhr3a")
+
+[node name="Sensores" type="Node2D" parent="." unique_id=35996536]
+
+[node name="RayCast2D" type="RayCast2D" parent="Sensores" unique_id=1878086494]
+target_position = Vector2(100, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Sensores" unique_id=1629922290]
+target_position = Vector2(31, 33)
+
+[node name="RayCast2D3" type="RayCast2D" parent="Sensores" unique_id=275432799]
+target_position = Vector2(35, -29)
