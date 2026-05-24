@@ -881,6 +881,7 @@ zoom = Vector2(0.8, 0.8)
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136 groups=["corredores"]]
 position = Vector2(-86, 251)
 rotation = 1.5707964
+motion_mode = 1
 script = ExtResource("4_wpo3d")
 metadata/_edit_group_ = true
 
@@ -1076,18 +1077,23 @@ position = Vector2(-197, 235)
 
 [node name="BotSteering" parent="." unique_id=548959796 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-39, 219)
+motion_mode = 1
 
 [node name="BotSteering2" parent="." unique_id=1309021458 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-87, 219)
+motion_mode = 1
 
 [node name="BotSteering3" parent="." unique_id=1635799287 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-38, 251)
+motion_mode = 1
 
 [node name="BotSteering4" parent="." unique_id=1447135848 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-135, 218)
+motion_mode = 1
 
 [node name="BotSteering5" parent="." unique_id=1014744325 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-134, 251)
+motion_mode = 1
 
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]

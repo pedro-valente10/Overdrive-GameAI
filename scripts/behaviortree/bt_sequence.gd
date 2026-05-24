@@ -1,11 +1,14 @@
 class_name BTSequence extends BTNode
+# (O nome da classe pode estar diferente, mantenha o seu se precisar)
 
-# Roda os filhos em ordem. Se UM falhar, tudo falha (retorna FAILURE).
-# Se todos derem SUCCESS, ele retorna SUCCESS.
 func tick(bot: CharacterBody2D, delta: float) -> int:
-	for child in get_children():
-		var result = child.tick(bot, delta)
-		if result != Status.SUCCESS:
-			return result # Pode ser FAILURE ou RUNNING
+	# Roda todos os filhos em ordem (TemObs -> depois Desviar)
+	for filho in get_children():
+		var status = filho.tick(bot, delta)
+		
+		# Se o TemObs falhar (não tem obstáculo), a sequência aborta aqui
+		if status != Status.SUCCESS:
+			return status
 			
+	# Se passou por todos (TemObs deu sucesso e Desviar deu sucesso)
 	return Status.SUCCESS

@@ -43,7 +43,9 @@ script = ExtResource("7_nhr3a")
 target_position = Vector2(100, 0)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Sensores" unique_id=1629922290]
+rotation = -0.43633232
 target_position = Vector2(31, 33)
 
 [node name="RayCast2D3" type="RayCast2D" parent="Sensores" unique_id=275432799]
+rotation = 0.43633232
 target_position = Vector2(35, -29)

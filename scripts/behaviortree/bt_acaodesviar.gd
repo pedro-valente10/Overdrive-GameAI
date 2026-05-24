@@ -4,35 +4,53 @@ func tick(bot: CharacterBody2D, delta: float) -> int:
 	var normal_colisao = Vector2.ZERO
 	var batendo = false
 	
-	# 1. Lê todos os RayCast2D que estão dentro do node "Sensores"
-	for sensor in bot.get_node("Sensores").get_children():
-		if sensor.is_colliding():
-			normal_colisao += sensor.get_collision_normal()
+	# find_children busca recursivamente, encontrando RayCast2D dentro de sub-nós
+	for filho in bot.find_children("*", "RayCast2D", true, false):
+		if filho.is_colliding():
+			normal_colisao += filho.get_collision_normal()
 			batendo = true
 			
-	# 2. Se nenhum sensor detectou colisão, o bot não precisa desviar
 	if not batendo:
 		return Status.FAILURE
 		
-	# 3. Normaliza o vetor resultante (caso mais de um sensor tenha batido ao mesmo tempo)
 	normal_colisao = normal_colisao.normalized()
 	
-	# 4. Encontra o vetor tangente (ortogonal) para deslizar pela lateral
+	# Encontra o vetor tangente (ortogonal) para deslizar pela lateral
 	var vetor_tangente = Vector2(-normal_colisao.y, normal_colisao.x)
 	
-	# 5. Usa o produto escalar para escolher o lado mais rápido para o desvio
-	if bot.velocity.dot(vetor_tangente) < 0:
+	# Desempate: usa o produto escalar para saber de qual lado é mais fácil desviar
+	var tendencia_desvio = bot.velocity.dot(vetor_tangente)
+	
+	# Limiar proporcional à velocidade máxima (5%), evita valor fixo frágil
+	var limiar = bot.velocidade_maxima * 0.05
+	
+	if abs(tendencia_desvio) < limiar:
+		# Carros perfeitamente alinhados: usa posição Y para desempatar
+		if bot.global_position.y > bot.get_viewport_rect().size.y / 2.0:
+			vetor_tangente = -vetor_tangente
+	elif tendencia_desvio < 0:
 		vetor_tangente = -vetor_tangente
 		
-	# 6. Calcula a direção de fuga misturando a normal e a tangente
-	var direcao_fuga = (normal_colisao * 0.4 + vetor_tangente * 1.2).normalized()
+	# Direção de fuga agressiva (prioriza muito mais as laterais)
+	var direcao_fuga = (normal_colisao * 0.2 + vetor_tangente * 2.0).normalized()
 	
-	# 7. Calcula a velocidade desejada aplicando a penalidade de momento (ex: 70% da vel máx)
-	var velocidade_fuga = direcao_fuga * (bot.velocidade_maxima * 0.7)
+	# Suaviza o desvio interpolando com a direção atual do carro (evita virada brusca)
+	var direcao_atual = bot.velocity.normalized()
+	var direcao_fuga_suave = direcao_fuga.lerp(direcao_atual, 0.3).normalized()
 	
-	# 8. Aplica a força de steering
+	# Velocidade calculada com a personalidade
+	var velocidade_fuga = direcao_fuga_suave * (bot.velocidade_maxima * bot.fator_frenagem_desvio)
+	
+	# Aplica a força de steering com curva reduzida (era 4.0, agora 2.0 para suavidade)
 	var forca_steering = (velocidade_fuga - bot.velocity) * (bot.forca_curva * 2.0) * delta
 	
 	bot.velocity += forca_steering
 	
+	# Verifica se ainda há risco de colisão APÓS aplicar o steering
+	# Enquanto houver, mantém o controle e impede BTAcaoCorrer de rodar
+	for filho in bot.find_children("*", "RayCast2D", true, false):
+		if filho.is_colliding():
+			return Status.RUNNING
+	
+	# Saiu do raio de perigo: libera o controle para BTAcaoCorrer retomar a rota
 	return Status.SUCCESS

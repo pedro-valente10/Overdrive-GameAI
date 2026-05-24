@@ -1,6 +1,7 @@
 class_name BTAcaoCorrer extends BTNode
 
 func tick(bot: CharacterBody2D, delta: float) -> int:
+	print("bot esta correndo normal")
 	if bot.lista_waypoints.is_empty():
 		return Status.FAILURE
 		

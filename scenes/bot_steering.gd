@@ -44,7 +44,7 @@ func _physics_process(delta):
 		
 	# Rotaciona visualmente o carro para a direção da velocidade
 	if velocity.length() > 0:
-		rotation = velocity.angle()
+		rotation = lerp_angle(rotation, velocity.angle(), delta * 8.0)
 		
 	# Aplica o movimento final do frame
 	move_and_slide()

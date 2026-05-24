@@ -1,11 +1,14 @@
 class_name BTSelector extends BTNode
 
-# Roda os filhos. Se o primeiro falhar, tenta o segundo. 
-# Se UM der SUCCESS ou RUNNING, ele para e retorna isso.
 func tick(bot: CharacterBody2D, delta: float) -> int:
-	for child in get_children():
-		var result = child.tick(bot, delta)
-		if result != Status.FAILURE:
-			return result # Pode ser SUCCESS ou RUNNING
+	# O Seletor varre os filhos da esquerda pra direita (de cima para baixo na árvore)
+	for filho in get_children():
+		var status = filho.tick(bot, delta)
+		
+		# Se um filho retornar SUCCESS (ex: desviou) ou RUNNING, a árvore PARA aqui.
+		# Isso impede que o CorrerNormal seja executado por cima do Desviar!
+		if status != Status.FAILURE:
+			return status
 			
+	# Se todas as opções falharem, retorna falha
 	return Status.FAILURE
