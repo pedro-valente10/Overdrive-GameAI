@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://lbqs8k4g42h8"]
 
 [ext_resource type="Script" uid="uid://ftg6owsx3iga" path="res://scenes/bot_steering.gd" id="1_xd11p"]
+[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="2_f13sb"]
 [ext_resource type="Texture2D" uid="uid://b15nsmfmuixb7" path="res://assets/cars/r_car_green.png" id="2_mw6xm"]
 [ext_resource type="Script" uid="uid://da74ptolpoymg" path="res://scripts/behaviortree/bt_selector.gd" id="3_f36s5"]
+[ext_resource type="Texture2D" uid="uid://duy3uwmive46y" path="res://assets/cars/r_car_purple.png" id="4_0763d"]
 [ext_resource type="Script" uid="uid://d0byoy1h0qfci" path="res://scripts/behaviortree/bt_sequence.gd" id="4_gn8sb"]
 [ext_resource type="Script" uid="uid://cbtfisltvsnft" path="res://scripts/behaviortree/bt_condobstaculo.gd" id="5_mw6xm"]
+[ext_resource type="Texture2D" uid="uid://chbjqsa62sio2" path="res://assets/cars/r_car_brown.png" id="5_ph2ht"]
+[ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/r_car_white.png" id="6_83suh"]
 [ext_resource type="Script" uid="uid://ci4vd6jh67krp" path="res://scripts/behaviortree/bt_acaodesviar.gd" id="6_mw6xm"]
 [ext_resource type="Script" uid="uid://cfjtqtngbufsb" path="res://scripts/behaviortree/bt_acaocorrer.gd" id="7_nhr3a"]
 
@@ -13,6 +17,7 @@ size = Vector2(25, 15)
 
 [node name="BotSteering" type="CharacterBody2D" unique_id=548959796]
 script = ExtResource("1_xd11p")
+texturas_dos_carros = Array[Texture2D]([ExtResource("2_f13sb"), ExtResource("2_mw6xm"), ExtResource("4_0763d"), ExtResource("5_ph2ht"), ExtResource("6_83suh")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242166554]
 rotation = 1.5707964

@@ -50,6 +50,8 @@ func _on_qualquer_checkpoint_entered(body, cp_node):
 
 func _on_body_entered(body):
 	# --- LÓGICA DO JOGADOR ---
+	if body.is_in_group("corredores"):
+		body.completou_uma_volta()
 	if body.name == "CharacterBody2D" and pode_contar_player:
 		pode_contar_player = false
 		
