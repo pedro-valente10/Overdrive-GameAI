@@ -817,6 +817,10 @@ size = Vector2(8, 196)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
 font_size = 68
+outline_size = 15
+outline_color = Color(0.97, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-56, 329)
@@ -1029,9 +1033,6 @@ text = "1,2,3, DRIVE!"
 label_settings = SubResource("LabelSettings_3rppj")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ContadorTimer" type="Timer" parent="CanvasLayer" unique_id=776608469]
-one_shot = true
 
 [node name="ParedesDaPista" type="StaticBody2D" parent="." unique_id=872785858]
 

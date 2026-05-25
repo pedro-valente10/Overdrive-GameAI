@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var pode_correr: bool = false
 
-@export var max_speed = 300.0
-@export var acceleration = 1500.0
+@export var max_speed = 275.0
+@export var acceleration = 1000.0
 @export var friction = 800.0
 @export var steering_speed = 3.5
 var speed_multiplier = 1.0
