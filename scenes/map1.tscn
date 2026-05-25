@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cyseeq7um4sst" path="res://scenes/map_1.gd" id="1_uoi5k"]
 [ext_resource type="Texture2D" uid="uid://bm6bkk5yuvrh5" path="res://assets/tile_sets/asphalt/asphalt_border_L.png" id="1_v7ld6"]
-[ext_resource type="Script" uid="uid://la4vu22856bv" path="res://scenes/gerenciador_corrida.gd" id="2_3rppj"]
+[ext_resource type="Script" path="res://scenes/gerenciador_corrida.gd" id="2_3rppj"]
 [ext_resource type="Texture2D" uid="uid://2r6010k0i6nt" path="res://assets/tile_sets/asphalt/asphalt2.png" id="3_k348l"]
 [ext_resource type="Texture2D" uid="uid://eo2644davua0" path="res://assets/tile_sets/asphalt/asphalt1.png" id="3_wpo3d"]
 [ext_resource type="Texture2D" uid="uid://b5c2x4qkaxdt4" path="res://assets/tile_sets/grass/grass_border1_R.png" id="4_2m3eu"]
@@ -33,6 +33,11 @@
 [ext_resource type="PackedScene" uid="uid://lbqs8k4g42h8" path="res://scenes/bot_steering.tscn" id="30_0j1pt"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="31_lus0x"]
 [ext_resource type="Script" uid="uid://dkhwvut5q2urw" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
+[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="34_lkj16"]
+[ext_resource type="Texture2D" uid="uid://b15nsmfmuixb7" path="res://assets/cars/r_car_green.png" id="35_q536y"]
+[ext_resource type="Texture2D" uid="uid://duy3uwmive46y" path="res://assets/cars/r_car_purple.png" id="36_olltv"]
+[ext_resource type="Texture2D" uid="uid://chbjqsa62sio2" path="res://assets/cars/r_car_brown.png" id="37_adx36"]
+[ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/r_car_white.png" id="38_8q12g"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
 
@@ -880,7 +885,7 @@ layer_0/tile_data = PackedInt32Array(458761, 65536, 1610612736, -917495, 65536, 
 position = Vector2(0, 2)
 tile_set = SubResource("TileSet_ykhnw")
 format = 2
-layer_0/tile_data = PackedInt32Array(917498, 0, 0, 983034, 0, 1, 917499, 65536, 0, 983035, 65536, 1, 1048570, 0, 0, 1114106, 0, 1, 1048571, 65536, 0, 1114107, 65536, 1, 917501, 0, 0, 983037, 0, 1, 917502, 65536, 0, 983038, 65536, 1, 1048573, 0, 0, 1114109, 0, 1, 1048574, 65536, 0, 1114110, 65536, 1, 917495, 0, 0, 983031, 0, 1, 917496, 65536, 0, 983032, 65536, 1, 1048567, 0, 0, 1114103, 0, 1, 1048568, 65536, 0, 1114104, 65536, 1, 786435, 65537, 0, 851971, 65537, 1, 917507, 65537, 0, 983043, 65537, 1, 1048579, 65537, 0, 1114115, 65537, 1, 720899, 65537, 0)
+layer_0/tile_data = PackedInt32Array(917501, 0, 0, 983037, 0, 1, 917502, 65536, 0, 983038, 65536, 1, 1048573, 0, 0, 1114109, 0, 1, 1048574, 65536, 0, 1114110, 65536, 1, 786435, 65537, 0, 851971, 65537, 1, 917507, 65537, 0, 983043, 65537, 1, 1048579, 65537, 0, 1114115, 65537, 1, 720899, 65537, 0, 917496, 0, 0, 983032, 0, 1, 917497, 65536, 0, 983033, 65536, 1, 917491, 0, 0, 983027, 0, 1, 917492, 65536, 0, 983028, 65536, 1, 1048563, 0, 0, 1114099, 0, 1, 1048564, 65536, 0, 1114100, 65536, 1, 1048568, 0, 0, 1114104, 0, 1, 1048569, 65536, 0, 1114105, 65536, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1447153436]
 position = Vector2(0, -45)
@@ -888,7 +893,7 @@ scale = Vector2(31.811, 15)
 zoom = Vector2(0.8, 0.8)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136 groups=["corredores"]]
-position = Vector2(-133, 251)
+position = Vector2(-198, 251)
 rotation = 1.5707964
 motion_mode = 1
 script = ExtResource("4_wpo3d")
@@ -1109,9 +1114,10 @@ position = Vector2(-197, 235)
 [node name="BotSteering" parent="." unique_id=548959796 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-39, 219)
 motion_mode = 1
+texturas_dos_carros = Array[Texture2D]([ExtResource("34_lkj16"), ExtResource("35_q536y"), ExtResource("36_olltv"), ExtResource("37_adx36"), ExtResource("38_8q12g"), ExtResource("5_uyy6q")])
 
 [node name="BotSteering2" parent="." unique_id=1309021458 groups=["corredores"] instance=ExtResource("30_0j1pt")]
-position = Vector2(-87, 219)
+position = Vector2(-118, 219)
 motion_mode = 1
 
 [node name="BotSteering3" parent="." unique_id=1635799287 groups=["corredores"] instance=ExtResource("30_0j1pt")]
@@ -1119,11 +1125,11 @@ position = Vector2(-38, 251)
 motion_mode = 1
 
 [node name="BotSteering4" parent="." unique_id=1447135848 groups=["corredores"] instance=ExtResource("30_0j1pt")]
-position = Vector2(-135, 218)
+position = Vector2(-199, 219)
 motion_mode = 1
 
 [node name="BotSteering5" parent="." unique_id=1014744325 groups=["corredores"] instance=ExtResource("30_0j1pt")]
-position = Vector2(-86, 251)
+position = Vector2(-118, 251)
 motion_mode = 1
 
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
