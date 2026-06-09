@@ -2,38 +2,75 @@
 
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_6d2am"]
 [ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
-[ext_resource type="Script" uid="uid://dw04dp2x8m6it" path="res://scenes/car1button.gd" id="2_8dg5h"]
+[ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
 
 [node name="ChooseCar" type="Node2D" unique_id=683914934]
+script = ExtResource("1_rsygn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=658869569]
 layer = 0
 script = ExtResource("1_8dg5h")
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=510102988]
-custom_minimum_size = Vector2(200, 65)
 layout_mode = 3
-anchors_preset = 0
-offset_left = 150.0
-offset_top = 150.0
-offset_right = 350.0
-offset_bottom = 300.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -75.0
+offset_right = 450.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1044131583]
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1827231136]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 100
 
 [node name="Car1Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=297548855]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_6d2am")
 theme_override_font_sizes/font_size = 20
 text = "Car 1
 "
 icon_alignment = 1
-script = ExtResource("2_8dg5h")
+
+[node name="Car2Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1059990635]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_6d2am")
+theme_override_font_sizes/font_size = 20
+text = "Car 2
+"
+icon_alignment = 1
+
+[node name="Car3Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1825688106]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_6d2am")
+theme_override_font_sizes/font_size = 20
+text = "Car 3
+"
+icon_alignment = 1
+
+[node name="Car4Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=183608665]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_6d2am")
+theme_override_font_sizes/font_size = 20
+text = "Car 4
+"
+icon_alignment = 1
