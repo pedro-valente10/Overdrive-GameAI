@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://mj4kexqcyc1x"]
 
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_6d2am"]
+[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
 [ext_resource type="Script" uid="uid://dw04dp2x8m6it" path="res://scenes/car1button.gd" id="2_8dg5h"]
 
 [node name="ChooseCar" type="Node2D" unique_id=683914934]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=658869569]
 layer = 0
+script = ExtResource("1_8dg5h")
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=510102988]
 custom_minimum_size = Vector2(200, 65)

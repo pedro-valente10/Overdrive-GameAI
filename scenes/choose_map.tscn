@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://i5wnx07v41yc"]
 
 [ext_resource type="Script" uid="uid://brhmiv18liwep" path="res://scenes/choose_map.gd" id="1_ofyh8"]
+[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="2_xwlp3"]
 
 [node name="ChooseMap" type="Node2D" unique_id=721215906]
@@ -8,6 +9,7 @@ script = ExtResource("1_ofyh8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=895451160]
 layer = 0
+script = ExtResource("2_l7jri")
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=927320406]
 custom_minimum_size = Vector2(200, 65)
