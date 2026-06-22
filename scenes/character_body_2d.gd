@@ -26,8 +26,9 @@ func _ready():
 func iniciar_flutuacao():
 	if not seta: return
 	tween_flutuar = create_tween().set_loops()
-	tween_flutuar.tween_property(seta, "position:y", seta.position.y - 10, 0.6).set_trans(Tween.TRANS_SINE)
-	tween_flutuar.tween_property(seta, "position:y", seta.position.y, 0.6).set_trans(Tween.TRANS_SINE)
+	var pos_y_inicial = seta.global_position.y 
+	tween_flutuar.tween_property(seta, "global_position:y", pos_y_inicial - 10, 0.6).set_trans(Tween.TRANS_SINE)
+	tween_flutuar.tween_property(seta, "global_position:y", pos_y_inicial, 0.6).set_trans(Tween.TRANS_SINE)
 
 func sumir_seta() -> Tween:
 	if not seta: return null
