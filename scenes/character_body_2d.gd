@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
+
+var tween_flutuar: Tween
 var pode_correr: bool = false
 
+@onready var seta = $SetaIndicadora
 @export var max_speed = 275.0
 @export var acceleration = 1000.0
 @export var friction = 800.0
@@ -15,9 +18,28 @@ var indice_alvo: int = 0
 var lista_waypoints = []
 
 func _ready():
+	iniciar_flutuacao()
 	var caminho_waypoints = get_node("../Waypoints")
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
+
+func iniciar_flutuacao():
+	if not seta: return
+	tween_flutuar = create_tween().set_loops()
+	tween_flutuar.tween_property(seta, "position:y", seta.position.y - 10, 0.6).set_trans(Tween.TRANS_SINE)
+	tween_flutuar.tween_property(seta, "position:y", seta.position.y, 0.6).set_trans(Tween.TRANS_SINE)
+
+func sumir_seta() -> Tween:
+	if not seta: return null
+	
+	if tween_flutuar and tween_flutuar.is_valid():
+		tween_flutuar.kill()
+		
+	var tween_sumir = create_tween()
+	tween_sumir.tween_property(seta, "modulate:a", 0.0, 0.3)
+	tween_sumir.tween_callback(seta.queue_free)
+	
+	return tween_sumir
 
 func definir_pode_correr(status: bool):
 	pode_correr = status
