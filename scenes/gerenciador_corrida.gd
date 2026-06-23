@@ -1,59 +1,94 @@
 extends Node2D
 
 var rank_corredores: Array = []
-# 1. CRIAMOS UMA TRAVA: Controla se a corrida já acabou
 var corrida_finalizada: bool = false 
+
+func _ready() -> void:
+	rank_corredores = get_tree().get_nodes_in_group("corredores")
+	print("Corredores encontrados no grupo: ", rank_corredores.size())
 
 func _process(_delta):
 	atualizar_posicoes()
 
-func atualizar_posicoes():
+func atualizar_posicoes(vencedor_absoluto = null):
 	var todos_corredores = get_tree().get_nodes_in_group("corredores")
-	todos_corredores.sort_custom(_ordenar_por_progresso)
+	
+	# Ordena os corredores com base no progresso normalizado
+	todos_corredores.sort_custom(func(a, b):
+		# SEGREDO 1: Se já temos um vencedor definitivo da corrida,
+		# ele é forçado a ficar no topo do ranking (Índice 0) independente do score de reset
+		if vencedor_absoluto != null:
+			if a == vencedor_absoluto: return true
+			if b == vencedor_absoluto: return false
+			
+		return _obter_pontuacao_normalizada(a) > _obter_pontuacao_normalizada(b)
+	)
 	rank_corredores = todos_corredores
 
-func _ordenar_por_progresso(a, b):
-	if a.has_method("obter_pontuacao_corrida") and b.has_method("obter_pontuacao_corrida"):
-		return a.obter_pontuacao_corrida() > b.obter_pontuacao_corrida()
-	return false
+func _obter_pontuacao_normalizada(corredor) -> float:
+	var pontuacao = 0.0
 	
+	# SEGREDO 2: Verifica se o corredor (player ou bot) possui o método de pontuação
+	if corredor.has_method("obter_pontuacao_corrida"):
+		pontuacao = corredor.obter_pontuacao_corrida()
+	else:
+		# Fallback de segurança caso o Player utilize variáveis diretas sem o método
+		var voltas = corredor.get("voltas_completadas") if corredor.get("voltas_completadas") != null else corredor.get("voltas")
+		var indice = corredor.get("indice_alvo") if corredor.get("indice_alvo") != null else corredor.get("indice_waypoint")
+		
+		if voltas == null: voltas = 0
+		if indice == null: indice = 0
+		pontuacao = (voltas * 1000.0) + indice
+
+			
+	return pontuacao
+
 func finalizar_corrida(vencedor):
-	# 1. VERIFICAÇÃO DA TRAVA: Se a corrida já acabou, ignora as próximas chamadas
 	if corrida_finalizada:
 		return
 	corrida_finalizada = true
 	
-	# Desativa o _process para poupar desempenho
+	# Desativa o _process para congelar o ranking visual síncrono
 	set_process(false)
 	
-	atualizar_posicoes()
+	# SEGREDO 4: Desativa o movimento físico de TODOS os carros imediatamente.
+	# Isso evita que eles continuem andando e alterando posições no meio do Fade Out.
+	for corredor in get_tree().get_nodes_in_group("corredores"):
+		if corredor.has_method("definir_pode_correr"):
+			corredor.definir_pode_correr(false)
+		elif "pode_correr" in corredor:
+			corredor.pode_correr = false
 	
-	var jogador_node = null
-	for corredor in rank_corredores:
-		if corredor.name == "CharacterBody2D" or not ("Bot" in corredor.name):
-			jogador_node = corredor
-			break
+	vencedor.voltas_completadas = 999
+	atualizar_posicoes(vencedor)
 	
-	# Cálculo inicial baseado no progresso físico do frame
-	var posicao_final_calculada = rank_corredores.find(jogador_node) + 1 
-	 
-	# --- CORREÇÃO ABSOLUTA DE RANKING ---
-	# Se a linha de chegada avisou que o jogador cruzou primeiro, ele é 1º obrigatoriamente,
-	# mesmo que o reset de checkpoints tenha bagunçado o sort_custom neste frame.
-	if vencedor == jogador_node:
+	# Determina se o jogador humano venceu
+	var o_jogador_venceu = (vencedor.name == "player")
+	var posicao_final_calculada = 1
+	
+	if o_jogador_venceu:
 		posicao_final_calculada = 1
 	else:
-		# Se o jogador NÃO venceu, mas o cálculo de progresso achou que ele estava em 1º,
-		# nós o jogamos para 2º (já que um bot cruzou a linha antes dele).
-		if posicao_final_calculada == 1:
-			posicao_final_calculada = 2
-	# -------------------------------------
+		# Busca a posição real e limpa do jogador dentro do ranking corrigido
+		var jogador_node = null
+		for corredor in rank_corredores:
+			if corredor.name == "player":
+				jogador_node = corredor
+				break
+		
+		if jogador_node != null:
+			posicao_final_calculada = rank_corredores.find(jogador_node) + 1
+		else:
+			posicao_final_calculada = rank_corredores.size() # Fallback dinâmico (último lugar)
+			
+	# Removeu-se a "gambiarra" antiga de forçar o jogador a ficar em 2º.
+	# Agora o cálculo acima é 100% real e confiável.
 	
-	# Salva os dados no Autoload/Singleton global
-	DadosCorrida.jogador_venceu = (vencedor == jogador_node)
+	# Salva os dados no Autoload DadosCorrida
+	DadosCorrida.jogador_venceu = o_jogador_venceu
 	DadosCorrida.posicao_final = posicao_final_calculada
 	
-	print("Corrida finalizada! Jogador terminou na posição: ", DadosCorrida.posicao_final)
+	print("DEBUG GERENCIADOR - Venceu: ", DadosCorrida.jogador_venceu, " | Posição Salva: ", DadosCorrida.posicao_final)
 	
 	fazer_fade_out_e_mudar_cena()
 
@@ -63,18 +98,11 @@ func fazer_fade_out_e_mudar_cena():
 	tela_preta.modulate.a = 0.0
 	tela_preta.set_anchors_preset(Control.PRESET_FULL_RECT)
 	
-	# 1. ADIÇÃO SEGURA: Só adiciona o nó após a física terminar de processar
 	$"../CanvasLayer".call_deferred("add_child", tela_preta)
-	
-	# 2. ESPERA ESTRATÉGICA: Aguarda um frame para a tela_preta realmente entrar no CanvasLayer
 	await get_tree().process_frame
 	
 	var tween = create_tween()
-	
-	# 3. MODO PAUSE: Garante que o Fade aconteça mesmo se algo (ou outro script) pausou o jogo
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	
-	# Anima apenas o Alpha
 	tween.tween_property(tela_preta, "modulate:a", 1.0, 1.5).set_trans(Tween.TRANS_SINE)
 	
 	tween.finished.connect(func():

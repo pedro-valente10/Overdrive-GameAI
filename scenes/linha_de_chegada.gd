@@ -30,7 +30,7 @@ func _ready():
 		print("Sistema de corrida iniciado. Total de Checkpoints na pista: ", total_de_checkpoints)
 
 func _on_qualquer_checkpoint_entered(body, cp_node):
-	if body.name == "CharacterBody2D":
+	if body.name == "player":
 		if not checkpoints_player.has(cp_node):
 			checkpoints_player.append(cp_node)
 			print("Player validou um Checkpoint! (", checkpoints_player.size(), "/", total_de_checkpoints, ")")
@@ -45,7 +45,7 @@ func _on_body_entered(body):
 		body.completou_uma_volta()
 		
 	# --- LÓGICA DO PLAYER ---
-	if body.name == "CharacterBody2D" and pode_contar_player:
+	if body.name == "player" and pode_contar_player:
 		pode_contar_player = false
 		
 		if primeira_passagem_player:

@@ -87,15 +87,15 @@ shadow_size = 8
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2.5, 2.5)
 
-[node name="TelaFimCorrida" type="Node2D" unique_id=412357771]
+[node name="TelaFimCorrida" type="Node2D" unique_id=446457585]
 script = ExtResource("1_05okg")
 
 [node name="ResultadoLabel" type="Label" parent="." unique_id=500407709]
 anchors_preset = -1
-offset_left = 556.0
-offset_top = 104.0
-offset_right = 619.0
-offset_bottom = 127.0
+offset_left = 544.0
+offset_top = 72.0
+offset_right = 607.0
+offset_bottom = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "VITORIA"
@@ -106,10 +106,10 @@ vertical_alignment = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 562.0
-offset_top = 365.0
-offset_right = 624.0
-offset_bottom = 388.0
+offset_left = 544.0
+offset_top = 360.0
+offset_right = 606.0
+offset_bottom = 383.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "numero"

@@ -13,7 +13,7 @@ var speed_multiplier = 1.0
 
 
 var voltas_completadas: int = 0
-var max_voltas: int = 6
+var max_voltas: int = 2
 var indice_alvo: int = 0
 var lista_waypoints = []
 

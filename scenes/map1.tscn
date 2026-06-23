@@ -1097,21 +1097,21 @@ layer_0/tile_data = PackedInt32Array(-1769499, 65537, 1342177281, -1703963, 1, 1
 tile_set = SubResource("TileSet_f1ld6")
 format = 2
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136 groups=["corredores"]]
+[node name="player" type="CharacterBody2D" parent="." unique_id=1818609136 groups=["corredores"]]
 position = Vector2(-198, 251)
 rotation = 1.5707964
 motion_mode = 1
 script = ExtResource("4_wpo3d")
 metadata/_edit_group_ = true
 
-[node name="player\'s_car" type="Sprite2D" parent="CharacterBody2D" unique_id=402526488]
+[node name="player\'s_car" type="Sprite2D" parent="player" unique_id=402526488]
 texture = ExtResource("5_uyy6q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1899713621]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1899713621]
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_p7jwj")
 
-[node name="SetaIndicadora" type="Sprite2D" parent="CharacterBody2D" unique_id=577356099]
+[node name="SetaIndicadora" type="Sprite2D" parent="player" unique_id=577356099]
 modulate = Color(0, 0, 0, 1)
 z_index = 1
 material = SubResource("ShaderMaterial_0i11a")
@@ -1281,5 +1281,5 @@ position = Vector2(-118, 251)
 motion_mode = 1
 
 [connection signal="body_entered" from="LinhaDeChegada" to="LinhaDeChegada" method="_on_body_entered"]
-[connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
-[connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
+[connection signal="body_entered" from="AtritoZebra" to="player" method="_on_atrito_zebra_body_entered"]
+[connection signal="body_exited" from="AtritoZebra" to="player" method="_on_atrito_zebra_body_exited"]
