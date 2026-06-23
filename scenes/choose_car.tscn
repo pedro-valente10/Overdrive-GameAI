@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="4_rsygn"]
 [ext_resource type="FontFile" uid="uid://3aow420kiq2d" path="res://text_fonts/Excess V.otf" id="5_3vq02"]
+[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="5_crpu2"]
 
 [node name="ChooseCar" type="Node2D" unique_id=683914934]
 script = ExtResource("1_rsygn")
@@ -57,9 +58,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_6d2am")
 theme_override_font_sizes/font_size = 20
-text = "Car 2
+text = "
 "
+icon = ExtResource("5_crpu2")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Car3Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1825688106]
 layout_mode = 2
