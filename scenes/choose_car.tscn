@@ -3,6 +3,8 @@
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_6d2am"]
 [ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
 [ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
+[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="4_rsygn"]
+[ext_resource type="FontFile" uid="uid://3aow420kiq2d" path="res://text_fonts/Excess V.otf" id="5_3vq02"]
 
 [node name="ChooseCar" type="Node2D" unique_id=683914934]
 script = ExtResource("1_rsygn")
@@ -31,6 +33,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -75.0
+offset_bottom = -75.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
@@ -41,9 +45,11 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_6d2am")
 theme_override_font_sizes/font_size = 20
-text = "Car 1
+text = "
 "
+icon = ExtResource("4_rsygn")
 icon_alignment = 1
+expand_icon = true
 
 [node name="Car2Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1059990635]
 layout_mode = 2
@@ -74,3 +80,36 @@ theme_override_font_sizes/font_size = 20
 text = "Car 4
 "
 icon_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1864343164]
+offset_left = 44.0
+offset_top = 493.0
+offset_right = 965.0
+offset_bottom = 561.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_3vq02")
+theme_override_font_sizes/font_size = 64
+text = "ESCOLHA SEU CARRO"
+
+[node name="Label5" type="Label" parent="CanvasLayer" unique_id=1878608403]
+anchors_preset = -1
+anchor_left = 0.096
+anchor_top = 0.085
+anchor_right = 0.096
+anchor_bottom = 0.085
+offset_left = -66.592
+offset_top = -15.080002
+offset_right = 67.408
+offset_bottom = 14.919998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_6d2am")
+theme_override_font_sizes/font_size = 24
+text = "OVERDRIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
