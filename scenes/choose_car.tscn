@@ -93,16 +93,16 @@ theme_override_fonts/font = ExtResource("5_3vq02")
 theme_override_font_sizes/font_size = 64
 text = "ESCOLHA SEU CARRO"
 
-[node name="Label5" type="Label" parent="CanvasLayer" unique_id=1878608403]
+[node name="Label6" type="Label" parent="CanvasLayer" unique_id=1430940077]
 anchors_preset = -1
 anchor_left = 0.096
 anchor_top = 0.085
 anchor_right = 0.096
 anchor_bottom = 0.085
-offset_left = -66.592
-offset_top = -15.080002
-offset_right = 67.408
-offset_bottom = 14.919998
+offset_left = -76.12001
+offset_top = -35.610004
+offset_right = 57.879982
+offset_bottom = -5.6100044
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
