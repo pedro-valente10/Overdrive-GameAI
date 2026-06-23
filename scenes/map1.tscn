@@ -51,6 +51,16 @@
 [ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/r_car_white.png" id="38_8q12g"]
 [ext_resource type="Texture2D" uid="uid://gqljjahe27pq" path="res://sprites/others/fance_wooden_filler.png" id="39_0i11a"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
+font_size = 68
+outline_size = 15
+outline_color = Color(0.97, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j1pt"]
+size = Vector2(8, 196)
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_k348l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srta2"]
@@ -963,22 +973,54 @@ shader = SubResource("Shader_0i11a")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 2.000000095
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0j1pt"]
-size = Vector2(8, 196)
-
-[sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
-font_size = 68
-outline_size = 15
-outline_color = Color(0.97, 0, 0, 1)
-shadow_size = 15
-shadow_color = Color(0, 0, 0, 1)
-
 [node name="map1" type="Node2D" unique_id=2120064602]
 position = Vector2(-61, 329)
 script = ExtResource("1_uoi5k")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1447153436]
+position = Vector2(0, -55)
+scale = Vector2(106.025, 50)
+zoom = Vector2(0.8, 0.8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=430185539]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1910730348]
+offset_right = 66.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("31_lus0x")
+theme_override_font_sizes/font_size = 32
+text = "Voltas: 0/5"
+
+[node name="ContadorLabel" type="Label" parent="CanvasLayer" unique_id=1679498239]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -29.0
+offset_right = 186.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("31_lus0x")
+theme_override_font_sizes/font_size = 700
+label_settings = SubResource("LabelSettings_3rppj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GerenciadorCorrida" type="Node2D" parent="." unique_id=419861528]
 script = ExtResource("2_3rppj")
+
+[node name="LinhaDeChegada" type="Area2D" parent="." unique_id=834506707]
+script = ExtResource("31_uoi5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LinhaDeChegada" unique_id=948859455]
+position = Vector2(60, 242)
+shape = SubResource("RectangleShape2D_0j1pt")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2002585355]
 
@@ -1054,11 +1096,6 @@ layer_0/tile_data = PackedInt32Array(-1769499, 65537, 1342177281, -1703963, 1, 1
 [node name="TileMap" type="TileMap" parent="TileMapLayer/fance" unique_id=1826652370]
 tile_set = SubResource("TileSet_f1ld6")
 format = 2
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1447153436]
-position = Vector2(0, -55)
-scale = Vector2(106.025, 50)
-zoom = Vector2(0.8, 0.8)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1818609136 groups=["corredores"]]
 position = Vector2(-198, 251)
@@ -1149,71 +1186,6 @@ polygon = PackedVector2Array(-737, -474, -338, -474, -338, 390, -738, 392)
 position = Vector2(-30, -105)
 rotation = -3.12763
 polygon = PackedVector2Array(-367.85995, -273.89063, -329.883, -347.42798, -290.33368, -379.9834, -247.60315, -399.5819, -13.639923, -403.84894, 209, -406, 266, -381, 311, -336, 333, -285, 329.00012, -503.6427, -371.93155, -493.85522)
-
-[node name="LinhaDeChegada" type="Area2D" parent="." unique_id=834506707]
-script = ExtResource("31_uoi5k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LinhaDeChegada" unique_id=948859455]
-position = Vector2(60, 242)
-shape = SubResource("RectangleShape2D_0j1pt")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=430185539]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1910730348]
-offset_right = 66.0
-offset_bottom = 23.0
-theme_override_fonts/font = ExtResource("31_lus0x")
-theme_override_font_sizes/font_size = 32
-text = "Voltas: 0/5"
-
-[node name="PainelFinal" type="ColorRect" parent="CanvasLayer" unique_id=1553691793]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.1148968, 0.11489681, 0.11489674, 0.7058824)
-
-[node name="ResultadoLabel" type="Label" parent="CanvasLayer/PainelFinal" unique_id=148075154]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -155.5
-offset_top = -55.0
-offset_right = 155.5
-offset_bottom = 55.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 80
-text = "VICTORY"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="ContadorLabel" type="Label" parent="CanvasLayer" unique_id=1679498239]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -186.0
-offset_top = -29.0
-offset_right = 186.0
-offset_bottom = 29.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("31_lus0x")
-theme_override_font_sizes/font_size = 700
-label_settings = SubResource("LabelSettings_3rppj")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="ParedesDaPista" type="StaticBody2D" parent="." unique_id=872785858]
 
@@ -1308,6 +1280,6 @@ motion_mode = 1
 position = Vector2(-118, 251)
 motion_mode = 1
 
+[connection signal="body_entered" from="LinhaDeChegada" to="LinhaDeChegada" method="_on_body_entered"]
 [connection signal="body_entered" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_entered"]
 [connection signal="body_exited" from="AtritoZebra" to="CharacterBody2D" method="_on_atrito_zebra_body_exited"]
-[connection signal="body_entered" from="LinhaDeChegada" to="LinhaDeChegada" method="_on_body_entered"]
