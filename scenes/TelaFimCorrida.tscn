@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://barnwcncawgd2"]
 
-[ext_resource type="Script" uid="uid://cfa62wopmr3o0" path="res://scripts/TelaFimCorrida.gd" id="1_05okg"]
+[ext_resource type="Script" uid="uid://cfa62wopmr3o0" path="res://TelaFimCorrida.gd" id="1_05okg"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="2_0pxr7"]
+[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="2_otyg3"]
 [ext_resource type="Script" uid="uid://cjhvu0375k42k" path="res://scenes/play_button.gd" id="3_jxjnd"]
+[ext_resource type="FontFile" uid="uid://ctjh4mawinvbt" path="res://text_fonts/Timeline.ttf" id="3_otyg3"]
 [ext_resource type="Script" uid="uid://b3y7g3mxqmrtl" path="res://scenes/quit_button.gd" id="4_otyg3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jxjnd"]
+font_size = 64
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_otyg3"]
+font_color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_tkwnt"]
 
@@ -90,41 +103,65 @@ shadow_offset = Vector2(2.5, 2.5)
 [node name="TelaFimCorrida" type="Node2D" unique_id=446457585]
 script = ExtResource("1_05okg")
 
-[node name="ResultadoLabel" type="Label" parent="." unique_id=500407709]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2006203944]
+script = ExtResource("2_otyg3")
+
+[node name="ResultadoLabel" type="Label" parent="CanvasLayer" unique_id=500407709]
 anchors_preset = -1
-offset_left = 544.0
-offset_top = 72.0
-offset_right = 607.0
-offset_bottom = 95.0
+anchor_left = 0.5
+anchor_top = 0.395
+anchor_right = 0.5
+anchor_bottom = 0.395
+offset_left = -136.0
+offset_top = -23.960007
+offset_right = 134.0
+offset_bottom = 30.039993
 grow_horizontal = 2
-grow_vertical = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_0pxr7")
 text = "VITORIA"
+label_settings = SubResource("LabelSettings_jxjnd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PosicaoLabel" type="Label" parent="." unique_id=1799717989]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 544.0
-offset_top = 360.0
-offset_right = 606.0
-offset_bottom = 383.0
+[node name="PosicaoLabel" type="Label" parent="CanvasLayer" unique_id=1799717989]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.50600004
+anchor_right = 0.5
+anchor_bottom = 0.50600004
+offset_left = -31.0
+offset_top = -15.388031
+offset_right = 31.0
+offset_bottom = 7.611969
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_otyg3")
+theme_override_font_sizes/font_size = 24
 text = "numero"
+label_settings = SubResource("LabelSettings_otyg3")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=893592688]
-offset_left = 368.0
-offset_top = 504.0
-offset_right = 768.0
-offset_bottom = 544.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=893592688]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -245.0
+offset_top = -140.0
+offset_right = 245.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_constants/separation = 150
 
-[node name="RestartButton" type="Button" parent="HBoxContainer" unique_id=1548990196]
+[node name="RestartButton" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=1548990196]
 use_parent_material = true
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 15
+size_flags_vertical = 13
 theme = SubResource("Theme_tkwnt")
 theme_override_colors/font_color = Color(0.7882353, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
@@ -139,14 +176,16 @@ autowrap_mode = 2
 icon_alignment = 1
 script = ExtResource("3_jxjnd")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/RestartButton" unique_id=969404079]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/HBoxContainer/RestartButton" unique_id=969404079]
 libraries/ = SubResource("AnimationLibrary_tcl8j")
 
-[node name="Label" type="Label" parent="HBoxContainer/RestartButton" unique_id=1592951936]
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/RestartButton" unique_id=1592951936]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_cncg7")
@@ -158,32 +197,30 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="QuitButton" type="Button" parent="HBoxContainer" unique_id=83264836]
+[node name="QuitButton" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=83264836]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 15
+size_flags_vertical = 13
+size_flags_stretch_ratio = 0.5
 theme_override_fonts/font = ExtResource("2_0pxr7")
 theme_override_font_sizes/font_size = 36
-text = "QUIT
+text = "
 
 "
 flat = true
 icon_alignment = 1
 script = ExtResource("4_otyg3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HBoxContainer/QuitButton" unique_id=346123422]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/HBoxContainer/QuitButton" unique_id=346123422]
 libraries/ = SubResource("AnimationLibrary_tcl8j")
 
-[node name="Label" type="Label" parent="HBoxContainer/QuitButton" unique_id=1425032562]
+[node name="Label" type="Label" parent="CanvasLayer/HBoxContainer/QuitButton" unique_id=1425032562]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -19.5
-offset_right = 42.0
-offset_bottom = 11.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 4.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_0pxr7")
@@ -194,7 +231,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[connection signal="mouse_entered" from="HBoxContainer/RestartButton" to="HBoxContainer/RestartButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="HBoxContainer/RestartButton" to="HBoxContainer/RestartButton" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="HBoxContainer/QuitButton" to="HBoxContainer/QuitButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="HBoxContainer/QuitButton" to="HBoxContainer/QuitButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/HBoxContainer/RestartButton" to="CanvasLayer/HBoxContainer/RestartButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/HBoxContainer/RestartButton" to="CanvasLayer/HBoxContainer/RestartButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/HBoxContainer/QuitButton" to="CanvasLayer/HBoxContainer/QuitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/HBoxContainer/QuitButton" to="CanvasLayer/HBoxContainer/QuitButton" method="_on_mouse_exited"]
