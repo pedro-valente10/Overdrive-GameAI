@@ -113,7 +113,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
 theme_override_font_sizes/font_size = 24
-text = "PISTA 1"
+text = "TRACK 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -131,7 +131,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
 theme_override_font_sizes/font_size = 24
-text = "PISTA 2"
+text = "TRACK 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -145,7 +145,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
 theme_override_font_sizes/font_size = 24
-text = "PISTA 3"
+text = "TRACK 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -163,7 +163,7 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
 theme_override_font_sizes/font_size = 24
-text = "PISTA 4"
+text = "TRACK 4"
 horizontal_alignment = 1
 vertical_alignment = 1
 

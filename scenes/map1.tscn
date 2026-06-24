@@ -989,7 +989,7 @@ offset_right = 66.0
 offset_bottom = 23.0
 theme_override_fonts/font = ExtResource("31_lus0x")
 theme_override_font_sizes/font_size = 32
-text = "Voltas: 0/5"
+text = "Laps: 0/5"
 
 [node name="ContadorLabel" type="Label" parent="CanvasLayer" unique_id=1679498239]
 anchors_preset = 8

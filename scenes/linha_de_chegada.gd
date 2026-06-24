@@ -19,7 +19,7 @@ var total_de_checkpoints = 0
 
 func _ready():
 	if label_hud:
-		label_hud.text = "Voltas: 1"
+		label_hud.text = "Laps: 1"
 		
 	if grupo_checkpoints:
 		total_de_checkpoints = grupo_checkpoints.get_child_count()
@@ -57,7 +57,7 @@ func _on_body_entered(body):
 		if checkpoints_player.size() >= total_de_checkpoints:
 			voltas_player += 1
 			if label_hud:
-				label_hud.text = "Voltas: " + str(voltas_player)
+				label_hud.text = "Laps: " + str(voltas_player)
 			
 			checkpoints_player.clear() 
 			print("Volta legítima! Passou para a volta: ", voltas_player)
