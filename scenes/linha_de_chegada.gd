@@ -1,6 +1,6 @@
 extends Area2D
 
-const VOLTAS_PARA_VENCER = 2 
+const VOLTAS_PARA_VENCER = 2
 
 var voltas_player = 1
 var voltas_bot = 1
