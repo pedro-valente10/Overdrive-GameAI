@@ -20,6 +20,8 @@ size = Vector2(25, 15)
 [node name="BotSteering" type="CharacterBody2D" unique_id=548959796]
 script = ExtResource("1_xd11p")
 texturas_dos_carros = Array[Texture2D]([ExtResource("2_f13sb"), ExtResource("2_mw6xm"), ExtResource("4_0763d"), ExtResource("5_ph2ht"), ExtResource("6_83suh")])
+forca_curva = 4.5
+frenagem = 350.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1242166554]
 rotation = 1.5707964

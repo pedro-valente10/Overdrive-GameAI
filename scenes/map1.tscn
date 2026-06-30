@@ -1259,26 +1259,44 @@ position = Vector2(-297, 247)
 [node name="Marker2D16" type="Marker2D" parent="Waypoints" unique_id=335755153]
 position = Vector2(-197, 235)
 
-[node name="BotSteering" parent="." unique_id=548959796 groups=["corredores"] instance=ExtResource("30_0j1pt")]
+[node name="Brabo" parent="." unique_id=548959796 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-39, 219)
 motion_mode = 1
 texturas_dos_carros = Array[Texture2D]([ExtResource("34_lkj16"), ExtResource("35_q536y"), ExtResource("36_olltv"), ExtResource("37_adx36"), ExtResource("38_8q12g"), ExtResource("5_uyy6q")])
+coragem = 1.1
+agressividade_volante = 1.2
+multiplicador_tangente = 2.0
+aderencia_pneu = 4.5
 
-[node name="BotSteering2" parent="." unique_id=1309021458 groups=["corredores"] instance=ExtResource("30_0j1pt")]
+[node name="Imprudente" parent="." unique_id=1309021458 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-118, 219)
 motion_mode = 1
+coragem = 2.0
+agressividade_volante = 2.0
+multiplicador_tangente = 1.0
+aderencia_pneu = 4.5
 
-[node name="BotSteering3" parent="." unique_id=1635799287 groups=["corredores"] instance=ExtResource("30_0j1pt")]
+[node name="Lerdo" parent="." unique_id=1635799287 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-38, 251)
 motion_mode = 1
+coragem = 0.6
+agressividade_volante = 0.6
+multiplicador_tangente = 0.7
+aderencia_pneu = 4.5
 
-[node name="BotSteering4" parent="." unique_id=1447135848 groups=["corredores"] instance=ExtResource("30_0j1pt")]
+[node name="Defensivo" parent="." unique_id=1447135848 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-199, 219)
 motion_mode = 1
+agressividade_volante = 2.0
+aderencia_pneu = 4.5
 
-[node name="BotSteering5" parent="." unique_id=1014744325 groups=["corredores"] instance=ExtResource("30_0j1pt")]
+[node name="BraboTBM" parent="." unique_id=1014744325 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-118, 251)
 motion_mode = 1
+coragem = 1.1
+agressividade_volante = 1.2
+multiplicador_tangente = 2.0
+aderencia_pneu = 4.5
 
 [connection signal="body_entered" from="LinhaDeChegada" to="LinhaDeChegada" method="_on_body_entered"]
 [connection signal="body_entered" from="AtritoZebra" to="player" method="_on_atrito_zebra_body_entered"]
