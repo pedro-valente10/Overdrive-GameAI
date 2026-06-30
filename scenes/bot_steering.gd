@@ -65,10 +65,30 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 		
+	# 1. A árvore de comportamento roda e a IA "tenta" puxar o carro para o alvo
 	if arvore_comportamento:
 		arvore_comportamento.tick(self, delta)
 		
-	if velocity.length() > 0:
-		rotation = lerp_angle(rotation, velocity.angle(), delta * 8.0)
+	# --- 2. NOVO MOTOR DE FÍSICA (IMPEDE O CAVALO DE PAU) ---
+	# Só aplicamos rotação se o bot tiver força o suficiente para andar
+	if velocity.length() > 1.0:
+		
+		# Para qual ângulo a IA está tentando ir?
+		var angulo_alvo = velocity.angle()
+		
+		# Limite matemático de virada (o volante do carro)
+		# Isso IMPEDE FISICAMENTE que o carro gire instantaneamente 
+		var limite_virada = forca_curva * 1.5 * delta 
+		
+		# Vira o carro suavemente pelo caminho mais curto
+		rotation += clamp(angle_difference(rotation, angulo_alvo), -limite_virada, limite_virada)
+		
+		# Pega a força total de aceleração que a IA gerou
+		var velocidade_real = velocity.length()
+		
+		# O PULO DO GATO: Nós "esmagamos" a velocidade lateral. 
+		# O carro agora é OBRIGADO a transferir 100% do movimento apenas para frente.
+		# Acaba de vez com o drift de OVNI e as curvas não naturais.
+		velocity = Vector2.RIGHT.rotated(rotation) * velocidade_real
 		
 	move_and_slide()
