@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i5wnx07v41yc"]
 
 [ext_resource type="Script" uid="uid://brhmiv18liwep" path="res://scenes/choose_map.gd" id="1_ofyh8"]
-[ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
+[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="2_xwlp3"]
 [ext_resource type="Texture2D" uid="uid://d1ynopxiuy28d" path="res://images/map1-icon.png" id="4_dq0v4"]
 [ext_resource type="Texture2D" uid="uid://bww5syfjby8ny" path="res://images/starting_line.png" id="4_l7jri"]
