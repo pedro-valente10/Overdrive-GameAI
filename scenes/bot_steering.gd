@@ -20,8 +20,6 @@ var pode_correr: bool = false
 var lista_waypoints = []
 var indice_alvo = 0
 
-
-
 var voltas_completadas: int = 0
 var max_voltas: int = 6
 

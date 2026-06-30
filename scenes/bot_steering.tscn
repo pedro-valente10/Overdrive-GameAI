@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/r_car_white.png" id="6_83suh"]
 [ext_resource type="Script" uid="uid://ci4vd6jh67krp" path="res://scripts/behaviortree/bt_acaodesviar.gd" id="6_mw6xm"]
 [ext_resource type="Script" uid="uid://cfjtqtngbufsb" path="res://scripts/behaviortree/bt_acaocorrer.gd" id="7_nhr3a"]
+[ext_resource type="Script" uid="uid://ddxdsdwse8lnq" path="res://scenes/sistema_steering_melhorado.gd" id="12_ph2ht"]
+[ext_resource type="Script" uid="uid://c4isotvdekbx7" path="res://scenes/sistema_aceleração.gd" id="13_83suh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoi5k"]
 size = Vector2(25, 15)
@@ -54,3 +56,9 @@ target_position = Vector2(31, 33)
 [node name="RayCast2D3" type="RayCast2D" parent="Sensores" unique_id=275432799]
 rotation = 0.43633232
 target_position = Vector2(35, -29)
+
+[node name="SistemaSteeringMelhorado" type="Node" parent="." unique_id=2088984465]
+script = ExtResource("12_ph2ht")
+
+[node name="SistemaAceleração" type="Node" parent="." unique_id=901006074]
+script = ExtResource("13_83suh")
