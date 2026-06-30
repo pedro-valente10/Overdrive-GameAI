@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i5wnx07v41yc"]
 
 [ext_resource type="Script" uid="uid://brhmiv18liwep" path="res://scenes/choose_map.gd" id="1_ofyh8"]
-[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
+[ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="2_xwlp3"]
 [ext_resource type="Texture2D" uid="uid://d1ynopxiuy28d" path="res://images/map1-icon.png" id="4_dq0v4"]
 [ext_resource type="Texture2D" uid="uid://bww5syfjby8ny" path="res://images/starting_line.png" id="4_l7jri"]
@@ -34,9 +34,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 40.0
+offset_left = 41.0
 offset_top = 70.0
-offset_right = 15.0
+offset_right = 17.0
 offset_bottom = 323.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -69,9 +69,9 @@ icon_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=895040906]
 layout_mode = 0
-offset_left = 360.0
+offset_left = 361.0
 offset_top = 70.0
-offset_right = 535.0
+offset_right = 537.0
 offset_bottom = 520.0
 theme_override_constants/separation = 100
 
@@ -105,10 +105,10 @@ anchor_left = 0.192
 anchor_top = 0.42900002
 anchor_right = 0.192
 anchor_bottom = 0.42900002
-offset_left = -61.184006
-offset_top = -14.992004
-offset_right = 65.815994
-offset_bottom = 15.007996
+offset_left = -69.184006
+offset_top = -16.992004
+offset_right = 74.815994
+offset_bottom = 13.007996
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
@@ -123,10 +123,10 @@ anchor_left = 0.192
 anchor_top = 0.85300004
 anchor_right = 0.192
 anchor_bottom = 0.85300004
-offset_left = -61.184006
-offset_top = -14.744019
-offset_right = 65.815994
-offset_bottom = 15.255981
+offset_left = -69.184006
+offset_top = -16.744019
+offset_right = 74.815994
+offset_bottom = 13.255981
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
@@ -136,12 +136,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer" unique_id=1250487239]
-anchors_preset = -1
-offset_left = 480.0
-offset_top = 263.0
-offset_right = 607.0
-offset_bottom = 293.0
-grow_vertical = 2
+offset_left = 472.0
+offset_top = 261.0
+offset_right = 616.0
+offset_bottom = 291.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
 theme_override_font_sizes/font_size = 24
@@ -155,10 +153,10 @@ anchor_left = 0.192
 anchor_top = 0.42900002
 anchor_right = 0.192
 anchor_bottom = 0.42900002
-offset_left = 258.81598
-offset_top = 260.008
-offset_right = 385.81598
-offset_bottom = 290.008
+offset_left = 250.816
+offset_top = 258.008
+offset_right = 394.81598
+offset_bottom = 288.008
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
