@@ -36,6 +36,7 @@ var pedal_acelerador: float = 0.0
 var volante: float = 0.0 
 var volante_fisico_real: float = 0.0 
 
+var multiplicador_velocidade: float = 1.0
 # NOVA VARIÁVEL: O tempo que o câmbio leva para engatar a ré
 var tempo_tentando_re: float = 0.0 
 
@@ -112,7 +113,7 @@ func _physics_process(delta):
 		velocidade_atual = move_toward(velocidade_atual, 0.0, atrito_pista * delta)
 		tempo_tentando_re = 0.0
 		
-	velocidade_atual = clamp(velocidade_atual, -velocidade_maxima * 0.35, velocidade_maxima)
+	velocidade_atual = clamp(velocidade_atual, -velocidade_maxima * 0.35, velocidade_maxima * multiplicador_velocidade)
 	
 	# --- 3. VIRANDO O EIXO ---
 	if abs(velocidade_atual) > 5.0:
@@ -125,3 +126,13 @@ func _physics_process(delta):
 	velocity = velocity.lerp(direcao_atual * velocidade_atual, aderencia_pneu * delta)
 	
 	move_and_slide()
+
+
+func _on_atrito_zebra_body_entered(body: Node2D) -> void:
+	if body == self:
+		multiplicador_velocidade = 0.4
+
+
+func _on_atrito_zebra_body_exited(body: Node2D) -> void:
+	if body == self:
+		multiplicador_velocidade = 1.0

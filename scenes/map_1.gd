@@ -46,3 +46,7 @@ func liberar_todos_os_corredores():
 func finalizar_corrida(vencedor):
 	if $GerenciadorCorrida:
 		$GerenciadorCorrida.finalizar_corrida(vencedor)
+
+
+func _on_atrito_zebra_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.
