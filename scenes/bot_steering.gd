@@ -2,8 +2,15 @@ extends CharacterBody2D
 
 var pode_correr: bool = false
 
-@export var texturas_dos_carros: Array[Texture2D]
+# --- NOVA LÓGICA DE CATEGORIAS VISUAIS (SUBSTITUIU A ANTIGA VARIÁVEL SINGLE) ---
+@export_group("Modelos de Carros")
+@export var carros_casuais: Array[Texture2D]
+@export var carros_esportivos: Array[Texture2D]
+@export var carros_de_luxo: Array[Texture2D]
+@export var carros_f1: Array[Texture2D]
+
 @onready var sprite = $Sprite2D
+# -------------------------------------------------------------------------------
 
 @export var velocidade_maxima = 275.0
 @export var forca_curva = 3.0
@@ -37,7 +44,6 @@ var volante: float = 0.0
 var volante_fisico_real: float = 0.0 
 
 var multiplicador_velocidade: float = 1.0
-# NOVA VARIÁVEL: O tempo que o câmbio leva para engatar a ré
 var tempo_tentando_re: float = 0.0 
 
 
@@ -46,16 +52,36 @@ func _ready():
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
 	
-	if texturas_dos_carros.size() > 0:
-		var textura_escolhida = texturas_dos_carros.pick_random()
+	# Executa a nova lógica de escolher a textura baseada na categoria global
+	_atualizar_modelo_bot()
+		
+	# Mantém a sua lógica original de inicializar o alcance dos RayCasts perfeitamente
+	for filho in get_children():
+		if filho is RayCast2D:
+			filho.target_position = filho.target_position.normalized() * alcance_visao
+
+
+func _atualizar_modelo_bot() -> void:
+	if not sprite: return
+	
+	var categoria_escolhida = DadosCorrida.carro_escolhido_id
+	var lista_atual: Array[Texture2D] = []
+	
+	# Filtra qual lista usar baseada na escolha vinda da tela de botões
+	match categoria_escolhida:
+		0: lista_atual = carros_casuais
+		1: lista_atual = carros_esportivos
+		2: lista_atual = carros_de_luxo
+		3: lista_atual = carros_f1
+		
+	# Escolhe uma cor/textura aleatória DENTRO da categoria que o jogador escolheu
+	if lista_atual.size() > 0:
+		var textura_escolhida = lista_atual.pick_random()
 		if textura_escolhida is String:
 			sprite.texture = load(textura_escolhida)
 		else:
 			sprite.texture = textura_escolhida
-		
-	for filho in get_children():
-		if filho is RayCast2D:
-			filho.target_position = filho.target_position.normalized() * alcance_visao
+
 
 func definir_pode_correr(status: bool):
 	pode_correr = status
@@ -95,19 +121,14 @@ func _physics_process(delta):
 		tempo_tentando_re = 0.0
 	elif pedal_acelerador < 0:
 		if velocidade_atual > 5.0:
-			# O carro está indo para frente, então o pedal atua puramente como FREIO
 			velocidade_atual += frenagem * pedal_acelerador * delta 
 			tempo_tentando_re = 0.0
 		else:
-			# O carro está parado ou a 0 km/h. A IA quer engatar a ré!
 			tempo_tentando_re += delta
 			
 			if tempo_tentando_re > 0.25:
-				# A marcha ré engatou! Acelera o motor para trás (com menos força que para frente)
 				velocidade_atual += (aceleracao * 0.4) * pedal_acelerador * delta
 			else:
-				# Segura o carro completamente freado enquanto a marcha não entra.
-				# (ISSO MATA A RÉ DA LARGADA!)
 				velocidade_atual = move_toward(velocidade_atual, 0.0, frenagem * delta)
 	else:
 		velocidade_atual = move_toward(velocidade_atual, 0.0, atrito_pista * delta)

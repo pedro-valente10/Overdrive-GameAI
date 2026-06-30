@@ -38,18 +38,16 @@
 [ext_resource type="Script" uid="uid://dkhwvut5q2urw" path="res://scenes/linha_de_chegada.gd" id="31_uoi5k"]
 [ext_resource type="Texture2D" uid="uid://ceol8ld50hc1y" path="res://assets/others/man4.png" id="32_3py8l"]
 [ext_resource type="Texture2D" uid="uid://bletvjkuhptk5" path="res://assets/others/ponytail_wom.png" id="33_kl6pv"]
-[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="34_lkj16"]
 [ext_resource type="Texture2D" uid="uid://bh27p56himu1b" path="res://assets/others/wom2.png" id="34_nvqxm"]
 [ext_resource type="Texture2D" uid="uid://b1gfst6llhf2w" path="res://sprites/others/fance_wooden.png" id="35_kl6pv"]
-[ext_resource type="Texture2D" uid="uid://b15nsmfmuixb7" path="res://assets/cars/r_car_green.png" id="35_q536y"]
 [ext_resource type="Texture2D" uid="uid://bhi0ahimtg2j3" path="res://sprites/others/fance_wooden_curve.png" id="36_nvqxm"]
-[ext_resource type="Texture2D" uid="uid://duy3uwmive46y" path="res://assets/cars/r_car_purple.png" id="36_olltv"]
 [ext_resource type="Texture2D" uid="uid://ted8ydsw2u0p" path="res://sprites/others/fance_wooden_curve_filler.png" id="37_0fvwm"]
 [ext_resource type="Texture2D" uid="uid://j0d53810yu2w" path="res://sprites/others/arrow_red.png" id="37_7slu4"]
-[ext_resource type="Texture2D" uid="uid://chbjqsa62sio2" path="res://assets/cars/r_car_brown.png" id="37_adx36"]
 [ext_resource type="Texture2D" uid="uid://b76pxg0tdqv0" path="res://sprites/others/fance_wooden_curve2.png" id="38_0i11a"]
-[ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/r_car_white.png" id="38_8q12g"]
 [ext_resource type="Texture2D" uid="uid://gqljjahe27pq" path="res://sprites/others/fance_wooden_filler.png" id="39_0i11a"]
+[ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/c_car_red.png" id="43_l6753"]
+[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="45_fi4hw"]
+[ext_resource type="Texture2D" uid="uid://bass0v3i7ycrs" path="res://assets/cars/f_car_red.png" id="46_f1ld6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
 font_size = 68
@@ -1097,11 +1095,16 @@ layer_0/tile_data = PackedInt32Array(-1769499, 65537, 1342177281, -1703963, 1, 1
 tile_set = SubResource("TileSet_f1ld6")
 format = 2
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=1818609136 groups=["corredores"]]
+[node name="player" type="CharacterBody2D" parent="." unique_id=1818609136 node_paths=PackedStringArray("sprite") groups=["corredores"]]
 position = Vector2(-198, 251)
 rotation = 1.5707964
 motion_mode = 1
 script = ExtResource("4_wpo3d")
+carros_casuais = Array[Texture2D]([ExtResource("43_l6753")])
+carros_esportivos = Array[Texture2D]([ExtResource("5_uyy6q")])
+carros_de_luxo = Array[Texture2D]([ExtResource("45_fi4hw")])
+carros_f1 = Array[Texture2D]([ExtResource("46_f1ld6")])
+sprite = NodePath("player\'s_car")
 metadata/_edit_group_ = true
 
 [node name="player\'s_car" type="Sprite2D" parent="player" unique_id=402526488]
@@ -1262,7 +1265,6 @@ position = Vector2(-197, 235)
 [node name="Brabo" parent="." unique_id=548959796 groups=["corredores"] instance=ExtResource("30_0j1pt")]
 position = Vector2(-39, 219)
 motion_mode = 1
-texturas_dos_carros = Array[Texture2D]([ExtResource("34_lkj16"), ExtResource("35_q536y"), ExtResource("36_olltv"), ExtResource("37_adx36"), ExtResource("38_8q12g"), ExtResource("5_uyy6q")])
 coragem = 1.1
 agressividade_volante = 1.2
 multiplicador_tangente = 2.0

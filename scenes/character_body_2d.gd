@@ -1,16 +1,25 @@
 extends CharacterBody2D
 
-
 var tween_flutuar: Tween
 var pode_correr: bool = false
 
 @onready var seta = $SetaIndicadora
+
+# --- ENVOLVIMENTO DE CATEGORIAS DE CARROS ---
+@export_group("Modelos de Carros (Coloque os Sprites correspondentes)")
+@export var carros_casuais: Array[Texture2D]
+@export var carros_esportivos: Array[Texture2D]
+@export var carros_de_luxo: Array[Texture2D]
+@export var carros_f1: Array[Texture2D]
+
+@export var sprite: Sprite2D # Certifique-se de que o nó do sprite se chama exatamente Sprite2D
+# --------------------------------------------
+
 @export var max_speed = 275.0
 @export var acceleration = 1000.0
 @export var friction = 800.0
 @export var steering_speed = 3.5
 var speed_multiplier = 1.0
-
 
 var voltas_completadas: int = 0
 var max_voltas: int = 2
@@ -19,9 +28,38 @@ var lista_waypoints = []
 
 func _ready():
 	iniciar_flutuacao()
+	
+	# Aplica o modelo visual correto no Player baseado no botão clicado
+	_atualizar_modelo_player()
+	
 	var caminho_waypoints = get_node("../Waypoints")
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
+
+func _atualizar_modelo_player() -> void:
+	if not sprite: 
+		print("Aviso: Nó de sprite do Player não foi encontrado!")
+		return
+	
+	var categoria_escolhida = DadosCorrida.carro_escolhido_id
+	var lista_atual: Array[Texture2D] = []
+	
+	# Seleciona o array correto baseado no ID do Singleton (0=Casual, 1=Esportivo, 2=Luxo, 3=F1)
+	match categoria_escolhida:
+		0: lista_atual = carros_casuais
+		1: lista_atual = carros_esportivos
+		2: lista_atual = carros_de_luxo
+		3: lista_atual = carros_f1
+		
+	# Aplica a primeira imagem da lista para o jogador
+	if lista_atual.size() > 0:
+		var textura_escolhida = lista_atual[0] # O player pega o primeiro modelo/cor da lista
+		if textura_escolhida is String:
+			sprite.texture = load(textura_escolhida)
+		else:
+			sprite.texture = textura_escolhida
+	else:
+		print("Aviso: A lista da categoria ", categoria_escolhida, " está vazia no Player!")
 
 func iniciar_flutuacao():
 	if not seta: return

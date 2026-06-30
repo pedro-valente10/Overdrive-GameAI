@@ -2,11 +2,13 @@
 
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_6d2am"]
 [ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
-[ext_resource type="Script" path="res://scenes/choose_car.gd" id="1_rsygn"]
+[ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
+[ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/c_car_red.png" id="4_b1jw2"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="4_rsygn"]
 [ext_resource type="FontFile" uid="uid://3aow420kiq2d" path="res://text_fonts/Excess V.otf" id="5_3vq02"]
 [ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="5_crpu2"]
 [ext_resource type="Texture2D" uid="uid://bass0v3i7ycrs" path="res://assets/cars/f_car_red.png" id="6_crpu2"]
+[ext_resource type="FontFile" uid="uid://dnewbykjaguxy" path="res://text_fonts/Excess V Straight.otf" id="8_e8l6n"]
 
 [node name="ChooseCar" type="Node2D" unique_id=683914934]
 script = ExtResource("1_rsygn")
@@ -47,8 +49,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_6d2am")
 theme_override_font_sizes/font_size = 20
-text = "Car 1
+text = "
 "
+icon = ExtResource("4_b1jw2")
 icon_alignment = 1
 expand_icon = true
 
@@ -88,7 +91,7 @@ icon = ExtResource("6_crpu2")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1864343164]
+[node name="Choose your car" type="Label" parent="CanvasLayer" unique_id=1864343164]
 offset_left = 44.0
 offset_top = 493.0
 offset_right = 965.0
@@ -98,9 +101,9 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_3vq02")
 theme_override_font_sizes/font_size = 64
-text = "ESCOLHA SEU CARRO"
+text = "Choose your car"
 
-[node name="Label6" type="Label" parent="CanvasLayer" unique_id=1430940077]
+[node name="overdrive" type="Label" parent="CanvasLayer" unique_id=1430940077]
 anchors_preset = -1
 anchor_left = 0.08800001
 anchor_top = 0.053000003
@@ -118,5 +121,77 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_6d2am")
 theme_override_font_sizes/font_size = 24
 text = "OVERDRIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="daily" type="Label" parent="CanvasLayer" unique_id=1427957679]
+anchors_preset = -1
+anchor_left = 0.17400001
+anchor_top = 0.275
+anchor_right = 0.17400001
+anchor_bottom = 0.275
+offset_left = -56.448013
+offset_top = -13.199997
+offset_right = 55.551987
+offset_bottom = 12.800003
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_e8l6n")
+theme_override_font_sizes/font_size = 24
+text = "DAILY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="sports" type="Label" parent="CanvasLayer" unique_id=1581800565]
+anchors_preset = -1
+anchor_left = 0.39100003
+anchor_top = 0.275
+anchor_right = 0.39100003
+anchor_bottom = 0.275
+offset_left = -67.43204
+offset_top = -13.199997
+offset_right = 68.56796
+offset_bottom = 12.800003
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_e8l6n")
+theme_override_font_sizes/font_size = 24
+text = "SPORTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="luxury" type="Label" parent="CanvasLayer" unique_id=1218123821]
+anchors_preset = -1
+anchor_left = 0.609
+anchor_top = 0.275
+anchor_right = 0.609
+anchor_bottom = 0.275
+offset_left = -68.568054
+offset_top = -13.199997
+offset_right = 67.431946
+offset_bottom = 12.800003
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_e8l6n")
+theme_override_font_sizes/font_size = 24
+text = "LUXURY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F1" type="Label" parent="CanvasLayer" unique_id=251060045]
+anchors_preset = -1
+anchor_left = 0.82900006
+anchor_top = 0.275
+anchor_right = 0.82900006
+anchor_bottom = 0.275
+offset_left = -68.00806
+offset_top = -13.199997
+offset_right = 67.99194
+offset_bottom = 12.800003
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_e8l6n")
+theme_override_font_sizes/font_size = 24
+text = "F1"
 horizontal_alignment = 1
 vertical_alignment = 1

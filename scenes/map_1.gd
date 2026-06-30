@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var contagem_label = $CanvasLayer/ContadorLabel
+# Pode remover o ponto_de_partida se não for usar para mais nada
 
 func _ready():
+	# Removeu a função antiga que causava o erro
 	get_tree().paused = false
 	
 	if contagem_label:
@@ -10,6 +12,9 @@ func _ready():
 	
 	bloquear_todos_os_corredores()
 	iniciar_contagem()
+
+# A função _carregar_carro_jogador foi removida daqui, 
+# pois agora o próprio nó do Player cuida do seu visual usando o DadosCorrida.carro_escolhido_id
 
 func iniciar_contagem():
 	await get_tree().create_timer(2.0).timeout
