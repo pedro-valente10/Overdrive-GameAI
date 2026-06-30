@@ -12,7 +12,6 @@ var pode_correr: bool = false
 @export_group("Personalidade do Piloto")
 @export_range(0.5, 2.0) var coragem: float = 1.0 
 @export_range(0.5, 2.0) var agressividade_volante: float = 1.0 
-
 @export var multiplicador_tangente: float = 1.2
 @export var alcance_visao: float = 220.0
 
@@ -36,6 +35,10 @@ var velocidade_atual: float = 0.0
 var pedal_acelerador: float = 0.0 
 var volante: float = 0.0 
 var volante_fisico_real: float = 0.0 
+
+# NOVA VARIÁVEL: O tempo que o câmbio leva para engatar a ré
+var tempo_tentando_re: float = 0.0 
+
 
 func _ready():
 	var caminho_waypoints = get_node("../Waypoints")
@@ -75,39 +78,50 @@ func _physics_process(delta):
 		move_and_slide()
 		return
 		
+	# Zera os comandos mentais da IA
 	pedal_acelerador = 0.0
 	volante = 0.0
 	
 	if arvore_comportamento:
 		arvore_comportamento.tick(self, delta)
 		
+	# --- 1. O ATRASO DO VOLANTE ---
 	volante_fisico_real = lerp(volante_fisico_real, volante, velocidade_giro_volante * delta)
 		
-# --- 2. O MOTOR ---
+	# --- 2. O MOTOR E A CAIXA DE CÂMBIO ---
 	if pedal_acelerador > 0:
 		velocidade_atual += aceleracao * pedal_acelerador * delta
+		tempo_tentando_re = 0.0
 	elif pedal_acelerador < 0:
-		velocidade_atual += frenagem * pedal_acelerador * delta 
+		if velocidade_atual > 5.0:
+			# O carro está indo para frente, então o pedal atua puramente como FREIO
+			velocidade_atual += frenagem * pedal_acelerador * delta 
+			tempo_tentando_re = 0.0
+		else:
+			# O carro está parado ou a 0 km/h. A IA quer engatar a ré!
+			tempo_tentando_re += delta
+			
+			if tempo_tentando_re > 0.25:
+				# A marcha ré engatou! Acelera o motor para trás (com menos força que para frente)
+				velocidade_atual += (aceleracao * 0.4) * pedal_acelerador * delta
+			else:
+				# Segura o carro completamente freado enquanto a marcha não entra.
+				# (ISSO MATA A RÉ DA LARGADA!)
+				velocidade_atual = move_toward(velocidade_atual, 0.0, frenagem * delta)
 	else:
 		velocidade_atual = move_toward(velocidade_atual, 0.0, atrito_pista * delta)
+		tempo_tentando_re = 0.0
+		
 	velocidade_atual = clamp(velocidade_atual, -velocidade_maxima * 0.35, velocidade_maxima)
 	
-	# --- 3. VIRANDO O EIXO (A TRAVA REALISTA) ---
-	# O carro só pode rotacionar se ele estiver se movendo (velocidade > 5)
-	# E quanto mais rápido, mais sensível ele é. Isso elimina o giro sobre o eixo.
+	# --- 3. VIRANDO O EIXO ---
 	if abs(velocidade_atual) > 5.0:
 		var direcao_movimento = sign(velocidade_atual)
-		# O giro agora é proporcional à velocidade atual
 		var velocidade_proporcional = abs(velocidade_atual) / velocidade_maxima
 		rotation += volante_fisico_real * forca_curva * direcao_movimento * velocidade_proporcional * delta
 		
 	# --- 4. OS PNEUS (TRAÇÃO REAL) ---
-	# A inércia domina. A velocidade vetorial (velocity) não é mais forçada para o ângulo 
-	# da rotação instantaneamente. Ela segue a inércia e é "puxada" pela direção que o bico aponta.
 	var direcao_atual = Vector2.RIGHT.rotated(rotation)
-	
-	# O segredo: o carro "derrapa" lateralmente se a força G for alta.
-	# A aderência puxa a velocity para a direção que o carro aponta.
 	velocity = velocity.lerp(direcao_atual * velocidade_atual, aderencia_pneu * delta)
 	
 	move_and_slide()
