@@ -40,10 +40,6 @@ func _on_qualquer_checkpoint_entered(body, cp_node):
 			checkpoints_bot.append(cp_node)
 
 func _on_body_entered(body):
-	# Garante que o método exista antes de chamar para evitar crash
-	if body.is_in_group("corredores") and body.has_method("completou_uma_volta"):
-		body.completou_uma_volta()
-		
 	# --- LÓGICA DO PLAYER ---
 	if body.name == "player" and pode_contar_player:
 		pode_contar_player = false
@@ -61,6 +57,10 @@ func _on_body_entered(body):
 			
 			checkpoints_player.clear() 
 			print("Volta legítima! Passou para a volta: ", voltas_player)
+			
+			# AVISA O PLAYER APENAS QUANDO A VOLTA FOR VÁLIDA
+			if body.has_method("completou_uma_volta"):
+				body.completou_uma_volta()
 			
 			if voltas_player >= VOLTAS_PARA_VENCER:
 				avisar_gerenciador_sobre_vitoria(body)
@@ -84,6 +84,10 @@ func _on_body_entered(body):
 			voltas_bot += 1
 			checkpoints_bot.clear() 
 			print("Bot completou volta legítima! Volta: ", voltas_bot)
+			
+			# AVISA O BOT APENAS QUANDO A VOLTA FOR VÁLIDA
+			if body.has_method("completou_uma_volta"):
+				body.completou_uma_volta()
 			
 			if voltas_bot >= VOLTAS_PARA_VENCER:
 				avisar_gerenciador_sobre_vitoria(body)

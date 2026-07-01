@@ -90,11 +90,8 @@ func obter_pontuacao_corrida() -> float:
 
 func completou_uma_volta():
 	voltas_completadas += 1
-
-	if voltas_completadas >= max_voltas:
-		var mapa = get_tree().current_scene
-		if mapa.has_method("finalizar_corrida"):
-			mapa.finalizar_corrida(self)
+	# Removida a verificação de vitória daqui. 
+	# A Linha de Chegada assume essa responsabilidade.
 
 
 func _physics_process(delta):
