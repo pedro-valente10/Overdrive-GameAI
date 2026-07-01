@@ -1,36 +1,44 @@
 [gd_scene format=3 uid="uid://lbqs8k4g42h8"]
 
 [ext_resource type="Script" uid="uid://ftg6owsx3iga" path="res://scenes/bot_steering.gd" id="1_xd11p"]
-[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/r_car_blue.png" id="2_f13sb"]
-[ext_resource type="Texture2D" uid="uid://b15nsmfmuixb7" path="res://assets/cars/r_car_green.png" id="2_mw6xm"]
-[ext_resource type="Texture2D" uid="uid://b1qonvg6xudw" path="res://assets/cars/c_car_grey.png" id="2_teepo"]
+[ext_resource type="Texture2D" uid="uid://dot0jaaxc62xc" path="res://assets/cars/sports/r_car_blue.png" id="2_f13sb"]
+[ext_resource type="Texture2D" uid="uid://b15nsmfmuixb7" path="res://assets/cars/sports/r_car_green.png" id="2_mw6xm"]
+[ext_resource type="Texture2D" uid="uid://b1qonvg6xudw" path="res://assets/cars/daily/c_car_grey.png" id="2_teepo"]
 [ext_resource type="Script" uid="uid://da74ptolpoymg" path="res://scripts/behaviortree/bt_selector.gd" id="3_f36s5"]
-[ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/c_car_red.png" id="3_u8xj3"]
-[ext_resource type="Texture2D" uid="uid://duy3uwmive46y" path="res://assets/cars/r_car_purple.png" id="4_0763d"]
+[ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/daily/c_car_red.png" id="3_u8xj3"]
+[ext_resource type="Texture2D" uid="uid://duy3uwmive46y" path="res://assets/cars/sports/r_car_purple.png" id="4_0763d"]
+[ext_resource type="Texture2D" uid="uid://cd83gvawn4lqf" path="res://assets/cars/daily/c_car_blue.png" id="4_dws3a"]
 [ext_resource type="Script" uid="uid://d0byoy1h0qfci" path="res://scripts/behaviortree/bt_sequence.gd" id="4_gn8sb"]
+[ext_resource type="Texture2D" uid="uid://bi2y7r07srl4a" path="res://assets/cars/daily/c_car_purple.png" id="5_b2vb0"]
 [ext_resource type="Script" uid="uid://cbtfisltvsnft" path="res://scripts/behaviortree/bt_condobstaculo.gd" id="5_mw6xm"]
-[ext_resource type="Texture2D" uid="uid://chbjqsa62sio2" path="res://assets/cars/r_car_brown.png" id="5_ph2ht"]
-[ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/r_car_white.png" id="6_83suh"]
+[ext_resource type="Texture2D" uid="uid://chbjqsa62sio2" path="res://assets/cars/sports/r_car_brown.png" id="5_ph2ht"]
+[ext_resource type="Texture2D" uid="uid://dvy7qiqnjrpe1" path="res://assets/cars/sports/r_car_white.png" id="6_83suh"]
 [ext_resource type="Script" uid="uid://ci4vd6jh67krp" path="res://scripts/behaviortree/bt_acaodesviar.gd" id="6_mw6xm"]
+[ext_resource type="Texture2D" uid="uid://bpctnagl5cndd" path="res://assets/cars/daily/c_car_bown.png" id="6_r40yv"]
 [ext_resource type="Script" uid="uid://cfjtqtngbufsb" path="res://scripts/behaviortree/bt_acaocorrer.gd" id="7_nhr3a"]
-[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="8_xyp80"]
-[ext_resource type="Texture2D" uid="uid://cojjec3n47lea" path="res://assets/cars/v_car_blue.png" id="10_5cp11"]
-[ext_resource type="Texture2D" uid="uid://csje1lc30fh3s" path="res://assets/cars/v_car_green.png" id="11_dws3a"]
-[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="12_b2vb0"]
+[ext_resource type="Texture2D" uid="uid://dptwd1aurd2qc" path="res://assets/cars/daily/c_car_green.png" id="7_yi3ta"]
+[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/sports/r_car_red.png" id="8_xyp80"]
+[ext_resource type="Texture2D" uid="uid://cojjec3n47lea" path="res://assets/cars/luxury/v_car_blue.png" id="10_5cp11"]
+[ext_resource type="Texture2D" uid="uid://csje1lc30fh3s" path="res://assets/cars/luxury/v_car_green.png" id="11_dws3a"]
+[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/luxury/v_car_red.png" id="12_b2vb0"]
 [ext_resource type="Script" path="res://scenes/sistema_steering_melhorado.gd" id="12_ph2ht"]
 [ext_resource type="Script" path="res://scenes/sistema_aceleração.gd" id="13_83suh"]
-[ext_resource type="Texture2D" uid="uid://bass0v3i7ycrs" path="res://assets/cars/f_car_red.png" id="13_r40yv"]
-[ext_resource type="Texture2D" uid="uid://q2vdq2dserbm" path="res://assets/cars/f_car_orange.png" id="14_yi3ta"]
+[ext_resource type="Texture2D" uid="uid://dwsa2qlo5v6sg" path="res://assets/cars/f1/f_car_red.png" id="13_r40yv"]
+[ext_resource type="Texture2D" uid="uid://b357lipvgjxi2" path="res://assets/cars/f1/f_car_orange.png" id="14_yi3ta"]
+[ext_resource type="Texture2D" uid="uid://jxodx6psmo1g" path="res://assets/cars/f1/f_car_grey.png" id="19_rvmws"]
+[ext_resource type="Texture2D" uid="uid://ny2vdmlg33f3" path="res://assets/cars/f1/f_car_green.png" id="20_wmm01"]
+[ext_resource type="Texture2D" uid="uid://cjauu14nqmrh4" path="res://assets/cars/f1/f_car_brown.png" id="21_ffq1j"]
+[ext_resource type="Texture2D" uid="uid://bkack2m5h045y" path="res://assets/cars/f1/f_car_blue.png" id="22_y1hol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoi5k"]
 size = Vector2(25, 15)
 
 [node name="BotSteering" type="CharacterBody2D" unique_id=548959796]
 script = ExtResource("1_xd11p")
-carros_casuais = Array[Texture2D]([ExtResource("2_teepo"), ExtResource("3_u8xj3")])
+carros_casuais = Array[Texture2D]([ExtResource("2_teepo"), ExtResource("3_u8xj3"), ExtResource("4_dws3a"), ExtResource("5_b2vb0"), ExtResource("6_r40yv"), ExtResource("7_yi3ta")])
 carros_esportivos = Array[Texture2D]([ExtResource("2_f13sb"), ExtResource("5_ph2ht"), ExtResource("2_mw6xm"), ExtResource("4_0763d"), ExtResource("8_xyp80"), ExtResource("6_83suh")])
 carros_de_luxo = Array[Texture2D]([ExtResource("10_5cp11"), ExtResource("11_dws3a"), ExtResource("12_b2vb0")])
-carros_f1 = Array[Texture2D]([ExtResource("13_r40yv"), ExtResource("14_yi3ta")])
+carros_f1 = Array[Texture2D]([ExtResource("13_r40yv"), ExtResource("14_yi3ta"), ExtResource("19_rvmws"), ExtResource("20_wmm01"), ExtResource("21_ffq1j"), ExtResource("22_y1hol")])
 forca_curva = 4.5
 frenagem = 350.0
 

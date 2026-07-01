@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q2vdq2dserbm"
-path="res://.godot/imported/f_car_orange.png-867138f4427152fd7d4eb57cf9763d8e.ctex"
+uid="uid://dot0jaaxc62xc"
+path="res://.godot/imported/r_car_blue.png-1848cbcc2f729bc52e86ab1ec2fe5f34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cars/f_car_orange.png"
-dest_files=["res://.godot/imported/f_car_orange.png-867138f4427152fd7d4eb57cf9763d8e.ctex"]
+source_file="res://assets/cars/sports/r_car_blue.png"
+dest_files=["res://.godot/imported/r_car_blue.png-1848cbcc2f729bc52e86ab1ec2fe5f34.ctex"]
 
 [params]
 

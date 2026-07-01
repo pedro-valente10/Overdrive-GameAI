@@ -3,12 +3,14 @@
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_6d2am"]
 [ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
 [ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
-[ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/c_car_red.png" id="4_b1jw2"]
-[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="4_rsygn"]
+[ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/daily/c_car_red.png" id="4_b1jw2"]
+[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/sports/r_car_red.png" id="4_rsygn"]
 [ext_resource type="FontFile" uid="uid://3aow420kiq2d" path="res://text_fonts/Excess V.otf" id="5_3vq02"]
-[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="5_crpu2"]
-[ext_resource type="Texture2D" uid="uid://bass0v3i7ycrs" path="res://assets/cars/f_car_red.png" id="6_crpu2"]
+[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/luxury/v_car_red.png" id="5_crpu2"]
 [ext_resource type="FontFile" uid="uid://dnewbykjaguxy" path="res://text_fonts/Excess V Straight.otf" id="8_e8l6n"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b1jw2"]
+load_path = "res://.godot/imported/f_car_red.png-f2b2d74d65c4f1677b87fe7014cb208a.ctex"
 
 [node name="ChooseCar" type="Node2D" unique_id=683914934]
 script = ExtResource("1_rsygn")
@@ -87,7 +89,7 @@ theme_override_fonts/font = ExtResource("1_6d2am")
 theme_override_font_sizes/font_size = 20
 text = "
 "
-icon = ExtResource("6_crpu2")
+icon = SubResource("CompressedTexture2D_b1jw2")
 icon_alignment = 1
 expand_icon = true
 
