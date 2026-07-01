@@ -90,8 +90,6 @@ func obter_pontuacao_corrida() -> float:
 
 func completou_uma_volta():
 	voltas_completadas += 1
-	# Removida a verificação de vitória daqui. 
-	# A Linha de Chegada assume essa responsabilidade.
 
 
 func _physics_process(delta):

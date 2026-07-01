@@ -40,7 +40,6 @@ func _on_qualquer_checkpoint_entered(body, cp_node):
 			checkpoints_bot.append(cp_node)
 
 func _on_body_entered(body):
-	# --- LÓGICA DO PLAYER ---
 	if body.name == "player" and pode_contar_player:
 		pode_contar_player = false
 		
@@ -58,7 +57,6 @@ func _on_body_entered(body):
 			checkpoints_player.clear() 
 			print("Volta legítima! Passou para a volta: ", voltas_player)
 			
-			# AVISA O PLAYER APENAS QUANDO A VOLTA FOR VÁLIDA
 			if body.has_method("completou_uma_volta"):
 				body.completou_uma_volta()
 			
@@ -70,7 +68,6 @@ func _on_body_entered(body):
 		await get_tree().create_timer(2.0).timeout
 		pode_contar_player = true
 
-	# --- LÓGICA DO BOT ---
 	elif ("Bot" in body.name or body.name == "CorpoDoBot") and pode_contar_bot:
 		pode_contar_bot = false
 		
@@ -85,7 +82,6 @@ func _on_body_entered(body):
 			checkpoints_bot.clear() 
 			print("Bot completou volta legítima! Volta: ", voltas_bot)
 			
-			# AVISA O BOT APENAS QUANDO A VOLTA FOR VÁLIDA
 			if body.has_method("completou_uma_volta"):
 				body.completou_uma_volta()
 			
