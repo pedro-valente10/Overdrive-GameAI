@@ -26,6 +26,7 @@ var max_voltas: int = 2
 var indice_alvo: int = 0
 var lista_waypoints = []
 
+
 func _ready():
 	iniciar_flutuacao()
 	
@@ -36,6 +37,7 @@ func _ready():
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
 
+
 func _atualizar_modelo_player() -> void:
 	if not sprite: 
 		print("Aviso: Nó de sprite do Player não foi encontrado!")
@@ -44,16 +46,14 @@ func _atualizar_modelo_player() -> void:
 	var categoria_escolhida = DadosCorrida.carro_escolhido_id
 	var lista_atual: Array[Texture2D] = []
 	
-	# Seleciona o array correto baseado no ID do Singleton (0=Casual, 1=Esportivo, 2=Luxo, 3=F1)
 	match categoria_escolhida:
 		0: lista_atual = carros_casuais
 		1: lista_atual = carros_esportivos
 		2: lista_atual = carros_de_luxo
 		3: lista_atual = carros_f1
 		
-	# Aplica a primeira imagem da lista para o jogador
 	if lista_atual.size() > 0:
-		var textura_escolhida = lista_atual[0] # O player pega o primeiro modelo/cor da lista
+		var textura_escolhida = lista_atual[0]
 		if textura_escolhida is String:
 			sprite.texture = load(textura_escolhida)
 		else:
@@ -61,12 +61,14 @@ func _atualizar_modelo_player() -> void:
 	else:
 		print("Aviso: A lista da categoria ", categoria_escolhida, " está vazia no Player!")
 
+
 func iniciar_flutuacao():
 	if not seta: return
 	tween_flutuar = create_tween().set_loops()
 	var pos_y_inicial = seta.global_position.y 
 	tween_flutuar.tween_property(seta, "global_position:y", pos_y_inicial - 10, 0.6).set_trans(Tween.TRANS_SINE)
 	tween_flutuar.tween_property(seta, "global_position:y", pos_y_inicial, 0.6).set_trans(Tween.TRANS_SINE)
+
 
 func sumir_seta() -> Tween:
 	if not seta: return null
@@ -80,22 +82,23 @@ func sumir_seta() -> Tween:
 	
 	return tween_sumir
 
+
 func definir_pode_correr(status: bool):
 	pode_correr = status
-	
-	
+
+
 func obter_pontuacao_corrida() -> float:
 	return (voltas_completadas * 1000.0) + indice_alvo
 
 
 func completou_uma_volta():
 	voltas_completadas += 1
-	
 
 	if voltas_completadas >= max_voltas:
 		var mapa = get_tree().current_scene
 		if mapa.has_method("finalizar_corrida"):
 			mapa.finalizar_corrida(self)
+
 
 func _physics_process(delta):
 	if not pode_correr: 
@@ -104,23 +107,29 @@ func _physics_process(delta):
 		return
 
 	var turn_input = Input.get_axis("ui_left", "ui_right")
-	var drive_input = Input.get_axis("ui_up", "ui_down")
+	
+	# INVERTIDO: Para cima (W) agora é positivo (+1) e para baixo (S) é negativo (-1)
+	var drive_input = Input.get_axis("ui_down", "ui_up")
 
 	if velocity.length() > 5:
-		var direction_modifier = -1 if drive_input > 0 else 1
+		# Lógica de ré ajustada para o novo input
+		var direction_modifier = -1 if drive_input < 0 else 1
 		rotation += turn_input * steering_speed * delta * direction_modifier
  
 	var current_max_speed = max_speed * speed_multiplier
 	
+# EIXO CORRIGIDO: Dizemos à física que a frente do seu carro aponta para Cima
+	var direcao_atual = -transform.y
+	
 	if drive_input != 0:
-		velocity += (transform.y * drive_input) * acceleration * delta
-		velocity = velocity.limit_length(current_max_speed)
+		var velocidade_desejada = drive_input * current_max_speed
+		
+		# FÍSICA DE PNEU: O Player agora derrapa e sofre perda de tração lateral!
+		velocity = velocity.lerp(direcao_atual * velocidade_desejada, 3.5 * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
 
 	move_and_slide()
-	
-
 	atualizar_waypoint_atual()
 
 
@@ -135,9 +144,11 @@ func atualizar_waypoint_atual():
 		if indice_alvo >= lista_waypoints.size():
 			indice_alvo = 0
 
+
 func _on_atrito_zebra_body_entered(body: Node2D) -> void:
 	if body == self: 
 		speed_multiplier = 0.4 
+
 
 func _on_atrito_zebra_body_exited(body: Node2D) -> void:
 	if body == self:
