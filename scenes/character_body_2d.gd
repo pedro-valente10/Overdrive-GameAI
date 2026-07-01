@@ -5,15 +5,13 @@ var pode_correr: bool = false
 
 @onready var seta = $SetaIndicadora
 
-
 @export_group("Modelos de Carros (Coloque os Sprites correspondentes)")
 @export var carros_casuais: Array[Texture2D]
 @export var carros_esportivos: Array[Texture2D]
 @export var carros_de_luxo: Array[Texture2D]
 @export var carros_f1: Array[Texture2D]
 
-@export var sprite: Sprite2D 
-
+@export var sprite: Sprite2D
 
 @export var max_speed = 250.0
 @export var acceleration = 1000.0
@@ -22,7 +20,7 @@ var pode_correr: bool = false
 var speed_multiplier = 1.0
 
 var voltas_completadas: int = 0
-var max_voltas: int = 2
+var max_voltas: int = 6
 var indice_alvo: int = 0
 var lista_waypoints = []
 
@@ -30,7 +28,6 @@ var lista_waypoints = []
 func _ready():
 	iniciar_flutuacao()
 	
-	# Aplica o modelo visual correto no Player baseado no botão clicado
 	_atualizar_modelo_player()
 	
 	var caminho_waypoints = get_node("../Waypoints")
@@ -108,23 +105,19 @@ func _physics_process(delta):
 
 	var turn_input = Input.get_axis("ui_left", "ui_right")
 	
-
 	var drive_input = Input.get_axis("ui_down", "ui_up")
 
 	if velocity.length() > 5:
-		# Lógica de ré ajustada para o novo input
 		var direction_modifier = -1 if drive_input < 0 else 1
 		rotation += turn_input * steering_speed * delta * direction_modifier
  
 	var current_max_speed = max_speed * speed_multiplier
 	
-
 	var direcao_atual = -transform.y
 	
 	if drive_input != 0:
 		var velocidade_desejada = drive_input * current_max_speed
 		
-	
 		velocity = velocity.lerp(direcao_atual * velocidade_desejada, 3.5 * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
