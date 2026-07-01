@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://i5wnx07v41yc"]
 
 [ext_resource type="Script" uid="uid://brhmiv18liwep" path="res://scenes/choose_map.gd" id="1_ofyh8"]
-[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
+[ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="2_l7jri"]
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="2_xwlp3"]
 [ext_resource type="Texture2D" uid="uid://d1ynopxiuy28d" path="res://images/map1-icon.png" id="4_dq0v4"]
 [ext_resource type="Texture2D" uid="uid://bww5syfjby8ny" path="res://images/starting_line.png" id="4_l7jri"]
@@ -94,6 +94,7 @@ text = "Map 4
 icon_alignment = 1
 
 [node name="StartingLine" type="Sprite2D" parent="CanvasLayer" unique_id=436886040]
+texture_filter = 1
 position = Vector2(943.00006, 326)
 rotation = 1.5707964
 scale = Vector2(0.6, 0.6)
@@ -136,10 +137,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label3" type="Label" parent="CanvasLayer" unique_id=1250487239]
-offset_left = 472.0
-offset_top = 261.0
-offset_right = 616.0
-offset_bottom = 291.0
+anchors_preset = -1
+anchor_left = 0.47200003
+anchor_top = 0.42600003
+anchor_right = 0.47200003
+anchor_bottom = 0.42600003
+offset_left = -71.74402
+offset_top = -15.048004
+offset_right = 72.25598
+offset_bottom = 14.951996
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
 theme_override_font_sizes/font_size = 24
@@ -149,14 +155,14 @@ vertical_alignment = 1
 
 [node name="Label4" type="Label" parent="CanvasLayer" unique_id=1272512986]
 anchors_preset = -1
-anchor_left = 0.192
-anchor_top = 0.42900002
-anchor_right = 0.192
-anchor_bottom = 0.42900002
-offset_left = 250.816
-offset_top = 258.008
-offset_right = 394.81598
-offset_bottom = 288.008
+anchor_left = 0.47200003
+anchor_top = 0.85
+anchor_right = 0.47200003
+anchor_bottom = 0.85
+offset_left = -71.74402
+offset_top = -14.799988
+offset_right = 72.25598
+offset_bottom = 15.200012
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_uu74g")
