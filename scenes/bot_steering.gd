@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var pode_correr: bool = false
 
-# --- NOVA LÓGICA DE CATEGORIAS VISUAIS (SUBSTITUIU A ANTIGA VARIÁVEL SINGLE) ---
+
 @export_group("Modelos de Carros")
 @export var carros_casuais: Array[Texture2D]
 @export var carros_esportivos: Array[Texture2D]
@@ -10,7 +10,7 @@ var pode_correr: bool = false
 @export var carros_f1: Array[Texture2D]
 
 @onready var sprite = $Sprite2D
-# -------------------------------------------------------------------------------
+
 
 @export var velocidade_maxima = 275.0
 @export var forca_curva = 3.0
@@ -29,8 +29,8 @@ var indice_alvo = 0
 var voltas_completadas: int = 0
 var max_voltas: int = 6
 
-# --- FÍSICA MECÂNICA AVANÇADA DE CARRO ---
-@export_group("Motor e Física Real")
+
+@export_group("Motor e Física")
 @export var aceleracao = 1000.0 
 @export var frenagem = 500.0
 @export var atrito_pista = 150.0
@@ -51,11 +51,10 @@ func _ready():
 	var caminho_waypoints = get_node("../Waypoints")
 	if caminho_waypoints:
 		lista_waypoints = caminho_waypoints.get_children()
-	
-	# Executa a nova lógica de escolher a textura baseada na categoria global
+		
 	_atualizar_modelo_bot()
 		
-	# Mantém a sua lógica original de inicializar o alcance dos RayCasts perfeitamente
+
 	for filho in get_children():
 		if filho is RayCast2D:
 			filho.target_position = filho.target_position.normalized() * alcance_visao
@@ -112,10 +111,10 @@ func _physics_process(delta):
 	if arvore_comportamento:
 		arvore_comportamento.tick(self, delta)
 		
-	# --- 1. O ATRASO DO VOLANTE ---
+	#Evita que o volante vire instantaneamente
 	volante_fisico_real = lerp(volante_fisico_real, volante, velocidade_giro_volante * delta)
 		
-	# --- 2. O MOTOR E A CAIXA DE CÂMBIO ---
+	#Funcionamento "motor"
 	if pedal_acelerador > 0:
 		velocidade_atual += aceleracao * pedal_acelerador * delta
 		tempo_tentando_re = 0.0
@@ -136,13 +135,13 @@ func _physics_process(delta):
 		
 	velocidade_atual = clamp(velocidade_atual, -velocidade_maxima * 0.35, velocidade_maxima * multiplicador_velocidade)
 	
-	# --- 3. VIRANDO O EIXO ---
+	#Virando o eixo do carro, evitando que ele faça movimentos bruscos e não naturais
 	if abs(velocidade_atual) > 5.0:
 		var direcao_movimento = sign(velocidade_atual)
 		var velocidade_proporcional = abs(velocidade_atual) / velocidade_maxima
 		rotation += volante_fisico_real * forca_curva * direcao_movimento * velocidade_proporcional * delta
 		
-	# --- 4. OS PNEUS (TRAÇÃO REAL) ---
+	#Tração Pneus
 	var direcao_atual = Vector2.RIGHT.rotated(rotation)
 	velocity = velocity.lerp(direcao_atual * velocidade_atual, aderencia_pneu * delta)
 	

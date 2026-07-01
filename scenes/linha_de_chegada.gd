@@ -91,12 +91,11 @@ func _on_body_entered(body):
 		await get_tree().create_timer(2.0).timeout
 		pode_contar_bot = true
 
-# LÓGICA NOVA: Substitui a antiga 'finalizar_jogo'
+
 func avisar_gerenciador_sobre_vitoria(vencedor):
 	# Procura a função finalizar_corrida no nó pai (o map1)
 	var map = get_parent()
 	if map and map.has_method("finalizar_corrida"):
-		# Agora o script do mapa aciona o Gerenciador, que cuida do Fade Out com segurança!
 		map.finalizar_corrida(vencedor)
 	else:
 		print("ERRO: O nó pai da Linha de Chegada não possui a função 'finalizar_corrida()'")

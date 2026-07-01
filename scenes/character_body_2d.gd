@@ -5,15 +5,15 @@ var pode_correr: bool = false
 
 @onready var seta = $SetaIndicadora
 
-# --- ENVOLVIMENTO DE CATEGORIAS DE CARROS ---
+
 @export_group("Modelos de Carros (Coloque os Sprites correspondentes)")
 @export var carros_casuais: Array[Texture2D]
 @export var carros_esportivos: Array[Texture2D]
 @export var carros_de_luxo: Array[Texture2D]
 @export var carros_f1: Array[Texture2D]
 
-@export var sprite: Sprite2D # Certifique-se de que o nó do sprite se chama exatamente Sprite2D
-# --------------------------------------------
+@export var sprite: Sprite2D 
+
 
 @export var max_speed = 250.0
 @export var acceleration = 1000.0
@@ -108,7 +108,7 @@ func _physics_process(delta):
 
 	var turn_input = Input.get_axis("ui_left", "ui_right")
 	
-	# INVERTIDO: Para cima (W) agora é positivo (+1) e para baixo (S) é negativo (-1)
+
 	var drive_input = Input.get_axis("ui_down", "ui_up")
 
 	if velocity.length() > 5:
@@ -118,13 +118,13 @@ func _physics_process(delta):
  
 	var current_max_speed = max_speed * speed_multiplier
 	
-# EIXO CORRIGIDO: Dizemos à física que a frente do seu carro aponta para Cima
+
 	var direcao_atual = -transform.y
 	
 	if drive_input != 0:
 		var velocidade_desejada = drive_input * current_max_speed
 		
-		# FÍSICA DE PNEU: O Player agora derrapa e sofre perda de tração lateral!
+	
 		velocity = velocity.lerp(direcao_atual * velocidade_desejada, 3.5 * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)

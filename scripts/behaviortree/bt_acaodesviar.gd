@@ -32,18 +32,18 @@ func tick(bot: CharacterBody2D, delta: float) -> int:
 	# Puxa o volante violentamente para a rota de fuga
 	bot.volante = clamp(diferenca_angulo * 3.0 * bot.agressividade_volante, -1.0, 1.0)
 	
-	# --- O FIM DO ENGARRAFAMENTO FANTASMA ---
+	#Feito para evitar o engarrafamento na pista
 	if perigo_frontal:
-		# Reduzimos um pouco a zona de pânico para eles serem mais ousados
+		#Reduzimos um pouco a zona de pânico para eles serem mais ousados
 		var distancia_panico = 80.0 / bot.coragem
 		
 		if distancia_perigo < distancia_panico:
-			# Só pisa no freio a fundo se estiver quase batendo no para-choque da frente
+			#Só pisa no freio a fundo se estiver quase batendo no para-choque da frente
 			bot.pedal_acelerador = -1.0 
 		else:
-			# AQUI ESTÁ O SEGREDO: Em vez de frear (-0.2), ele mantém o motor cheio!
-			# Um piloto agressivo (coragem alta) pisa fundo (1.0) pra passar raspando,
-			# Um medroso alivia o pé (0.5), mas NÃO usa o freio!
+			#Em vez de frear (-0.2), ele mantém o motor cheio
+			#Um piloto agressivo (coragem alta) pisa fundo (1.0) pra passar raspando,
+			#Um medroso alivia o pé (0.5), mas não usa o freio
 			bot.pedal_acelerador = clamp(0.8 * bot.coragem, 0.4, 1.0)
 	else:
 		# Se o perigo for só lateral, ignora e acelera 100%
