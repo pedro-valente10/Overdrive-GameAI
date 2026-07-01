@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://gqljjahe27pq" path="res://sprites/others/fance_wooden_filler.png" id="39_0i11a"]
 [ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/daily/c_car_red.png" id="43_l6753"]
 [ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/luxury/v_car_red.png" id="45_fi4hw"]
-[ext_resource type="Texture2D" uid="uid://bass0v3i7ycrs" path="res://assets/cars/f1/f_car_red.png" id="46_f1ld6"]
+[ext_resource type="Texture2D" uid="uid://dwsa2qlo5v6sg" path="res://assets/cars/f1/f_car_red.png" id="46_f1ld6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
 font_size = 68

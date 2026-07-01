@@ -15,7 +15,7 @@ var pode_correr: bool = false
 @export var sprite: Sprite2D # Certifique-se de que o nó do sprite se chama exatamente Sprite2D
 # --------------------------------------------
 
-@export var max_speed = 275.0
+@export var max_speed = 250.0
 @export var acceleration = 1000.0
 @export var friction = 800.0
 @export var steering_speed = 3.5

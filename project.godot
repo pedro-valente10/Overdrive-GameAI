@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 DadosCorrida="*uid://bu0p85g77nais"
+MusicaGlobal="*uid://ceebnvn8lryya"
 
 [physics]
 

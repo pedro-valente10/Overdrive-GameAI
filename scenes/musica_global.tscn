@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ceebnvn8lryya"]
+
+[ext_resource type="AudioStream" uid="uid://b55lcioqbot17" path="res://sound/Deep Purple - Highway Star (8 bit).mp3" id="1_7a1gg"]
+
+[node name="MusicaGlobal" type="AudioStreamPlayer2D" unique_id=755221343]
+stream = ExtResource("1_7a1gg")

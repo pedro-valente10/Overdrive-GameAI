@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://cjhvu0375k42k" path="res://scenes/play_button.gd" id="4_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://c27htyv2m2b3f" path="res://sound/car_starting.mp3" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://b3y7g3mxqmrtl" path="res://scenes/quit_button.gd" id="5_oa1go"]
+[ext_resource type="AudioStream" uid="uid://n75v3d3gyxi2" path="res://sound/mouse_click.mp3" id="7_oa1go"]
 
 [sub_resource type="Theme" id="Theme_8ln24"]
 
@@ -216,10 +217,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1373688900]
-position = Vector2(9.708972, -26.61553)
-scale = Vector2(0.01849328, -0.050890114)
+[node name="SomMotor" type="AudioStreamPlayer" parent="." unique_id=1273537585]
 stream = ExtResource("4_wu84c")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=157588907]
+stream = ExtResource("7_oa1go")
 
 [connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/PlayButton" to="CanvasLayer/Control/VBoxContainer/PlayButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/PlayButton" to="CanvasLayer/Control/VBoxContainer/PlayButton" method="_on_mouse_exited"]
