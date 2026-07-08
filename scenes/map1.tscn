@@ -1173,17 +1173,17 @@ polygon = PackedVector2Array(-370, -279, -357, -310, -345, -335, -327, -358, -30
 polygon = PackedVector2Array(-362, 170, -362, 175, -357, 184, -355, 193, -348, 202, -344, 209, -341, 211, -341, 216, -339, 217, -339, 224, -338, 228, -328, 237, -313, 252, -304, 261, -299, 264, -296, 267, -289, 267, -283, 270, -279, 273, -275, 274, -274, 279, -267, 280, -264, 283, -257, 283, -251, 285, -248, 289, -245, 290, -245, 298, -249, 298, -256, 291, -266, 291, -287, 276, -299, 275, -341, 237, -343, 228, -347, 225, -348, 215, -360, 198, -363, 193, -363, 185, -366, 181, -370, 177, -370, 169)
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=813490871]
-polygon = PackedVector2Array(-737, -470, -372, -470, -366, 395, -738, 392)
+polygon = PackedVector2Array(-738, -502, -372, -502, -366, 395, -738, 392)
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1195296473]
-polygon = PackedVector2Array(-370, -284, -334, -352, -279, -391, -245, -407, 209, -406, 266, -381, 311, -336, 333, -285, 335, -470, -372, -470)
+polygon = PackedVector2Array(-370, -284, -334, -352, -279, -391, -245, -407, 209, -406, 266, -381, 311, -336, 333, -285, 335, -502, -372, -502)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=876702859]
 polygon = PackedVector2Array(-242, -278, 206, -278, 206, 169, -242, 170)
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=792179039]
 position = Vector2(1072, 4)
-polygon = PackedVector2Array(-737, -474, -338, -474, -338, 390, -738, 392)
+polygon = PackedVector2Array(-737, -506, -338, -506, -338, 390, -738, 392)
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=958723876]
 position = Vector2(-30, -105)
@@ -1200,17 +1200,17 @@ polygon = PackedVector2Array(-192, -256, -191, 141, 159, 143, 158, -257)
 [node name="Area2D" type="Area2D" parent="Checkpoints" unique_id=1655302242]
 
 [node name="Check1" type="CollisionPolygon2D" parent="Checkpoints/Area2D" unique_id=365257937]
-polygon = PackedVector2Array(159, -80, 404, -75, 401, -11, 161, -19)
+polygon = PackedVector2Array(157, -81, 397, -81, 397, -17, 157, -17)
 
 [node name="Area2D3" type="Area2D" parent="Checkpoints" unique_id=2100187761]
 
 [node name="Check3" type="CollisionPolygon2D" parent="Checkpoints/Area2D3" unique_id=1254427241]
-polygon = PackedVector2Array(-428, -92, -192, -91, -191, -37, -436, -37)
+polygon = PackedVector2Array(-427, -89, -187, -89, -187, -33, -427, -33)
 
 [node name="Area2D2" type="Area2D" parent="Checkpoints" unique_id=1506168358]
 
 [node name="Check2" type="CollisionPolygon2D" parent="Checkpoints/Area2D2" unique_id=1484287112]
-polygon = PackedVector2Array(-59, -454, -64, -254, -8, -258, -12, -452)
+polygon = PackedVector2Array(-59, -457, -59, -257, -11, -257, -11, -457)
 
 [node name="Waypoints" type="Node2D" parent="." unique_id=382592575]
 
