@@ -1,26 +1,42 @@
 extends Node2D
 
-# Alteramos o som_botao para AudioStreamPlayer (sem o 2D)
 @onready var som_botao: AudioStreamPlayer = $AudioStreamPlayer
-@onready var som_motor: AudioStreamPlayer = $SomMotor 
+@onready var som_motor: AudioStreamPlayer = $SomMotor
+
+var dot_count : int = 0
+
 
 func _ready() -> void:
+	$CanvasLayer/Control/TimerLoading.stop()
+	$CanvasLayer/Control/LabelLoading.visible = false
+	
 	$CanvasLayer/Control/VBoxContainer/PlayButton.pressed.connect(_on_play_pressed)
 	$CanvasLayer/Control/VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
+	
+	$CanvasLayer/Control/TimerLoading.timeout.connect(_on_timer_loading_timeout)
 
 func _on_play_pressed() -> void:
-	# Toca os sons
 	som_botao.play() 
 	som_motor.play() 
 	
-	# Desativa o botão para evitar cliques duplos
 	$CanvasLayer/Control/VBoxContainer/PlayButton.disabled = true
+	$CanvasLayer/Control/LabelLoading.visible = true
+	$CanvasLayer/Control/TimerLoading.start()
 	
-	# Aguarda 1.5 segundos para o jogador ouvir o ronco do motor
+	
 	await get_tree().create_timer(3.5).timeout
-	
-	# Só depois que o tempo acaba, ele troca de cena
 	get_tree().change_scene_to_file("res://scenes/choose_map.tscn")
+
+func _on_timer_loading_timeout():
+	dot_count += 1
+	if dot_count > 3:
+		dot_count = 0
+	
+	match dot_count:
+		0: $CanvasLayer/Control/LabelLoading.text = "LOADING"
+		1: $CanvasLayer/Control/LabelLoading.text = "LOADING."
+		2: $CanvasLayer/Control/LabelLoading.text = "LOADING.."
+		3: $CanvasLayer/Control/LabelLoading.text = "LOADING..."
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
