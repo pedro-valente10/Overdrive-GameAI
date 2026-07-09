@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bkack2m5h045y" path="res://assets/cars/f1/f_car_blue.png" id="22_y1hol"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uoi5k"]
-size = Vector2(25, 15)
+size = Vector2(26, 14)
 
 [node name="BotSteering" type="CharacterBody2D" unique_id=548959796]
 script = ExtResource("1_xd11p")
@@ -45,7 +45,6 @@ rotation = 1.5707964
 texture = ExtResource("2_mw6xm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1200832950]
-position = Vector2(1.5, -0.5)
 shape = SubResource("RectangleShape2D_uoi5k")
 
 [node name="BehaviorTree" type="Node" parent="." unique_id=151230121]
