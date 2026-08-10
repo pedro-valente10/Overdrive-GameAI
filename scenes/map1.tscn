@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dlrpymtskws81" path="res://assets/tile_sets/asphalt/asphalt_curve2.png" id="5_1bs4p"]
 [ext_resource type="Texture2D" uid="uid://ddg6epe5cmffq" path="res://assets/tile_sets/grass/grass_center1.png" id="5_5vo6v"]
 [ext_resource type="Texture2D" uid="uid://cl4g5wnq2i678" path="res://assets/tile_sets/grass/grass_border2_R.png" id="5_raiux"]
-[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/sports/r_car_red.png" id="5_uyy6q"]
+[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="5_uyy6q"]
 [ext_resource type="Texture2D" uid="uid://xsf2iebfxp8r" path="res://assets/tile_sets/grass/grass_border1_L.png" id="6_5vo6v"]
 [ext_resource type="Texture2D" uid="uid://cyor1fphc4ugb" path="res://assets/tile_sets/grass/grass_curve1.png" id="6_d7n0x"]
 [ext_resource type="Texture2D" uid="uid://fcahs55rw2w7" path="res://assets/tile_sets/grass/grass_curve2.png" id="7_f0y4q"]
@@ -46,7 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://b76pxg0tdqv0" path="res://sprites/others/fance_wooden_curve2.png" id="38_0i11a"]
 [ext_resource type="Texture2D" uid="uid://gqljjahe27pq" path="res://sprites/others/fance_wooden_filler.png" id="39_0i11a"]
 [ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/daily/c_car_red.png" id="43_l6753"]
-[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/luxury/v_car_red.png" id="45_fi4hw"]
+[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="45_fi4hw"]
 [ext_resource type="Texture2D" uid="uid://dwsa2qlo5v6sg" path="res://assets/cars/f1/f_car_red.png" id="46_f1ld6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3rppj"]
