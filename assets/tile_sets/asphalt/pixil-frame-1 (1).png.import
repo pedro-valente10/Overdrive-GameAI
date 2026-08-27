@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5imgnxnb51p0"
-path="res://.godot/imported/pixil-frame-2.png-ec6c37906a657c26753ae2a8113ed39f.ctex"
+uid="uid://qp17mvmr6rw"
+path="res://.godot/imported/pixil-frame-1 (1).png-9afde18a7a6922e434a08231ad645ce9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/asphalt/pixil-frame-2.png"
-dest_files=["res://.godot/imported/pixil-frame-2.png-ec6c37906a657c26753ae2a8113ed39f.ctex"]
+source_file="res://assets/tile_sets/asphalt/pixil-frame-1 (1).png"
+dest_files=["res://.godot/imported/pixil-frame-1 (1).png-9afde18a7a6922e434a08231ad645ce9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjs5pwrlmmtjp"
-path="res://.godot/imported/asphalt_curve.png-9102b70dbca83c796f222bfd18177de8.ctex"
+uid="uid://5dub1bq18f6w"
+path="res://.godot/imported/pixil-layer-Background.png-9401536607eafc48811e68646af9c425.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/asphalt/asphalt_curve.png"
-dest_files=["res://.godot/imported/asphalt_curve.png-9102b70dbca83c796f222bfd18177de8.ctex"]
+source_file="res://assets/tile_sets/asphalt/pixil-layer-Background.png"
+dest_files=["res://.godot/imported/pixil-layer-Background.png-9401536607eafc48811e68646af9c425.ctex"]
 
 [params]
 
