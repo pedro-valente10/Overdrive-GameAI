@@ -1162,12 +1162,6 @@ polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 position = Vector2(696, 0)
 polygon = PackedVector2Array(-370, -278, -362, -278, -362, 170, -370, 170)
 
-[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=783444454]
-polygon = PackedVector2Array(326, 171, 319, 185, 319, 193, 310, 203, 304, 219, 296, 236, 262, 266, 249, 269, 236, 276, 229, 284, 217, 285, 210, 290, 210, 297, 219, 292, 230, 290, 251, 275, 264, 272, 287, 255, 307, 232, 312, 216, 322, 200, 329, 186, 330, 176, 334, 175, 334, 169)
-
-[node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=632610610]
-polygon = PackedVector2Array(-362, 170, -362, 175, -357, 184, -355, 193, -348, 202, -344, 209, -341, 211, -341, 216, -339, 217, -339, 224, -338, 228, -328, 237, -313, 252, -304, 261, -299, 264, -296, 267, -289, 267, -283, 270, -279, 273, -275, 274, -274, 279, -267, 280, -264, 283, -257, 283, -251, 285, -248, 289, -245, 290, -245, 298, -249, 298, -256, 291, -266, 291, -287, 276, -299, 275, -341, 237, -343, 228, -347, 225, -348, 215, -360, 198, -363, 193, -363, 185, -366, 181, -370, 177, -370, 169)
-
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=813490871]
 position = Vector2(59, -1)
 polygon = PackedVector2Array(-779, -463, -371, -463, -371, 353, -779, 353)
