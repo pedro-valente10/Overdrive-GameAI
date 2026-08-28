@@ -1173,24 +1173,59 @@ position = Vector2(59, -1)
 polygon = PackedVector2Array(-779, -463, -371, -463, -371, 353, -779, 353)
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1195296473]
-polygon = PackedVector2Array(-317, -337, -304, -367, -280, -388, -266, -392, 231, -393, 260, -381, 276, -356, 282, -331, 279, -463, -318, -464)
+polygon = PackedVector2Array(-312, -344, -305, -363, -280, -384, -266, -392, 232, -392, 259, -380, 273, -358, 280, -339, 280, -464, -318, -464)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=876702859]
 polygon = PackedVector2Array(-232, -272, 200, -272, 200, 160, -232, 160)
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=792179039]
-position = Vector2(1018, 7)
-polygon = PackedVector2Array(-737, -471, -299, -471, -299, 345, -731, 344)
+position = Vector2(1014, 33)
+polygon = PackedVector2Array(-734, -497, -294, -497, -294, 319, -733, 319)
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=958723876]
 position = Vector2(-33, -140)
 rotation = -3.12763
-polygon = PackedVector2Array(-317.94003, -351.59512, -310.234, -372.70474, -289.50137, -391.99612, -247.60315, -399.5819, -13.639923, -403.84894, 225.33673, -407.18588, 254.52942, -393.5922, 274.01624, -358.8608, 272.1034, -495.8475, -350.82193, -486.14914)
+polygon = PackedVector2Array(-317.94003, -351.59512, -310.234, -372.70474, -289.50137, -391.99612, -247.60315, -399.5819, -13.639923, -403.84894, 225.33673, -407.18588, 254.52942, -393.5922, 274.01624, -358.8608, 272.1034, -495.8475, -349.836, -487.16306)
+
+[node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=301828496]
+polygon = PackedVector2Array(-232, -272, 200, -272, 200, 160, -232, 160)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1815159758]
+position = Vector2(21.689625, 173)
+scale = Vector2(0.92058414, 0.07343746)
+polygon = PackedVector2Array(-240.81407, -177.021, -240.81407, 149.7876, 158.9321, 149.7876, 157.84583, -177.021)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=518603894]
+position = Vector2(-27, -294)
+scale = Vector2(0.8505089, 0.08422594)
+polygon = PackedVector2Array(-203.40762, -213.71088, -203.40762, 261.2022, 230.45026, 261.2022, 229.27448, -213.71088)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=1415804289]
+position = Vector2(197, -284.00003)
+scale = Vector2(0.14015155, 0.04456563)
+polygon = PackedVector2Array(-206.91888, -628.2869, -199.78375, 269.26575, 21.405396, 269.26575, -7.135132, -246.8263, -99.891846, -538.5316)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=938572124]
+position = Vector2(-218.00002, -304)
+rotation = -1.5528678
+scale = Vector2(0.15431935, 0.017695973)
+polygon = PackedVector2Array(-208.9553, -758.5947, -205.23778, 1049.4355, 53.92331, 1008.9121, 19.785583, 166.46289, -59.472977, -555.8916)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="AtritoZebra" unique_id=995471924]
+position = Vector2(-229, 169)
+rotation = -2.9685557
+scale = Vector2(0.05764075, 0.007995888)
+skew = -0.15305233
+polygon = PackedVector2Array(-514.22754, -1237.9609, -505.8086, 1753.7266, 55.808594, 1056.5234, -51.950195, 314.67188, -249.56592, -1066.1641)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="AtritoZebra/CollisionPolygon2D6" unique_id=2094647036]
+position = Vector2(-7291.89, 6050.1626)
+rotation = 0.18776119
+scale = Vector2(0.7871772, 1.1618079)
+skew = -0.15305233
+polygon = PackedVector2Array(96.17383, 1705.5508, -59.455566, 2986.4648, -103.674805, 3818.621, 608.26074, 3109.3008, 442.42627, 572.46875, 266.29443, 1085.7109)
 
 [node name="ParedesDaPista" type="StaticBody2D" parent="." unique_id=872785858]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ParedesDaPista" unique_id=1815159758]
-polygon = PackedVector2Array(-192, -256, -191, 141, 159, 143, 158, -257)
 
 [node name="Checkpoints" type="Node2D" parent="." unique_id=1235197278]
 
