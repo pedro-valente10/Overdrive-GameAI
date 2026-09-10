@@ -14,7 +14,7 @@ var checkpoints_player = []
 var checkpoints_bot = []    
 var total_de_checkpoints = 0
 
-@onready var label_hud = get_node("../CanvasLayer/Label")
+@onready var label_hud = get_node("../CanvasLayer/ContadorDeVoltas")
 @onready var grupo_checkpoints = get_node("../Checkpoints") 
 
 func _ready():
@@ -52,7 +52,7 @@ func _on_body_entered(body):
 		if checkpoints_player.size() >= total_de_checkpoints:
 			voltas_player += 1
 			if label_hud:
-				label_hud.text = "Laps: " + str(voltas_player)
+				label_hud.text = "LAPS: " + str(voltas_player)
 			
 			checkpoints_player.clear() 
 			print("Volta legítima! Passou para a volta: ", voltas_player)

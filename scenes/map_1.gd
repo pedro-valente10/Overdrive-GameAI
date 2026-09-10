@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var contagem_label = $CanvasLayer/ContadorLabel
+@onready var contagem_label = $CanvasLayer/RelogioInicial
 # Pode remover o ponto_de_partida se não for usar para mais nada
 
 func _ready():
