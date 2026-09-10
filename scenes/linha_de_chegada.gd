@@ -19,7 +19,7 @@ var total_de_checkpoints = 0
 
 func _ready():
 	if label_hud:
-		label_hud.text = "Laps: 1"
+		label_hud.text = "LAPS: 1"
 		
 	if grupo_checkpoints:
 		total_de_checkpoints = grupo_checkpoints.get_child_count()
