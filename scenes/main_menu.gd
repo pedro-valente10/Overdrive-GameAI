@@ -10,16 +10,21 @@ func _ready() -> void:
 	$CanvasLayer/Control/TimerLoading.stop()
 	$CanvasLayer/Control/LabelLoading.visible = false
 	
-	$CanvasLayer/Control/VBoxContainer/PlayButton.pressed.connect(_on_play_pressed)
-	$CanvasLayer/Control/VBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
+	$CanvasLayer/Control/HBoxContainer/OptionsButton.pressed.connect(_on_options_pressed)
+	$CanvasLayer/Control/HBoxContainer/PlayButton.pressed.connect(_on_play_pressed)
+	$CanvasLayer/Control/HBoxContainer/QuitButton.pressed.connect(_on_quit_pressed)
+	
 	
 	$CanvasLayer/Control/TimerLoading.timeout.connect(_on_timer_loading_timeout)
+	
+func _on_options_pressed() -> void:
+	pass
 
 func _on_play_pressed() -> void:
 	som_botao.play() 
 	som_motor.play() 
 	
-	$CanvasLayer/Control/VBoxContainer/PlayButton.disabled = true
+	$CanvasLayer/Control/HBoxContainer/PlayButton.disabled = true
 	$CanvasLayer/Control/LabelLoading.visible = true
 	$CanvasLayer/Control/TimerLoading.start()
 	

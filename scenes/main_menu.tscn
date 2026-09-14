@@ -150,17 +150,60 @@ text = "LOADING"
 [node name="TimerLoading" type="Timer" parent="CanvasLayer/Control" unique_id=1018266814]
 wait_time = 0.25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1133000939]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1390683379]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -18.0
+offset_right = 276.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+
+[node name="OptionsButton" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=927632933]
+use_parent_material = true
+custom_minimum_size = Vector2(155, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_8ln24")
+theme_override_colors/font_color = Color(0.7882353, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_8ln24")
+keep_pressed_outside = true
+flat = true
+autowrap_mode = 2
+icon_alignment = 1
+script = ExtResource("4_rtw2f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/OptionsButton" unique_id=1504946583]
+libraries/ = SubResource("AnimationLibrary_tbmy8")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/OptionsButton" unique_id=215093793]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 15
-alignment = 1
+theme = SubResource("Theme_wu84c")
+theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_font_sizes/font_size = 36
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_wu84c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=324440957]
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=324440957]
 use_parent_material = true
 custom_minimum_size = Vector2(96, 39)
 layout_mode = 2
@@ -180,10 +223,10 @@ autowrap_mode = 2
 icon_alignment = 1
 script = ExtResource("4_rtw2f")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/VBoxContainer/PlayButton" unique_id=1554169612]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/PlayButton" unique_id=1554169612]
 libraries/ = SubResource("AnimationLibrary_tbmy8")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/PlayButton" unique_id=1704878827]
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/PlayButton" unique_id=1704878827]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -205,23 +248,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1376850712]
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=1376850712]
+custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_bqqt6")
 theme_override_font_sizes/font_size = 36
-text = "QUIT
+text = "
 
 "
 flat = true
 icon_alignment = 1
 script = ExtResource("5_oa1go")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/VBoxContainer/QuitButton" unique_id=2088447041]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/QuitButton" unique_id=2088447041]
 libraries/ = SubResource("AnimationLibrary_tbmy8")
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/QuitButton" unique_id=2106379421]
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/QuitButton" unique_id=2106379421]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -248,8 +292,10 @@ stream = ExtResource("4_wu84c")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=157588907]
 stream = ExtResource("7_oa1go")
 
-[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/PlayButton" to="CanvasLayer/Control/VBoxContainer/PlayButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/PlayButton" to="CanvasLayer/Control/VBoxContainer/PlayButton" method="_on_mouse_exited"]
-[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="mouse_entered" from="CanvasLayer/Control/VBoxContainer/QuitButton" to="CanvasLayer/Control/VBoxContainer/QuitButton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/Control/VBoxContainer/QuitButton" to="CanvasLayer/Control/VBoxContainer/QuitButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/HBoxContainer/OptionsButton" to="CanvasLayer/Control/HBoxContainer/OptionsButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/HBoxContainer/OptionsButton" to="CanvasLayer/Control/HBoxContainer/OptionsButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/HBoxContainer/PlayButton" to="CanvasLayer/Control/HBoxContainer/PlayButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/HBoxContainer/PlayButton" to="CanvasLayer/Control/HBoxContainer/PlayButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/HBoxContainer/QuitButton" to="CanvasLayer/Control/HBoxContainer/QuitButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/HBoxContainer/QuitButton" to="CanvasLayer/Control/HBoxContainer/QuitButton" method="_on_mouse_exited"]
