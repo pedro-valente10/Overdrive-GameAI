@@ -4,9 +4,9 @@
 [ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
 [ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
 [ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/daily/c_car_red.png" id="4_b1jw2"]
-[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/sports/r_car_red.png" id="4_rsygn"]
+[ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="4_rsygn"]
 [ext_resource type="FontFile" uid="uid://3aow420kiq2d" path="res://text_fonts/Excess V.otf" id="5_3vq02"]
-[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/luxury/v_car_red.png" id="5_crpu2"]
+[ext_resource type="Texture2D" uid="uid://cdiejkij53usq" path="res://assets/cars/v_car_red.png" id="5_crpu2"]
 [ext_resource type="FontFile" uid="uid://dnewbykjaguxy" path="res://text_fonts/Excess V Straight.otf" id="8_e8l6n"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b1jw2"]
