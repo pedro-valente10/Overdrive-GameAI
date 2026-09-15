@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8hkcj5munajt"
-path="res://.godot/imported/trees.png-888a97eba610d0a0bd3952cd7602a4c8.ctex"
+uid="uid://dbyjsfmf2b6u4"
+path="res://.godot/imported/race_line.png-63a3c31ca6a459c4b976aa3c1d0b9fd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/trees.png"
-dest_files=["res://.godot/imported/trees.png-888a97eba610d0a0bd3952cd7602a4c8.ctex"]
+source_file="res://assets/tile_sets/others/race_line.png"
+dest_files=["res://.godot/imported/race_line.png-63a3c31ca6a459c4b976aa3c1d0b9fd9.ctex"]
 
 [params]
 

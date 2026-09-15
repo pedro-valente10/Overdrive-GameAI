@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsmt22fn8yjmq"
-path="res://.godot/imported/trees_noShadow.png-843af7e2b2f29144c6cc4c72cbabd2d0.ctex"
+uid="uid://b8hkcj5munajt"
+path="res://.godot/imported/trees.png-7831357a088987597bc69c0d4c12ffa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/trees_noShadow.png"
-dest_files=["res://.godot/imported/trees_noShadow.png-843af7e2b2f29144c6cc4c72cbabd2d0.ctex"]
+source_file="res://assets/tile_sets/others/trees.png"
+dest_files=["res://.godot/imported/trees.png-7831357a088987597bc69c0d4c12ffa5.ctex"]
 
 [params]
 

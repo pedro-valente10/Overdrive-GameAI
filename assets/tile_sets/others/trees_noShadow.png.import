@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijsjqtr3tpoi"
-path="res://.godot/imported/car_start.png-25dcae90d5294b757aea676835bd27f5.ctex"
+uid="uid://bsmt22fn8yjmq"
+path="res://.godot/imported/trees_noShadow.png-fe75c17be69d1fe98402ff4895c63c8c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/car_start.png"
-dest_files=["res://.godot/imported/car_start.png-25dcae90d5294b757aea676835bd27f5.ctex"]
+source_file="res://assets/tile_sets/others/trees_noShadow.png"
+dest_files=["res://.godot/imported/trees_noShadow.png-fe75c17be69d1fe98402ff4895c63c8c.ctex"]
 
 [params]
 
