@@ -8,9 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://b5c2x4qkaxdt4" path="res://assets/tile_sets/grass/grass_border1_R.png" id="4_2m3eu"]
 [ext_resource type="Texture2D" uid="uid://dnp03rtmnwbh" path="res://assets/tile_sets/asphalt/asphalt_curve1.png" id="4_ol6j0"]
 [ext_resource type="Script" uid="uid://bwah8yj6luede" path="res://scenes/character_body_2d.gd" id="4_wpo3d"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://cy2mbawynv27c" path="res://assets/tile_sets/asphalt/asphalt_border_R.png" id="5_4mm2b"]
 [ext_resource type="Texture2D" uid="uid://dlrpymtskws81" path="res://assets/tile_sets/asphalt/asphalt_curve2.png" id="5_1bs4p"]
 >>>>>>> 5e80b86 (reverting curves)
+=======
+>>>>>>> 1772120 (tress collision)
 [ext_resource type="Texture2D" uid="uid://ddg6epe5cmffq" path="res://assets/tile_sets/grass/grass_center1.png" id="5_5vo6v"]
 [ext_resource type="Texture2D" uid="uid://cl4g5wnq2i678" path="res://assets/tile_sets/grass/grass_border2_R.png" id="5_raiux"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="5_uyy6q"]
@@ -63,13 +66,6 @@ shadow_color = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0j1pt"]
 size = Vector2(8, 196)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tsum"]
-texture = ExtResource("5_4mm2b")
-0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpe66"]
 texture = ExtResource("1_v7ld6")
 0:0/0 = 0
@@ -95,7 +91,6 @@ texture = ExtResource("3_k348l")
 sources/1 = SubResource("TileSetAtlasSource_lpe66")
 sources/2 = SubResource("TileSetAtlasSource_bwvye")
 sources/3 = SubResource("TileSetAtlasSource_rimy1")
-sources/0 = SubResource("TileSetAtlasSource_7tsum")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sslir"]
 texture = ExtResource("4_ol6j0")
@@ -489,14 +484,20 @@ texture = ExtResource("11_x1kdh")
 4:12/0 = 0
 5:12/0 = 0
 6:12/0 = 0
+6:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(3.5971737, 8, 3.5971737, 0, 8, -0.5395756, 8, 8)
 7:12/0 = 0
+7:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -0.8992939, -4.136751, -0.5395756, -3.7770338, 8)
 8:12/0 = 0
 9:12/0 = 0
+9:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.35971832, 8, -0.5395756, 1.978447, 3.2374573, -8, 8, -8, 8, 8)
 10:12/0 = 0
+10:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 1.0791531, 8, 0.35971832, 0.17985916, -5.036044, -8, -8, -8)
 11:12/0 = 0
 12:12/0 = 0
 13:12/0 = 0
+13:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.17985916, 8, 8, 8, 8, -8, 3.057598, -8, -0.5395756, 1.6187286)
 14:12/0 = 0
+14:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 0, 8, -0.17985916, 0.5395775, -4.6763268, -8)
 15:12/0 = 0
 16:12/0 = 0
 17:12/0 = 0
