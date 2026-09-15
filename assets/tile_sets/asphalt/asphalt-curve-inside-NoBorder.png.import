@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qp17mvmr6rw"
-path="res://.godot/imported/pixil-frame-1 (1).png-9afde18a7a6922e434a08231ad645ce9.ctex"
+uid="uid://c31pjhedackl0"
+path="res://.godot/imported/asphalt-curve-inside-NoBorder.png-60dde9c9e417f223f2a4816374694892.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/asphalt/pixil-frame-1 (1).png"
-dest_files=["res://.godot/imported/pixil-frame-1 (1).png-9afde18a7a6922e434a08231ad645ce9.ctex"]
+source_file="res://assets/tile_sets/asphalt/asphalt-curve-inside-NoBorder.png"
+dest_files=["res://.godot/imported/asphalt-curve-inside-NoBorder.png-60dde9c9e417f223f2a4816374694892.ctex"]
 
 [params]
 
