@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2a54kxfv1tp5"
-path="res://.godot/imported/asphalt-curve-inside-Noborder.png-bef7d9d92dfdb93317ffe52f5076d2cf.ctex"
+uid="uid://dlrpymtskws81"
+path="res://.godot/imported/asphalt_curve2.png-90a88500072ba7b6a450aed61b8baa53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/asphalt/asphalt-curve-inside-Noborder.png"
-dest_files=["res://.godot/imported/asphalt-curve-inside-Noborder.png-bef7d9d92dfdb93317ffe52f5076d2cf.ctex"]
+source_file="res://assets/tile_sets/asphalt/asphalt_curve2.png"
+dest_files=["res://.godot/imported/asphalt_curve2.png-90a88500072ba7b6a450aed61b8baa53.ctex"]
 
 [params]
 
