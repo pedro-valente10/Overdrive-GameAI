@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5dub1bq18f6w"
-path="res://.godot/imported/pixil-layer-Background.png-9401536607eafc48811e68646af9c425.ctex"
+uid="uid://dlcpdjonhlxeb"
+path="res://.godot/imported/asphalt-curve-outside-NoBorder.png-de7bb8b01cd2a1a0ea187fafea7c0f1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tile_sets/asphalt/pixil-layer-Background.png"
-dest_files=["res://.godot/imported/pixil-layer-Background.png-9401536607eafc48811e68646af9c425.ctex"]
+source_file="res://assets/tile_sets/asphalt/asphalt-curve-outside-NoBorder.png"
+dest_files=["res://.godot/imported/asphalt-curve-outside-NoBorder.png-de7bb8b01cd2a1a0ea187fafea7c0f1d.ctex"]
 
 [params]
 
