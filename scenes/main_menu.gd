@@ -18,7 +18,7 @@ func _ready() -> void:
 	$CanvasLayer/Control/TimerLoading.timeout.connect(_on_timer_loading_timeout)
 	
 func _on_options_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/options.tscn")
 
 func _on_play_pressed() -> void:
 	som_botao.play() 

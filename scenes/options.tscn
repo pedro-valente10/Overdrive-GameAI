@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://hf3h6vxnbuh6"]
+
+[ext_resource type="Script" uid="uid://5txpwb1d71nt" path="res://scenes/options.gd" id="1_2iy26"]
+[ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_yjkok"]
+[ext_resource type="Script" uid="uid://b3y7g3mxqmrtl" path="res://scenes/quit_button.gd" id="2_2iy26"]
+
+[sub_resource type="GDScript" id="GDScript_kv8mn"]
+
+[sub_resource type="Animation" id="Animation_rtw2f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oa1go"]
+resource_name = "hover_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.9529412, 0.19607843, 0.1764706, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tbmy8"]
+resource_name = "hover_out"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.9529412, 0.19607843, 0.1764706, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1sggn"]
+_data = {
+&"RESET": SubResource("Animation_rtw2f"),
+&"hover_in": SubResource("Animation_oa1go"),
+&"hover_out": SubResource("Animation_tbmy8")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_e6vpq"]
+line_spacing = 0.0
+font_size = 36
+shadow_size = 8
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2.5, 2.5)
+
+[node name="Node2D" type="Node2D" unique_id=1940582280]
+script = ExtResource("1_2iy26")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=739683611]
+layer = 0
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=815119944]
+layout_mode = 3
+anchor_left = 0.49800003
+anchor_top = 0.88000005
+anchor_right = 0.49800003
+anchor_bottom = 0.88000005
+offset_left = -99.696045
+offset_top = -50.24005
+offset_right = 100.303955
+offset_bottom = 49.75995
+grow_horizontal = 2
+grow_vertical = 0
+script = SubResource("GDScript_kv8mn")
+
+[node name="LabelLoading" type="Label" parent="CanvasLayer/Control" unique_id=269382763]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -1.94
+anchor_right = 0.5
+anchor_bottom = -1.94
+offset_left = -54.0
+offset_top = -14.0
+offset_right = 57.0
+offset_bottom = 14.0
+tooltip_auto_translate_mode = 2
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_yjkok")
+theme_override_font_sizes/font_size = 32
+text = "LOADING"
+
+[node name="TimerLoading" type="Timer" parent="CanvasLayer/Control" unique_id=1888346472]
+wait_time = 0.25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=1232289415]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.29500002
+anchor_right = 0.5
+anchor_bottom = 0.29500002
+offset_left = -48.0
+offset_top = -19.500002
+offset_right = 48.0
+offset_bottom = 19.499998
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 120
+
+[node name="BackButton" type="Button" parent="CanvasLayer/Control/HBoxContainer" unique_id=78330292]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_yjkok")
+theme_override_font_sizes/font_size = 36
+text = "
+
+"
+flat = true
+icon_alignment = 1
+script = ExtResource("2_2iy26")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/BackButton" unique_id=319220049]
+libraries/ = SubResource("AnimationLibrary_1sggn")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/BackButton" unique_id=1284474918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yjkok")
+theme_override_font_sizes/font_size = 36
+text = "BACK"
+label_settings = SubResource("LabelSettings_e6vpq")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="mouse_entered" from="CanvasLayer/Control/HBoxContainer/BackButton" to="CanvasLayer/Control/HBoxContainer/BackButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/HBoxContainer/BackButton" to="CanvasLayer/Control/HBoxContainer/BackButton" method="_on_mouse_exited"]

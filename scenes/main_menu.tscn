@@ -79,11 +79,11 @@ _data = {
 &"hover_out": SubResource("Animation_tbmy8")
 }
 
-[sub_resource type="GDScript" id="GDScript_wu84c"]
+[sub_resource type="GDScript" id="GDScript_tbmy8"]
 
 [sub_resource type="Theme" id="Theme_wu84c"]
 default_base_scale = 1.0
-script = SubResource("GDScript_wu84c")
+script = SubResource("GDScript_tbmy8")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
 line_spacing = 0.0
@@ -189,9 +189,13 @@ libraries/ = SubResource("AnimationLibrary_tbmy8")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/OptionsButton" unique_id=215093793]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = -0.052
+anchor_top = -0.20500001
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.06000042
+offset_top = -0.0049996376
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wu84c")
@@ -228,15 +232,13 @@ libraries/ = SubResource("AnimationLibrary_tbmy8")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/PlayButton" unique_id=1704878827]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -15.5
-offset_right = 45.0
-offset_bottom = 15.5
+anchors_preset = -1
+anchor_left = -0.031000001
+anchor_right = 0.96900004
+anchor_bottom = 0.897
+offset_left = -0.02399993
+offset_right = -0.024002075
+offset_bottom = 0.016998291
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wu84c")
@@ -267,15 +269,13 @@ libraries/ = SubResource("AnimationLibrary_tbmy8")
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/HBoxContainer/QuitButton" unique_id=2106379421]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -45.0
-offset_top = -15.5
-offset_right = 45.0
-offset_bottom = 15.5
+anchors_preset = -1
+anchor_left = -0.032
+anchor_right = 0.97400004
+anchor_bottom = 0.897
+offset_left = 0.0400002
+offset_right = -0.030006409
+offset_bottom = 0.016998291
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_bqqt6")
