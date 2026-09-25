@@ -1,16 +1,11 @@
-[gd_scene format=3 uid="uid://ch2sex183f75o"]
+[gd_scene format=3 uid="uid://cwwg6eu4ns7ox"]
 
-[ext_resource type="Script" uid="uid://cwi28hxudv0jn" path="res://scenes/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="Script" uid="uid://df6n1h8qij368" path="res://scenes/canvas_layer.gd" id="2_oa1go"]
-[ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="3_bqqt6"]
-[ext_resource type="VideoStream" uid="uid://cf4i5clj8grsn" path="res://videos/OVERDRIVE-opening-scene-loop.ogv" id="3_tbmy8"]
-[ext_resource type="Script" uid="uid://cjhvu0375k42k" path="res://scenes/play_button.gd" id="4_rtw2f"]
-[ext_resource type="AudioStream" uid="uid://c27htyv2m2b3f" path="res://sound/car_starting.mp3" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://b3y7g3mxqmrtl" path="res://scenes/quit_button.gd" id="5_oa1go"]
-[ext_resource type="AudioStream" uid="uid://n75v3d3gyxi2" path="res://sound/mouse_click.mp3" id="7_oa1go"]
-
-[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_oa1go"]
-file = "res://videos/OVERDRIVE-opening.ogv"
+[ext_resource type="Script" uid="uid://cwi28hxudv0jn" path="res://scenes/main_menu.gd" id="1_11ndu"]
+[ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="2_7dsen"]
+[ext_resource type="Script" uid="uid://cjhvu0375k42k" path="res://scenes/play_button.gd" id="3_s8d4p"]
+[ext_resource type="Script" uid="uid://b3y7g3mxqmrtl" path="res://scenes/quit_button.gd" id="4_hb8b2"]
+[ext_resource type="AudioStream" uid="uid://c27htyv2m2b3f" path="res://sound/car_starting.mp3" id="5_ee2js"]
+[ext_resource type="AudioStream" uid="uid://n75v3d3gyxi2" path="res://sound/mouse_click.mp3" id="6_ip2p3"]
 
 [sub_resource type="GDScript" id="GDScript_oa1go"]
 
@@ -98,31 +93,24 @@ shadow_offset = Vector2(2.5, 2.5)
 
 [node name="MainMenu" type="Node2D" unique_id=719023652]
 scale = Vector2(54.073692, -19.65018)
-script = ExtResource("1_l6cm7")
+script = ExtResource("1_11ndu")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1546593424]
 layer = 0
-script = ExtResource("2_oa1go")
 
-[node name="VideoPlayerA" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=1758733275]
-anchors_preset = 15
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1324786037]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stream = SubResource("VideoStreamTheora_oa1go")
-autoplay = true
-expand = true
-
-[node name="VideoPlayerB" type="VideoStreamPlayer" parent="CanvasLayer" unique_id=487332401]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stream = ExtResource("3_tbmy8")
-expand = true
-loop = true
+offset_left = -1152.0
+offset_top = -648.0
+offset_right = 768.0
+offset_bottom = 432.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=984483754]
 layout_mode = 3
@@ -153,7 +141,7 @@ offset_bottom = 14.0
 tooltip_auto_translate_mode = 2
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 32
 text = "LOADING"
 
@@ -184,7 +172,7 @@ theme = SubResource("Theme_8ln24")
 theme_override_colors/font_color = Color(0.7882353, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_8ln24")
@@ -192,7 +180,7 @@ keep_pressed_outside = true
 flat = true
 autowrap_mode = 2
 icon_alignment = 1
-script = ExtResource("4_rtw2f")
+script = ExtResource("3_s8d4p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/OptionsButton" unique_id=1504946583]
 libraries/ = SubResource("AnimationLibrary_tbmy8")
@@ -209,7 +197,7 @@ offset_top = -0.0049996376
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wu84c")
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 36
 text = "OPTIONS"
 label_settings = SubResource("LabelSettings_wu84c")
@@ -227,7 +215,7 @@ theme = SubResource("Theme_8ln24")
 theme_override_colors/font_color = Color(0.7882353, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/hover = SubResource("StyleBoxFlat_wu84c")
 theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_8ln24")
@@ -235,7 +223,7 @@ keep_pressed_outside = true
 flat = true
 autowrap_mode = 2
 icon_alignment = 1
-script = ExtResource("4_rtw2f")
+script = ExtResource("3_s8d4p")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/PlayButton" unique_id=1554169612]
 libraries/ = SubResource("AnimationLibrary_tbmy8")
@@ -252,7 +240,7 @@ offset_bottom = 0.016998291
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_wu84c")
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 36
 text = "PLAY"
 label_settings = SubResource("LabelSettings_wu84c")
@@ -265,14 +253,14 @@ custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 36
 text = "
 
 "
 flat = true
 icon_alignment = 1
-script = ExtResource("5_oa1go")
+script = ExtResource("4_hb8b2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/HBoxContainer/QuitButton" unique_id=2088447041]
 libraries/ = SubResource("AnimationLibrary_tbmy8")
@@ -288,7 +276,7 @@ offset_right = -0.030006409
 offset_bottom = 0.016998291
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_bqqt6")
+theme_override_fonts/font = ExtResource("2_7dsen")
 theme_override_font_sizes/font_size = 36
 text = "QUIT"
 label_settings = SubResource("LabelSettings_wu84c")
@@ -297,10 +285,10 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="SomMotor" type="AudioStreamPlayer" parent="." unique_id=1273537585]
-stream = ExtResource("4_wu84c")
+stream = ExtResource("5_ee2js")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=157588907]
-stream = ExtResource("7_oa1go")
+stream = ExtResource("6_ip2p3")
 
 [connection signal="mouse_entered" from="CanvasLayer/Control/HBoxContainer/OptionsButton" to="CanvasLayer/Control/HBoxContainer/OptionsButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/HBoxContainer/OptionsButton" to="CanvasLayer/Control/HBoxContainer/OptionsButton" method="_on_mouse_exited"]

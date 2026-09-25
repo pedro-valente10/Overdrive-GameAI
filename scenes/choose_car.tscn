@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://mj4kexqcyc1x"]
 
 [ext_resource type="FontFile" uid="uid://c6q0soqg0is4" path="res://text_fonts/RETROTECH.ttf" id="1_6d2am"]
-[ext_resource type="Script" path="res://scenes/canvas_layer.gd" id="1_8dg5h"]
 [ext_resource type="Script" uid="uid://bfxm2whe7jns7" path="res://scenes/choose_car.gd" id="1_rsygn"]
 [ext_resource type="Texture2D" uid="uid://ryckiesprlkj" path="res://assets/cars/daily/c_car_red.png" id="4_b1jw2"]
 [ext_resource type="Texture2D" uid="uid://blv57w7opypkd" path="res://assets/cars/r_car_red.png" id="4_rsygn"]
@@ -17,7 +16,6 @@ script = ExtResource("1_rsygn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=658869569]
 layer = 0
-script = ExtResource("1_8dg5h")
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=510102988]
 layout_mode = 3
